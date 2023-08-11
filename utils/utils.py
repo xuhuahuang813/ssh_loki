@@ -2039,6 +2039,7 @@ def ops_to_expr_df_singleq(df):
     return exprs
 
 def parse_sqls_single(sqls, batchnum=0, cols_to_tables={}):
+    print("here parse_sqls_single")
     start = time.time()
     fails = 0
     allinpdata = defaultdict(list)
