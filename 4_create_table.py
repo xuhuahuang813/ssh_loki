@@ -29,15 +29,7 @@ DROP_TEMPLATE = "DROP TABLE IF EXISTS {TABLE_NAME}"
 ENGINE_CMD_FMT = """postgresql://{USER}:{PWD}@{HOST}:{PORT}/{DB}"""
 
 NULL_VAL = "#NULL1234"
-# WK = "tpch1"
 WK = "ceb"
-# WK = "financial"
-#WK = "tpcds1G"
-#WK = "tpcds"
-#WK = "job"
-#WK = "tpch"
-#WK = "stack"
-
 if WK in ["ceb", "job"]:
     DBNAME="imdb"
 else:
@@ -45,7 +37,6 @@ else:
 
 USER="postgres"
 DBHOST="49.52.27.35"
-# args.port=5432
 PWD=""
 
 def read_flags():

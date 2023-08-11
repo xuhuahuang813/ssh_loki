@@ -12,7 +12,7 @@ import loki
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Run Loki.')
-    parser.add_argument('--config', '-c', default='application.conf')
+    parser.add_argument('--config', '-c', default='settings.json')
     parser.add_argument('--workload', '-w', default='imdb')
     parser.add_argument('--table', '-t', default="n")
     parser.add_argument('--vars_per_col', '-n', default=1000)

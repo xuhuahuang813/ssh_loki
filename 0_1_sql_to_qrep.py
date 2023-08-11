@@ -7,18 +7,23 @@ import pdb
 import sys
 sys.path.append("./")
 
-SQL_DIR = "multi_column_2/"  # "./imdb-sqls/"中存在文件夹
-INPUT_SQLS_PATH_LIST = os.listdir("./imdb-new-sqls/" + SQL_DIR)
-OUTPUT_DIR = "./imdb-new-workload/" + SQL_DIR
+# 加载参数配置文件
+settings = {}
+with open("./settings.json", 'r') as f:
+    settings = json.load(f)
 
+# sql文件生成pkl文件
+INPUT_SQLS_PATH_LIST = os.listdir(settings["sqlPath"])
+OUTPUT_DIR = settings["workloadPath"]
 make_dir(OUTPUT_DIR)
 
-for i, sql_path in enumerate(INPUT_SQLS_PATH_LIST):
+
+for i, sql_path in enumerate(INPUT_SQLS_PATH_LIST): #读INPUT_SQLS_PATH_LIST文件夹下所有的sql文件，并返回初步pkl文件，存于
     print(i, end="\r")
-    with open("./imdb-new-sqls/" + SQL_DIR + "/" + sql_path, "r", encoding='utf-8') as f:
+    with open(settings["sqlPath"] + "/" + sql_path, "r", encoding='utf-8') as f:
         sql = f.read()
 
-    output_fn = OUTPUT_DIR + sql_path.replace(".sql", "") + ".pkl"
+    output_fn = OUTPUT_DIR + "/" + sql_path.replace(".sql", "") + ".pkl"
 
     if "SELECT" not in sql:
         print("SELECT not in sql")

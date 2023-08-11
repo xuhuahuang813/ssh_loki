@@ -20,6 +20,10 @@ ALIAS_TO_TABS["t"] = "title"
 
 ZDBS = ["financial"]
 
+settings = {}
+with open("./settings.json", 'r') as f:
+    settings = json.load(f)
+    
 def read_flags():
     parser = argparse.ArgumentParser()
 
@@ -151,7 +155,7 @@ def main():
 
     # QDIR = WORKLOADS[args.workload]
     # DATADIR = os.path.join(QDIR, "dfs")
-    EXPRFN = os.path.join("./imdb-new-dfs/multi_column_2/", "expr_df.csv")
+    EXPRFN = os.path.join(settings["dfsPath"], "expr_df.csv")
     #EXPRFN = os.path.join(DATADIR, "literal_df.csv")
     print(EXPRFN)
     exprdf = pd.read_csv(EXPRFN)

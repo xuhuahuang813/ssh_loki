@@ -18,7 +18,10 @@ import argparse
 import sys
 sys.path.append(".")
 
-# from wanderjoin import WanderJoin
+# 加载参数配置文件
+settings = {}
+with open("./settings.json", 'r') as f:
+    settings = json.load(f)
 
 
 TIMEOUT_COUNT_CONSTANT = 150001000001
@@ -70,8 +73,8 @@ def read_flags():
                         default=5632)
     parser.add_argument("--wj_walk_timeout", type=float, required=False,
                         default=0.5)
-    parser.add_argument("--query_dir", type=str, required=False,
-                        default="./imdb-new-workload/multi_column_2/")
+    # parser.add_argument("--query_dir", type=str, required=False,
+    #                     default="./imdb-new-workload/multi_column_2/")
     parser.add_argument("-n", "--num_queries", type=int,
                         required=False, default=-1)
     parser.add_argument("--use_tries", type=int,
@@ -82,10 +85,11 @@ def read_flags():
                         required=False, default=0)
     #
     parser.add_argument("--card_type", type=str, required=False,
-                        default="total")
+                        default="actual")
     #
     parser.add_argument("--key_name", type=str, required=False,
-                        default="total")
+                        default="actual")
+    
     parser.add_argument("--true_timeout", type=int,
                         required=False, default=1800000*5)
     parser.add_argument("--pg_total", type=int,
@@ -399,7 +403,8 @@ def get_cardinality(qrep, card_type, key_name, db_host, db_name, user, pwd,
 
 
 def main():
-    fns = list(glob.glob(args.query_dir + "/*"))
+    # fns = list(glob.glob(args.query_dir + "/*"))
+    fns = list(glob.glob(settings["workloadPath"] + "/*"))
     fns.sort()
     par_args = []
 

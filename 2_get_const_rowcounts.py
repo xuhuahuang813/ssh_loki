@@ -5,6 +5,7 @@ import pdb
 from collections import defaultdict
 import sqlparse
 import time
+import json
 
 WK = "ceb"
 if WK in ["ceb", "job"]:
@@ -17,16 +18,17 @@ DBHOST="49.52.27.35"
 PORT=5632
 PWD=""
 
-
-SQL_DIR = "multi_column_2/"
-
-EXPRFN = os.path.join("./imdb-new-dfs/" + SQL_DIR, "expr_df.csv")
-OPFN = os.path.join("./imdb-new-dfs/" + SQL_DIR, "op_df.csv")
+settings = {}
+with open("./settings.json", 'r') as f:
+    settings = json.load(f)
+    
+EXPRFN = os.path.join(settings["dfsPath"], "expr_df.csv")
+OPFN = os.path.join(settings["dfsPath"], "op_df.csv")
 
 exprdf = pd.read_csv(EXPRFN)
 opdf = pd.read_csv(OPFN)
 
-LITERAL_DATA_FN = os.path.join("./imdb-new-dfs/" + SQL_DIR, "literal_df.csv")
+LITERAL_DATA_FN = os.path.join(settings["dfsPath"], "literal_df.csv")
 
 CARDCACHE = {}
 
@@ -285,12 +287,7 @@ rdata = get_rowcounts_consts(sqls, exprhashes, inputs, jobids)
 
 rdata["Selectivity"] = rdata.apply(lambda x: float(x["RowCount"]) / x["InputCardinality"] ,axis=1)
 tmp2 = rdata[rdata["RowCount"] != -1]
-# print(tmp2["Selectivity"].describe(percentiles=[0.75, 0.5, 0.9, 0.99]))
-# print(rdata.keys())
-# print(opdf.keys())
-# opdf = opdf.rename(columns={"column":"Column", "constant":"Value", "op":"Op"})
 print(opdf.keys())
-# pdb.set_trace()
 
 # print(LITERAL_DATA_FN)
 rdata.to_csv(LITERAL_DATA_FN, index=False)

@@ -1,0 +1,9 @@
+{
+    "imdb": {
+        "df": "./imdb-new-dfs/multi_column_3/op_df.csv",
+        "constraints_df": "./imdb-new-dfs/multi_column_3/literal_df.csv"
+    },
+    "sqlPath" : "./imdb-new-sqls/multi_column_3",
+    "workloadPath" : "./imdb-new-workload/multi_column_3",
+    "dfsPath" : "./imdb-new-dfs/multi_column_3"
+}

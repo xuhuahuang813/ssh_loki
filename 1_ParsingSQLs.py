@@ -16,6 +16,11 @@ import networkx as nx
 from networkx.readwrite import json_graph
 import pickle
 
+# 加载参数配置文件
+settings = {}
+with open("./settings.json", 'r') as f:
+    settings = json.load(f)
+    
 def load_sql_rep(fn, dummy=None):
     assert ".pkl" in fn
     try:
@@ -33,10 +38,10 @@ def load_sql_rep(fn, dummy=None):
 
     return query
 
-SQL_DIR = "multi_column_2/"
 WK = "ceb"
-QDIR = "./imdb-new-sqls/" + SQL_DIR
-OUTPATH = os.path.join("./imdb-new-dfs/" + SQL_DIR)
+
+QDIR = settings["sqlPath"]
+OUTPATH = settings["dfsPath"]
 
 make_dir(OUTPATH)
 
@@ -45,7 +50,7 @@ COLS_TO_TABLES = {}
 qdict = {}
 qfns = []
 
-QREP_DIR = './imdb-new-workload/' + SQL_DIR
+QREP_DIR = settings["workloadPath"]
 
 
 if WK in ["job", "ceb"]:

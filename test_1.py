@@ -3,7 +3,11 @@ from networkx.readwrite import json_graph
 import pickle
 # import numpy as np
 
-fn = "./imdb-new-workload/multi_column_2/8a506.pkl"
+# settings = {}
+# with open("./settings.json", 'r') as f:
+#     settings = json.load(f)
+    
+fn = "./imdb-new-workload/multi_column_3/8a506.pkl"
 
 with open(fn, "rb") as f:
     query = pickle.load(f)
