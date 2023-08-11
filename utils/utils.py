@@ -2126,7 +2126,9 @@ def parse_sqls_par(sqls, cols_to_tables={}):
             range(int(len(sqls)/fsize) + 1)]
     print("number of sql groups: ", len(sframes))
     num_par = min(len(sframes), 64)
+    print("num_par is ", num_par, "\n")
     par_args = [(s, si, cols_to_tables) for si,s in enumerate(sframes)]
+    print("par_args is \n", par_args, end="\n")
 
     with Pool(processes = num_par) as pool:
         res = pool.starmap(parse_sqls_single, par_args)
