@@ -1,2 +1,13 @@
 op,dtype,optype,constant,input,column,opstring,is_id,jobid,discrete_ops,cont_ops,like_ops,alias,exprhash,InputCardinality,Selectivity,RowCount,workload,db
-LIKE,unknown,contains,'%lise%',n,name,n.name like '%lise%',0,0,0,0,1,n,1412706111350165054529954383171903240337882399016,1736455,0.0015715926989181982,2729,ceb,ceb
+=,string,in,'4',it,id,it1.id in ('4'),0,0,1,0,0,it1,201247606223691005679595717410545984913115377236,113,0.0088495575221238,1,ceb,ceb
+=,string,in,'Danish',mi,info,"mi1.info in ('Danish','Spanish')",0,0,1,0,0,mi1,915029170915645337045155848430817461122198949223,6181550,0.0158929394731094,98243,ceb,ceb
+=,string,in,'Spanish',mi,info,"mi1.info in ('Danish','Spanish')",0,0,1,0,0,mi1,915029170915645337045155848430817461122198949223,6181550,0.0158929394731094,98243,ceb,ceb
+LIKE,unknown,contains,'%lise%',n,name,n.name like '%lise%',0,0,0,0,1,n,1412706111350165054529954383171903240337882399016,1736455,0.0015715926989181,2729,ceb,ceb
+=,string,in,'tv series',kt,kind,"kt.kind in ('tv series','video game','video movie')",0,0,1,0,0,kt,1333422666374384445257481059356447143403429617557,7,0.4285714285714285,3,ceb,ceb
+=,string,in,'video game',kt,kind,"kt.kind in ('tv series','video game','video movie')",0,0,1,0,0,kt,1333422666374384445257481059356447143403429617557,7,0.4285714285714285,3,ceb,ceb
+=,string,in,'video movie',kt,kind,"kt.kind in ('tv series','video game','video movie')",0,0,1,0,0,kt,1333422666374384445257481059356447143403429617557,7,0.4285714285714285,3,ceb,ceb
+=,string,in,'director',rt,role,"rt.role in ('director','editor','miscellaneous crew','producer','production designer')",0,0,1,0,0,rt,234388626842304026844118353514313021009107246290,12,0.4166666666666667,5,ceb,ceb
+=,string,in,'editor',rt,role,"rt.role in ('director','editor','miscellaneous crew','producer','production designer')",0,0,1,0,0,rt,234388626842304026844118353514313021009107246290,12,0.4166666666666667,5,ceb,ceb
+=,string,in,'miscellaneous crew',rt,role,"rt.role in ('director','editor','miscellaneous crew','producer','production designer')",0,0,1,0,0,rt,234388626842304026844118353514313021009107246290,12,0.4166666666666667,5,ceb,ceb
+=,string,in,'producer',rt,role,"rt.role in ('director','editor','miscellaneous crew','producer','production designer')",0,0,1,0,0,rt,234388626842304026844118353514313021009107246290,12,0.4166666666666667,5,ceb,ceb
+=,string,in,'production designer',rt,role,"rt.role in ('director','editor','miscellaneous crew','producer','production designer')",0,0,1,0,0,rt,234388626842304026844118353514313021009107246290,12,0.4166666666666667,5,ceb,ceb

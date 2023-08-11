@@ -44,9 +44,9 @@ else:
     DBNAME = WK
 
 USER="postgres"
-DBHOST="localhost"
+DBHOST="49.52.27.35"
 # args.port=5432
-PWD="postgres"
+PWD=""
 
 def read_flags():
     parser = argparse.ArgumentParser()
@@ -57,7 +57,7 @@ def read_flags():
     parser.add_argument("--data_kind", type=str, required=False,
             default="gen_shuffle", help="suffix for the table")
     parser.add_argument("--port", type=int, required=False,
-            default=5432, help="")
+            default=5632, help="")
 
     return parser.parse_args()
 

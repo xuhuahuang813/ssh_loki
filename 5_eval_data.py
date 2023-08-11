@@ -46,15 +46,13 @@ def read_flags():
     parser.add_argument("--db_name", type=str, required=False,
             default="imdb")
     parser.add_argument("--db_host", type=str, required=False,
-            default="localhost")
+            default="49.52.27.35")
     parser.add_argument("--user", type=str, required=False,
             default="postgres")
-    # parser.add_argument("--user", type=str, required=False,
-            # default="pari")
     parser.add_argument("--pwd", type=str, required=False,
-            default="postgres")
+            default="")
     parser.add_argument("--port", type=int, required=False,
-            default=5432)
+            default=5632)
 
     return parser.parse_args()
 

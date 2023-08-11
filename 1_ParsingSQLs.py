@@ -33,7 +33,7 @@ def load_sql_rep(fn, dummy=None):
 
     return query
 
-SQL_DIR = "multi_column_1/"
+SQL_DIR = "multi_column_2/"
 WK = "ceb"
 QDIR = "./imdb-new-sqls/" + SQL_DIR
 OUTPATH = os.path.join("./imdb-new-dfs/" + SQL_DIR)
