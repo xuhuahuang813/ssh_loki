@@ -1,0 +1,49 @@
+2023-08-11 10:55:06 INFO     [MAIN]  Loki initialized with configuration:
+{
+    "imdb": {
+        "constraints_df": "./imdb-new-dfs/multi_column_2/literal_df.csv",
+        "df": "./imdb-new-dfs/multi_column_2/op_df.csv"
+    }
+}
+2023-08-11 10:56:38 INFO     [MAIN]  Loki initialized with configuration:
+{
+    "imdb": {
+        "constraints_df": "./imdb-new-dfs/multi_column_2/literal_df.csv",
+        "df": "./imdb-new-dfs/multi_column_2/op_df.csv"
+    }
+}
+2023-08-11 11:06:01 INFO     [MAIN]  Loki initialized with configuration:
+{
+    "imdb": {
+        "constraints_df": "./imdb-new-dfs/multi_column_2/literal_df.csv",
+        "df": "./imdb-new-dfs/multi_column_2/op_df.csv"
+    }
+}
+2023-08-11 11:06:34 INFO     [MAIN]  Loki initialized with configuration:
+{
+    "imdb": {
+        "constraints_df": "./imdb-new-dfs/multi_column_2/literal_df.csv",
+        "df": "./imdb-new-dfs/multi_column_2/op_df.csv"
+    }
+}
+2023-08-11 11:06:58 INFO     [MAIN]  Loki initialized with configuration:
+{
+    "imdb": {
+        "constraints_df": "./imdb-new-dfs/multi_column_2/literal_df.csv",
+        "df": "./imdb-new-dfs/multi_column_2/op_df.csv"
+    }
+}
+2023-08-11 11:07:32 INFO     [MAIN]  Loki initialized with configuration:
+{
+    "imdb": {
+        "constraints_df": "./imdb-new-dfs/multi_column_2/literal_df.csv",
+        "df": "./imdb-new-dfs/multi_column_2/op_df.csv"
+    }
+}
+2023-08-11 11:08:43 INFO     [MAIN]  Loki initialized with configuration:
+{
+    "imdb": {
+        "constraints_df": "./imdb-new-dfs/multi_column_2/literal_df.csv",
+        "df": "./imdb-new-dfs/multi_column_2/op_df.csv"
+    }
+}

@@ -1,0 +1,2 @@
+op,dtype,optype,constant,input,column,opstring,is_id,jobid,discrete_ops,cont_ops,like_ops,alias,exprhash,InputCardinality,Selectivity,RowCount,workload,db
+LIKE,unknown,contains,'%lise%',n,name,n.name like '%lise%',0,0,0,0,1,n,1412706111350165054529954383171903240337882399016,1736455,0.0015715926989181982,2729,ceb,ceb

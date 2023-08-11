@@ -1,0 +1,2 @@
+filtersql,jobid,input,alias,exprhash,unique_filter_cols,discrete_ops,cont_ops,like_ops,is_id,num_unique_ops,num_ops,num_discrete_consts,num_likes,like_lens,InputCardinality,Selectivity,RowCount,workload,db
+SELECT COUNT(*) from name AS n WHERE n.name like '%lise%',0,n,n,1412706111350165054529954383171903240337882399016,1,0,0,1,0,1,1,0,1,8,1736455,0.0015715926989181982,2729,ceb,ceb
