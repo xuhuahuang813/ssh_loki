@@ -2075,11 +2075,15 @@ def parse_sqls_single(sqls, batchnum=0, cols_to_tables={}):
             continue
 
         allpreds.append(preds)
-
+    
+    print("allpreds is \n", allpreds, end="\n")
+    
     if len(allpreds) == 0:
         return None,None
 
     opdf = pd.concat(allpreds, ignore_index=True)
+    
+    print("opdf is \n", opdf, end="\n")
 
     opdf["discrete_ops"] = opdf.apply(lambda x: int(x["op"] in ["=", "!="]) ,
             axis=1)
