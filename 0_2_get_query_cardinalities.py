@@ -85,10 +85,10 @@ def read_flags():
                         required=False, default=0)
     #
     parser.add_argument("--card_type", type=str, required=False,
-                        default="actual")
+                        default="total")
     #
     parser.add_argument("--key_name", type=str, required=False,
-                        default="actual")
+                        default="total")
     
     parser.add_argument("--true_timeout", type=int,
                         required=False, default=1800000*5)
@@ -142,53 +142,53 @@ def is_cross_join(sg):
     return True
 
 
-def get_cardinality_wj(qrep, card_type, key_name, db_host, db_name, user, pwd,
-                       port, fn, wj_fn, wj_walk_timeout, idx, seed, trie_cache, use_tries):
+# def get_cardinality_wj(qrep, card_type, key_name, db_host, db_name, user, pwd,
+#                        port, fn, wj_fn, wj_walk_timeout, idx, seed, trie_cache, use_tries):
 
-    key_name = "wanderjoin-" + str(wj_walk_timeout)
-    # key_name = "wj" + str(wj_walk_timeout)
-    for subset, info in qrep["subset_graph"].nodes().items():
-        cards = info["cardinality"]
-        if key_name in cards:
-            return
-        if "actual" not in cards:
-            return
+#     key_name = "wanderjoin-" + str(wj_walk_timeout)
+#     # key_name = "wj" + str(wj_walk_timeout)
+#     for subset, info in qrep["subset_graph"].nodes().items():
+#         cards = info["cardinality"]
+#         if key_name in cards:
+#             return
+#         if "actual" not in cards:
+#             return
 
-    if idx % 10 == 0:
-        print("query: ", idx)
-    start = time.time()
-    wj = WanderJoin(user, pwd, db_host, port,
-                    db_name, verbose=True, walks_timeout=wj_walk_timeout, seed=seed, use_tries=use_tries, trie_cache=trie_cache)
+#     if idx % 10 == 0:
+#         print("query: ", idx)
+#     start = time.time()
+#     wj = WanderJoin(user, pwd, db_host, port,
+#                     db_name, verbose=True, walks_timeout=wj_walk_timeout, seed=seed, use_tries=use_tries, trie_cache=trie_cache)
 
-    if SOURCE_NODE in list(qrep["subset_graph"].nodes()):
-        qrep["subset_graph"].remove_node(SOURCE_NODE)
+#     if SOURCE_NODE in list(qrep["subset_graph"].nodes()):
+#         qrep["subset_graph"].remove_node(SOURCE_NODE)
 
-    data = wj.get_counts(qrep)
+#     data = wj.get_counts(qrep)
 
-    # save wj data
-    for subset, info in qrep["subset_graph"].nodes().items():
-        cards = info["cardinality"]
-        num = data["card_samples"][subset]
-        est = math.ceil(data["card_ests_sum"][subset] / num)
-        if num <= 1:
-            std = 0
-        else:
-            std = np.sqrt(data["card_vars_sum"][subset] / float(num-1))
-        alpha = st.norm.ppf((CONF_ALPHA+1)/2)
-        half_interval = std*alpha / np.sqrt(num)
+#     # save wj data
+#     for subset, info in qrep["subset_graph"].nodes().items():
+#         cards = info["cardinality"]
+#         num = data["card_samples"][subset]
+#         est = math.ceil(data["card_ests_sum"][subset] / num)
+#         if num <= 1:
+#             std = 0
+#         else:
+#             std = np.sqrt(data["card_vars_sum"][subset] / float(num-1))
+#         alpha = st.norm.ppf((CONF_ALPHA+1)/2)
+#         half_interval = std*alpha / np.sqrt(num)
 
-        cards[key_name] = est
-        cards[key_name + "_half_interval"] = half_interval
+#         cards[key_name] = est
+#         cards[key_name + "_half_interval"] = half_interval
 
-    old_data = load_object(wj_fn)
-    if old_data is None:
-        old_data = {}
-    old_data[key_name] = data
+#     old_data = load_object(wj_fn)
+#     if old_data is None:
+#         old_data = {}
+#     old_data[key_name] = data
 
-    save_qrep(fn, qrep)
-    save_object(wj_fn, old_data)
-    print("wanderjoin, seed: {} took {}".format(seed, time.time()-start))
-    return qrep
+#     save_qrep(fn, qrep)
+#     save_object(wj_fn, old_data)
+#     print("wanderjoin, seed: {} took {}".format(seed, time.time()-start))
+#     return qrep
 
 
 def get_cardinality(qrep, card_type, key_name, db_host, db_name, user, pwd,
@@ -199,12 +199,16 @@ def get_cardinality(qrep, card_type, key_name, db_host, db_name, user, pwd,
     the qrep.
     '''
     print("get cardinality!")
+    
+    # key_name分别是expected，actual，total
     if key_name is None:
         key_name = card_type
 
+    # db_year == NONE
     if db_year is not None:
         db_name = db_name + str(db_year)
 
+    # sampling_percentage == NONE
     if sampling_percentage is not None:
         key_name = str(sampling_type) + \
             str(sampling_percentage) + "_" + key_name
@@ -244,9 +248,12 @@ def get_cardinality(qrep, card_type, key_name, db_host, db_name, user, pwd,
 
     for subqi, subset in enumerate(node_list):
         info = qrep["subset_graph"].nodes()[subset]
+        
+        # 创建cardinality类。每一次都会判断，所以这三类生成的顺序并不重要。
         if card_key not in info:
             info[card_key] = {}
 
+        # 创建exec_time类、只会在actual的时候有值
         if "exec_time" not in info:
             info["exec_time"] = {}
 
@@ -299,11 +306,18 @@ def get_cardinality(qrep, card_type, key_name, db_host, db_name, user, pwd,
                 # continue
 
         if card_type == "pg":
-            subsql = "EXPLAIN " + subsql
-            output = execute_query(subsql, user, db_host,
-                                   port, pwd, db_name, [])
-            card = pg_est_from_explain(output)
-            cards[key_name] = card
+            # print("subset type is ",type(subset))
+            # print("subset len is ", len(subset))
+            if(len(subset) != 1):
+                cards[key_name] = -1
+            elif(len(subset) == 1):
+                subsql = "EXPLAIN " + subsql
+                output = execute_query(subsql, user, db_host,
+                                    port, pwd, db_name, [])
+                card = pg_est_from_explain(output)
+                cards[key_name] = card
+            else:
+                print("something gi wrong!")
             if subqi % 10 == 0:
                 save_qrep(fn, qrep)
 
@@ -327,36 +341,43 @@ def get_cardinality(qrep, card_type, key_name, db_host, db_name, user, pwd,
                 found_in_cache += 1
                 cards[key_name] = card
                 continue
+            
+            if(len(subset) != 1):
+                cards[key_name] = -1
+                execs[key_name] = 0
+                query_exec_times.append(0)
+            elif(len(subset) == 1):
+                start = time.time()
+                pre_execs = ["SET statement_timeout = {}".format(true_timeout)]
+                output = execute_query(subsql, user, db_host, port, pwd, db_name,
+                                    pre_execs)
+                if isinstance(output, Exception):
+                    print(output)
+                    card = EXCEPTION_COUNT_CONSTANT
+                    num_timeout += 1
+                    # continue
+                    # pdb.set_trace()
+                elif output == "timeout":
+                    print("timeout query: ")
+                    print(subsql)
+                    card = TIMEOUT_COUNT_CONSTANT
+                    num_timeout += 1
+                else:
+                    card = output[0][0]
 
-            start = time.time()
-            pre_execs = ["SET statement_timeout = {}".format(true_timeout)]
-            output = execute_query(subsql, user, db_host, port, pwd, db_name,
-                                   pre_execs)
-            if isinstance(output, Exception):
-                print(output)
-                card = EXCEPTION_COUNT_CONSTANT
-                num_timeout += 1
-                # continue
-                # pdb.set_trace()
-            elif output == "timeout":
-                print("timeout query: ")
-                print(subsql)
-                card = TIMEOUT_COUNT_CONSTANT
-                num_timeout += 1
+                exec_time = time.time() - start
+                if exec_time > CACHE_TIMEOUT:
+                    print(exec_time)
+                    sql_cache.archive[hash_sql] = card
+                cards[key_name] = card
+                execs[key_name] = exec_time
+                query_exec_times.append(exec_time)
+                if card == 0 and skip_zero_queries:
+                    # bad times...
+                    print("skipping query with zero cardinality subquery")
+                    break
             else:
-                card = output[0][0]
-
-            exec_time = time.time() - start
-            if exec_time > CACHE_TIMEOUT:
-                print(exec_time)
-                sql_cache.archive[hash_sql] = card
-            cards[key_name] = card
-            execs[key_name] = exec_time
-            query_exec_times.append(exec_time)
-            if card == 0 and skip_zero_queries:
-                # bad times...
-                print("skipping query with zero cardinality subquery")
-                break
+                print("something go wrong!")
 
         elif card_type == "wanderjoin":
             assert "SELECT" in subsql
@@ -374,14 +395,17 @@ def get_cardinality(qrep, card_type, key_name, db_host, db_name, user, pwd,
             assert False
 
         elif card_type == "total":
-            exec_sql = get_total_count_query(subsql)
-            if args.pg_total:
-                exec_sql = "EXPLAIN " + exec_sql
+            if(len(subset) != 1):
+                cards[key_name] = -1
+            elif(len(subset) == 1):
+                exec_sql = get_total_count_query(subsql)
+                if args.pg_total:
+                    exec_sql = "EXPLAIN " + exec_sql
 
-            output = execute_query(
-                exec_sql, user, db_host, port, pwd, db_name, [])
-            card = pg_est_from_explain(output)
-            cards[key_name] = card
+                output = execute_query(
+                    exec_sql, user, db_host, port, pwd, db_name, [])
+                card = pg_est_from_explain(output)
+                cards[key_name] = card
         else:
             assert False
 

@@ -135,3 +135,18 @@
     "sqlPath": "./imdb-new-sqls/multi_column_3",
     "workloadPath": "./imdb-new-workload/multi_column_3"
 }
+2023-08-12 16:33:38 INFO     [MAIN]  Loki initialized with configuration:
+{
+    "dfsPath": "./imdb-new-dfs/multi_column_3",
+    "imdb": {
+        "constraints_df": "./imdb-new-dfs/multi_column_3/literal_df.csv",
+        "df": "./imdb-new-dfs/multi_column_3/op_df.csv"
+    },
+    "sqlPath": "./imdb-new-sqls/multi_column_3",
+    "workloadPath": "./imdb-new-workload/multi_column_3"
+}
+2023-08-12 16:33:38 INFO     [MAIN]  Solving: {'gender'}
+2023-08-12 16:33:39 INFO     [MAIN]  Solved: {'gender'}
+2023-08-12 16:33:39 INFO     [MAIN]  Solving: {'name_pcode_nf'}
+2023-08-12 16:33:39 INFO     [MAIN]  Solved: {'name_pcode_nf'}
+2023-08-12 16:33:45 INFO     [MAIN]  Exiting Loki!
