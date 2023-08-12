@@ -501,7 +501,7 @@ def main():
                              fn, wj_fn, args.wj_walk_timeout, i, args.seed, None,
                              args.use_tries))
         else:
-            print("here")
+            # print("here")
             # qrep = get_cardinality(qrep, args.card_type, args.key_name, args.db_host,
             #                        args.db_name, args.user, args.pwd, args.port,
             #                        args.true_timeout, args.pg_total, args.card_cache_dir, fn,
@@ -521,8 +521,8 @@ def main():
 
     start = time.time()
     if args.num_proc == -1:
-        # num_proc = cpu_count()
-        num_proc = 48
+        num_proc = cpu_count()
+        # num_proc = 48
         
     else:
         num_proc = args.num_proc

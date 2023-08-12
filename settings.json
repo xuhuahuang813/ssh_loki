@@ -1,9 +1,9 @@
 {
     "imdb": {
-        "df": "./imdb-new-dfs/multi_column_3/op_df.csv",
-        "constraints_df": "./imdb-new-dfs/multi_column_3/literal_df.csv"
+        "df": "./imdb-new-dfs/1a_simple/op_df.csv",
+        "constraints_df": "./imdb-new-dfs/1a_simple/literal_df.csv"
     },
-    "sqlPath" : "./imdb-new-sqls/multi_column_3",
-    "workloadPath" : "./imdb-new-workload/multi_column_3",
-    "dfsPath" : "./imdb-new-dfs/multi_column_3"
+    "sqlPath" : "./imdb-new-sqls/1a_simple",
+    "workloadPath" : "./imdb-new-workload/1a_simple",
+    "dfsPath" : "./imdb-new-dfs/1a_simple"
 }
