@@ -20,7 +20,7 @@ folder_path = "./benchmark_small"
 dir_list = os.listdir(folder_path)
 
 for dir_name in dir_list:
-    dir_path = os.path.join(folder_path, dir_name, "queries")
+    dir_path = os.path.join(folder_path, dir_name, "queries_processed")
     file_list = os.listdir(dir_path)
 
     # 创建输出workload文件夹
@@ -39,7 +39,7 @@ for dir_name in dir_list:
                 continue
 
             # pkl文件路径
-            workload_path = file_path.replace("queries", "workload").replace(".sql", ".pkl")  # ./benchmark/Arade/workload/2.pkl
+            workload_path = file_path.replace("queries_processed", "workload").replace(".sql", ".pkl")  # ./benchmark/Arade/workload/2.pkl
 
             qrep = parse_sql(sql, None, None, None, None, None, compute_ground_truth=False)
 

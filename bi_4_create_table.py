@@ -31,7 +31,7 @@ ENGINE_CMD_FMT = """postgresql://{USER}:{PWD}@{HOST}:{PORT}/{DB}"""
 NULL_VAL = "#NULL1234"
 WK = "ceb"
 if WK in ["ceb", "job"]:
-    DBNAME="bibench"
+    DBNAME="bibench3"
 else:
     DBNAME = WK
 
@@ -113,7 +113,7 @@ def main():
 
         cols = ",".join(list(df.keys()))
 
-        if DBNAME == "bibench":
+        if DBNAME == "bibench3":
             cols = "id," + cols
         elif DBNAME == "financial":
             cols = "index," + cols

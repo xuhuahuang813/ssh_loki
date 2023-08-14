@@ -1,5 +1,0 @@
-2023-08-14 19:20:25 INFO     [MAIN]  Solving: {'hcpcs_description'}
-2023-08-14 19:20:25 INFO     [MAIN]  Solved: {'hcpcs_description'}
-2023-08-14 19:20:25 INFO     [MAIN]  Solving: {'nppes_provider_state'}
-2023-08-14 19:20:25 INFO     [MAIN]  Solved: {'nppes_provider_state'}
-2023-08-14 19:20:38 INFO     [MAIN]  Exiting Loki!
