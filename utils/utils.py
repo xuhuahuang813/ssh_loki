@@ -2097,7 +2097,9 @@ def parse_sqls_single(sqls, batchnum=0, cols_to_tables={}):
         if row["column"] in cols_to_tables:
             return cols_to_tables[row["column"]]
         else:
-            return remove_ints(row["input"])
+            # 尝试
+            # return remove_ints(row["input"])
+            return row["input"]
 
     def update_alias(row, cols_to_tables):
         if row["input"] == "X" and row["column"] in cols_to_tables:
@@ -2133,7 +2135,7 @@ def parse_sqls_par(sqls, cols_to_tables={}):
     num_par = min(len(sframes), 64)
     print("num_par is ", num_par, "\n")
     par_args = [(s, si, cols_to_tables) for si,s in enumerate(sframes)]
-    print("par_args is \n", par_args, end="\n")
+    # print("par_args is \n", par_args, end="\n")
 
     with Pool(processes = num_par) as pool:
         res = pool.starmap(parse_sqls_single, par_args)

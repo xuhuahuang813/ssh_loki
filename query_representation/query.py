@@ -49,7 +49,7 @@ def parse_sql(sql, user, db_name, db_host, port, pwd, timeout=False,
           len(join_graph.nodes), "relations,",
           len(join_graph.edges), "joins, and",
           len(subset_graph), " possible subplans.",
-          "took:", time.time() - start, end="\r")
+          "took:", time.time() - start, end="\n")
 
     ret = {}
     ret["sql"] = sql
