@@ -738,10 +738,23 @@ def extract_join_graph(sql):
         join_graph[t1][t2]["join_condition"] = j
         if t1 in aliases:
             table1 = aliases[t1]
-            table2 = aliases[t2]
-
             join_graph.nodes()[t1]["real_name"] = table1
+        
+        if t2 in aliases:
+            table2 = aliases[t2]
             join_graph.nodes()[t2]["real_name"] = table2
+        
+    
+    for alias in aliases:
+        tableName = aliases[alias]
+        tables.remove(tableName)
+        if not join_graph.has_node(alias):
+            join_graph.add_node(alias)
+            join_graph.nodes()[alias]["real_name"] = tableName
+    
+    for table in tables:
+        if not join_graph.has_node(table):
+            join_graph.add_node(table)
 
     parsed = sqlparse.parse(sql)[0]
     # let us go over all the where clauses
