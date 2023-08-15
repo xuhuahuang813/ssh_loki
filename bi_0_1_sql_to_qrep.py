@@ -44,6 +44,7 @@ for dir_name in dir_list:
             # pkl文件路径
             workload_path = file_path.replace("queries_processed", "workload").replace(".sql", ".pkl")  # ./benchmark/Arade/workload/2.pkl
 
+            print("file_name is: ", file_name)
             qrep = parse_sql(sql, None, None, None, None, None, compute_ground_truth=False)
 
             qrep["subset_graph"] = nx.OrderedDiGraph(json_graph.adjacency_graph(qrep["subset_graph"]))
