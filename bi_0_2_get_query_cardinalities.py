@@ -428,110 +428,116 @@ def get_cardinality(qrep, card_type, key_name, db_host, db_name, user, pwd,
 
 
 def main():
-    # fns = list(glob.glob(args.query_dir + "/*"))
-    # fns = list(glob.glob(settings["workloadPath"] + "/*"))
-    fns = list(glob.glob("./benchmark_small/CMSprovider/workload"+ "/*"))
-    fns.sort()
-    par_args = []
+    folder_path = "./benchmark_small"
+    # 遍历文件夹
+    dir_list = os.listdir(folder_path)
 
-    for i, fn in enumerate(fns):
-        if i >= args.num_queries and args.num_queries != -1:
-            break
-
-        if (".pkl" not in fn and ".sql" not in fn):
+    for dir_name in dir_list:
+        if dir_name == "results.csv":
             continue
+        
+        fns = list(glob.glob(os.path.join(folder_path, dir_name, "workload")+ "/*"))
+        fns.sort()
+        par_args = []
 
-        if ".pkl" in fn:
-            qrep = load_qrep(fn)
-        else:
-            with open(fn, "r") as f:
-                sql = f.read()
-            sql = sql.strip()
-            if "SELECT" not in sql:
+        for i, fn in enumerate(fns):
+            if i >= args.num_queries and args.num_queries != -1:
+                break
+
+            if (".pkl" not in fn and ".sql" not in fn):
                 continue
 
-            qrep = parse_sql(sql, None, None, None, None, None,
-                             compute_ground_truth=False)
+            if ".pkl" in fn:
+                qrep = load_qrep(fn)
+            else:
+                with open(fn, "r") as f:
+                    sql = f.read()
+                sql = sql.strip()
+                if "SELECT" not in sql:
+                    continue
 
-            qrep["subset_graph"] = \
-                nx.OrderedDiGraph(
-                    json_graph.adjacency_graph(qrep["subset_graph"]))
-            qrep["join_graph"] = json_graph.adjacency_graph(qrep["join_graph"])
-            fn = fn.replace(".sql", ".pkl")
-            save_qrep(fn, qrep)
-            print("updated sql rep!")
-            continue
+                qrep = parse_sql(sql, None, None, None, None, None,
+                                compute_ground_truth=False)
 
-        if args.no_parallel:
+                qrep["subset_graph"] = \
+                    nx.OrderedDiGraph(
+                        json_graph.adjacency_graph(qrep["subset_graph"]))
+                qrep["join_graph"] = json_graph.adjacency_graph(qrep["join_graph"])
+                fn = fn.replace(".sql", ".pkl")
+                save_qrep(fn, qrep)
+                print("updated sql rep!")
+                continue
+
+            if args.no_parallel:
+                if args.card_type == "wanderjoin":
+                    wj_dir = os.path.dirname(fn) + "/wj_data/"
+                    base_name = os.path.basename(fn)
+                    if not os.path.exists(wj_dir):
+                        make_dir(wj_dir)
+                    wj_fn = wj_dir + base_name
+                    get_cardinality_wj(qrep, args.card_type, args.key_name, args.db_host,
+                                    args.db_name, args.user, args.pwd, args.port,
+                                    fn, wj_fn, args.wj_walk_timeout, i, args.seed, None,
+                                    args.use_tries)
+                    print("done!")
+                    pdb.set_trace()
+                else:
+                    get_cardinality(qrep, args.card_type, args.key_name, args.db_host,
+                                    args.db_name, args.user, args.pwd, args.port,
+                                    args.true_timeout, args.pg_total, args.card_cache_dir, fn,
+                                    args.wj_walk_timeout, i, args.sampling_percentage,
+                                    args.sampling_type, True, args.db_year)
+
+                continue
+
             if args.card_type == "wanderjoin":
+                par_func = get_cardinality_wj
+
                 wj_dir = os.path.dirname(fn) + "/wj_data/"
                 base_name = os.path.basename(fn)
                 if not os.path.exists(wj_dir):
                     make_dir(wj_dir)
                 wj_fn = wj_dir + base_name
-                get_cardinality_wj(qrep, args.card_type, args.key_name, args.db_host,
-                                   args.db_name, args.user, args.pwd, args.port,
-                                   fn, wj_fn, args.wj_walk_timeout, i, args.seed, None,
-                                   args.use_tries)
-                print("done!")
-                pdb.set_trace()
+                # trie_cache = klepto.archives.dir_archive("./trie_cache",
+                # cached=True, serialized=True)
+                # tstart = time.time()
+                # print("going to load trie archive...")
+                # trie_cache.load()
+                # print("loading trie archive took: ", time.time() - tstart)
+                par_args.append((qrep, args.card_type, args.key_name, args.db_host,
+                                args.db_name, args.user, args.pwd, args.port,
+                                fn, wj_fn, args.wj_walk_timeout, i, args.seed, None,
+                                args.use_tries))
             else:
-                get_cardinality(qrep, args.card_type, args.key_name, args.db_host,
+                # print("here")
+                # qrep = get_cardinality(qrep, args.card_type, args.key_name, args.db_host,
+                #                        args.db_name, args.user, args.pwd, args.port,
+                #                        args.true_timeout, args.pg_total, args.card_cache_dir, fn,
+                #                        args.wj_walk_timeout, i, args.sampling_percentage,
+                #                        args.sampling_type, args.skip_zero_queries, args.db_year)
+                
+                par_func = get_cardinality
+                par_args.append((qrep, args.card_type, args.key_name, args.db_host,
                                 args.db_name, args.user, args.pwd, args.port,
                                 args.true_timeout, args.pg_total, args.card_cache_dir, fn,
                                 args.wj_walk_timeout, i, args.sampling_percentage,
-                                args.sampling_type, True, args.db_year)
+                                args.sampling_type, args.skip_zero_queries, args.db_year))
 
-            continue
+        if args.no_parallel:
+            print("Generated all cardinalities")
+            exit(1)
 
-        if args.card_type == "wanderjoin":
-            par_func = get_cardinality_wj
-
-            wj_dir = os.path.dirname(fn) + "/wj_data/"
-            base_name = os.path.basename(fn)
-            if not os.path.exists(wj_dir):
-                make_dir(wj_dir)
-            wj_fn = wj_dir + base_name
-            # trie_cache = klepto.archives.dir_archive("./trie_cache",
-            # cached=True, serialized=True)
-            # tstart = time.time()
-            # print("going to load trie archive...")
-            # trie_cache.load()
-            # print("loading trie archive took: ", time.time() - tstart)
-            par_args.append((qrep, args.card_type, args.key_name, args.db_host,
-                             args.db_name, args.user, args.pwd, args.port,
-                             fn, wj_fn, args.wj_walk_timeout, i, args.seed, None,
-                             args.use_tries))
-        else:
-            # print("here")
-            # qrep = get_cardinality(qrep, args.card_type, args.key_name, args.db_host,
-            #                        args.db_name, args.user, args.pwd, args.port,
-            #                        args.true_timeout, args.pg_total, args.card_cache_dir, fn,
-            #                        args.wj_walk_timeout, i, args.sampling_percentage,
-            #                        args.sampling_type, args.skip_zero_queries, args.db_year)
+        start = time.time()
+        if args.num_proc == -1:
+            num_proc = cpu_count()
+            # num_proc = 48
             
-            par_func = get_cardinality
-            par_args.append((qrep, args.card_type, args.key_name, args.db_host,
-                             args.db_name, args.user, args.pwd, args.port,
-                             args.true_timeout, args.pg_total, args.card_cache_dir, fn,
-                             args.wj_walk_timeout, i, args.sampling_percentage,
-                             args.sampling_type, args.skip_zero_queries, args.db_year))
-
-    if args.no_parallel:
-        print("Generated all cardinalities")
-        exit(1)
-
-    start = time.time()
-    if args.num_proc == -1:
-        num_proc = cpu_count()
-        # num_proc = 48
-        
-    else:
-        num_proc = args.num_proc
-    print("num_proc is ", num_proc)
-    with Pool(processes=num_proc) as pool:
-        qreps = pool.starmap(par_func, par_args)
-    print("Generated all cardinalities in {} seconds".format(time.time()-start))
+        else:
+            num_proc = args.num_proc
+        print("num_proc is ", num_proc)
+        with Pool(processes=num_proc) as pool:
+            qreps = pool.starmap(par_func, par_args)
+        print("Generated all cardinalities in {} seconds".format(time.time()-start))
 
 
 args = read_flags()

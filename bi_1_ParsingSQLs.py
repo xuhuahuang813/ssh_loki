@@ -16,10 +16,6 @@ import networkx as nx
 from networkx.readwrite import json_graph
 import pickle
 
-# 加载参数配置文件
-# settings = {}
-# with open("./settings.json", 'r') as f:
-#     settings = json.load(f)
     
 def load_sql_rep(fn, dummy=None):
     assert ".pkl" in fn
@@ -40,126 +36,128 @@ def load_sql_rep(fn, dummy=None):
 
 WK = "ceb"
 
-# QDIR = settings["sqlPath"]
-# OUTPATH = settings["dfsPath"]
-QDIR = "./benchmark_small/CMSprovider/queries_processed"
-OUTPATH = "./benchmark_small/CMSprovider/dfs"
+folder_path = "./benchmark_small"
+# 遍历文件夹
+dir_list = os.listdir(folder_path)
 
-make_dir(OUTPATH)
-
-COLS_TO_TABLES = {}
-
-qdict = {}
-qfns = []
-
-# QREP_DIR = settings["workloadPath"]
-QREP_DIR = "./benchmark_small/CMSprovider/workload"
-
-
-if WK in ["job", "ceb"]:
-    qfns = os.listdir(QREP_DIR)
-    for fn in qfns:
-        qfn = os.path.join(QREP_DIR, fn)
-        if ".pkl" in qfn:
-            qdict[fn] = load_sql_rep(qfn)
-
-FNS = os.listdir(QDIR)
-
-sqls = []
-qreps = []
-
-for fi, fn in enumerate(FNS):
-    if ".sql" not in fn:
-        continue
-    if "all" in fn:
+for dir_name in dir_list:
+    if dir_name == "results.csv":
         continue
     
-    fnkey = fn.replace(".sql", ".pkl")
-    qreps.append(qdict[fnkey])
+    QDIR = os.path.join(folder_path, dir_name, "queries_processed")
+    OUTPATH = os.path.join(folder_path, dir_name, "dfs")
+    make_dir(OUTPATH)
+
+    COLS_TO_TABLES = {}
+
+    qdict = {}
+    qfns = []
+
+    QREP_DIR = os.path.join(folder_path, dir_name, "workload")
+    if WK in ["job", "ceb"]:
+        qfns = os.listdir(QREP_DIR)
+        for fn in qfns:
+            qfn = os.path.join(QREP_DIR, fn)
+            if ".pkl" in qfn:
+                qdict[fn] = load_sql_rep(qfn)
+
+    FNS = os.listdir(QDIR)
+
+    sqls = []
+    qreps = []
+
+    for fi, fn in enumerate(FNS):
+        if ".sql" not in fn:
+            continue
+        if "all" in fn:
+            continue
         
-    fn = os.path.join(QDIR, fn)
-    with open(fn, "r", encoding='utf-8') as f:
-        sql = f.read()
-
-    sql = sql.replace("IN", "in")
-    sql = sql.replace("In", "in")
-    sql = sql.replace("ILIKE", "like")
-    sql = sql.replace("LIKE", "like")
-    
-    if "return_rank" in sql:
-        print(sql)
-    sqls.append(sql)
-    
-for i, sql in enumerate(sqls):
-    sql = sql.replace("IN", "in")
-    sql = sql.replace("In", "in")
-    sql = sql.replace("ILIKE", "like")
-    sql = sql.replace("LIKE", "like")
-    sqls[i] = sql
-
-parse_sql_preds(sql)    
-    
-start = time.time()
-opdf,exprdf = parse_sqls_par(sqls, COLS_TO_TABLES)
-print("parse sqls took(s): ", int(time.time()-start))
-print("Num Ops: ", len(opdf), "Num Expressions: ", len(exprdf))
-    
-print("len(qreps) is ",len(qreps))
-if len(qreps) != 0:
-    rowcounts = []
-    totals = []
-    sels = []
-    filtersqls = []
-    
-    for _,row in exprdf.iterrows():
-        jid = row["jobid"]
-        qrep = qreps[int(jid)]
-        sql = sqls[int(jid)]
-        try:
-            print([tuple([row["alias"],])])
-            print(qrep["subset_graph"].nodes())
-            cards = qrep["subset_graph"].nodes()[tuple([row["alias"],])]["cardinality"]
-            rowcounts.append(cards["actual"])
-            totals.append(cards["total"])
-            sels.append(min(float(cards["actual"]) / cards["total"], 1.0))
+        fnkey = fn.replace(".sql", ".pkl")
+        qreps.append(qdict[fnkey])
             
-            filtersql = row["filtersql"]
-            # real_name = qrep["join_graph"].nodes()[row["alias"]]["real_name"]
-            # filtersql = filtersql.replace(row["input"], real_name, 1)
-            filtersqls.append(filtersql)
-        except:
-            print("trigger except!")
-            rowcounts.append(-1)
-            totals.append(-1)
-            sels.append(-1)
-            filtersqls.append(-1)
-            
-if len(qreps) == 0:
-    exprdf["InputCardinality"] = -1
-    exprdf["RowCount"] = -1
-    exprdf["Selectivity"] = -1
-else:
-    exprdf["InputCardinality"] = totals
-    exprdf["Selectivity"] = sels
-    exprdf["RowCount"] = rowcounts
-    exprdf["filtersql"] = filtersqls   
-    
-edf = exprdf[["exprhash", "InputCardinality", "Selectivity", "RowCount"]]
-opdf = opdf.merge(edf, on="exprhash", how="inner")
-    
-    
-opdf["workload"] = WK
-exprdf["workload"] = WK
-opdf["db"] = WK
-exprdf["db"] = WK
+        fn = os.path.join(QDIR, fn)
+        with open(fn, "r", encoding='utf-8') as f:
+            sql = f.read()
 
-import time
-start = time.time()
+        sql = sql.replace("IN", "in")
+        sql = sql.replace("In", "in")
+        sql = sql.replace("ILIKE", "like")
+        sql = sql.replace("LIKE", "like")
+        
+        if "return_rank" in sql:
+            print(sql)
+        sqls.append(sql)
+        
+    for i, sql in enumerate(sqls):
+        sql = sql.replace("IN", "in")
+        sql = sql.replace("In", "in")
+        sql = sql.replace("ILIKE", "like")
+        sql = sql.replace("LIKE", "like")
+        sqls[i] = sql
 
-opfn = os.path.join(OUTPATH, "op_df.csv")
-exprfn = os.path.join(OUTPATH, "expr_df.csv")
+    parse_sql_preds(sql)    
+        
+    start = time.time()
+    opdf,exprdf = parse_sqls_par(sqls, COLS_TO_TABLES)
+    print("parse sqls took(s): ", int(time.time()-start))
+    print("Num Ops: ", len(opdf), "Num Expressions: ", len(exprdf))
+        
+    print("len(qreps) is ",len(qreps))
+    if len(qreps) != 0:
+        rowcounts = []
+        totals = []
+        sels = []
+        filtersqls = []
+        
+        for _,row in exprdf.iterrows():
+            jid = row["jobid"]
+            qrep = qreps[int(jid)]
+            sql = sqls[int(jid)]
+            try:
+                print([tuple([row["alias"],])])
+                print(qrep["subset_graph"].nodes())
+                cards = qrep["subset_graph"].nodes()[tuple([row["alias"],])]["cardinality"]
+                rowcounts.append(cards["actual"])
+                totals.append(cards["total"])
+                sels.append(min(float(cards["actual"]) / cards["total"], 1.0))
+                
+                filtersql = row["filtersql"]
+                # real_name = qrep["join_graph"].nodes()[row["alias"]]["real_name"]
+                # filtersql = filtersql.replace(row["input"], real_name, 1)
+                filtersqls.append(filtersql)
+            except:
+                print("trigger except!")
+                rowcounts.append(-1)
+                totals.append(-1)
+                sels.append(-1)
+                filtersqls.append(-1)
+                
+    if len(qreps) == 0:
+        exprdf["InputCardinality"] = -1
+        exprdf["RowCount"] = -1
+        exprdf["Selectivity"] = -1
+    else:
+        exprdf["InputCardinality"] = totals
+        exprdf["Selectivity"] = sels
+        exprdf["RowCount"] = rowcounts
+        exprdf["filtersql"] = filtersqls   
+        
+    edf = exprdf[["exprhash", "InputCardinality", "Selectivity", "RowCount"]]
+    opdf = opdf.merge(edf, on="exprhash", how="inner")
+        
+        
+    opdf["workload"] = WK
+    exprdf["workload"] = WK
+    opdf["db"] = WK
+    exprdf["db"] = WK
 
-opdf.to_csv(opfn, index=False)
-print("opdf to csv took: ", time.time()-start)
+    import time
+    start = time.time()
 
-exprdf.to_csv(exprfn, index=False)
+    opfn = os.path.join(OUTPATH, "op_df.csv")
+    exprfn = os.path.join(OUTPATH, "expr_df.csv")
+
+    opdf.to_csv(opfn, index=False)
+    print("opdf to csv took: ", time.time()-start)
+
+    exprdf.to_csv(exprfn, index=False)

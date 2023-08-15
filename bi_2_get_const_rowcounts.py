@@ -18,19 +18,7 @@ DBHOST="49.52.27.35"
 PORT=5632
 PWD=""
 
-settings = {}
-with open("./settings.json", 'r') as f:
-    settings = json.load(f)
     
-EXPRFN = "./benchmark_small/CMSprovider/dfs/expr_df.csv"
-OPFN = "./benchmark_small/CMSprovider/dfs/op_df.csv"
-
-exprdf = pd.read_csv(EXPRFN)
-opdf = pd.read_csv(OPFN)
-
-LITERAL_DATA_FN = "./benchmark_small/CMSprovider/dfs/literal_df.csv"
-
-CARDCACHE = {}
 
 def get_total(sql):
     if sql == "X":
@@ -268,31 +256,49 @@ def get_rowcounts_consts(sqls, exprhashes, inputs, jobids):
     countdf = pd.DataFrame(countdata)
     return countdf
 
-# 尝试：目前只有一个sql，如果还使用下采样，会导致dataFrame为空。尝试注释掉下一句
-# exprdf = exprdf.sample(frac=0.001)
+folder_path = "./benchmark_small"
+# 遍历文件夹
+dir_list = os.listdir(folder_path)
 
-sqls = exprdf["filtersql"].values
-jobids = exprdf["jobid"].values
-inputs = exprdf["input"].values
-aliases = exprdf["alias"].values
-exprhashes = exprdf["exprhash"].values
+for dir_name in dir_list:
+    if dir_name == "results.csv":
+        continue
+    
+    EXPRFN = os.path.join(folder_path, dir_name, "dfs", "expr_df.csv")
+    OPFN = os.path.join(folder_path, dir_name, "dfs", "op_df.csv")
 
-## for each sql expression, divide into each AND operator, and each IN (...)
-print("sqls len is ", len(sqls))
+    exprdf = pd.read_csv(EXPRFN)
+    opdf = pd.read_csv(OPFN)
 
-start = time.time()
-rdata = get_rowcounts_consts(sqls, exprhashes, inputs, jobids)
+    LITERAL_DATA_FN = os.path.join(folder_path, dir_name, "dfs", "literal_df.csv")
 
-print("took: ", time.time()-start)
+    CARDCACHE = {}
 
-rdata["Selectivity"] = rdata.apply(lambda x: float(x["RowCount"]) / x["InputCardinality"] ,axis=1)
-tmp2 = rdata[rdata["RowCount"] != -1]
-print(opdf.keys())
+    # 尝试：目前只有一个sql，如果还使用下采样，会导致dataFrame为空。尝试注释掉下一句
+    # exprdf = exprdf.sample(frac=0.001)
 
-# print(LITERAL_DATA_FN)
-rdata.to_csv(LITERAL_DATA_FN, index=False)
-print(OPFN)
-opdf.to_csv(OPFN, index=False)
+    sqls = exprdf["filtersql"].values
+    jobids = exprdf["jobid"].values
+    inputs = exprdf["input"].values
+    aliases = exprdf["alias"].values
+    exprhashes = exprdf["exprhash"].values
 
-# pdb.set_trace()
+    ## for each sql expression, divide into each AND operator, and each IN (...)
+    print("sqls len is ", len(sqls))
+
+    start = time.time()
+    rdata = get_rowcounts_consts(sqls, exprhashes, inputs, jobids)
+
+    print("took: ", time.time()-start)
+
+    rdata["Selectivity"] = rdata.apply(lambda x: float(x["RowCount"]) / x["InputCardinality"] ,axis=1)
+    tmp2 = rdata[rdata["RowCount"] != -1]
+    print(opdf.keys())
+
+    # print(LITERAL_DATA_FN)
+    rdata.to_csv(LITERAL_DATA_FN, index=False)
+    print(OPFN)
+    opdf.to_csv(OPFN, index=False)
+
+    # pdb.set_trace()
 
