@@ -7,7 +7,7 @@ import pickle
 # with open("./settings.json", 'r') as f:
 #     settings = json.load(f)
     
-fn = "./imdb-new-workload/1a_simple/1a1.pkl"
+fn = "./benchmark_small/Rentabilidad/workload/1.pkl"
 
 with open(fn, "rb") as f:
     query = pickle.load(f)

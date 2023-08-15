@@ -1,0 +1,8 @@
+2023-08-15 20:37:54 INFO     [MAIN]  Solving: {'nppes_provider_state', 'hcpcs_description'}
+2023-08-15 20:37:54 INFO     [MAIN]  Solved: {'nppes_provider_state', 'hcpcs_description'}
+2023-08-15 20:37:55 INFO     [MAIN]  table cmsprovider_1 solved!
+2023-08-15 20:37:55 INFO     [MAIN]  Exiting Loki!
+2023-08-15 20:37:55 INFO     [MAIN]  Solving: {'nppes_provider_state', 'hcpcs_description'}
+2023-08-15 20:37:55 INFO     [MAIN]  Solved: {'nppes_provider_state', 'hcpcs_description'}
+2023-08-15 20:37:57 INFO     [MAIN]  table cmsprovider_2 solved!
+2023-08-15 20:37:57 INFO     [MAIN]  Exiting Loki!

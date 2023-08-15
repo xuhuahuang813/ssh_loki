@@ -26,7 +26,7 @@ folder_path = "./benchmark_small"
 dir_list = os.listdir(folder_path)
 
 for dir_name in dir_list:
-    if dir_name == "results.csv":
+    if ".csv" in dir_name:
         continue
     
     # 输入文件夹和输出文件夹的路径
@@ -57,6 +57,13 @@ for dir_name in dir_list:
             # 读取输入文件内容并转为小写，然后写入输出文件
             with open(input_path, "r") as input_file:
                 sql_content = input_file.read()
+                
+                # 滤去(没有where)或(and和or都有的)
+                if("WHERE" not in sql_content) or (" AND " in sql_content and " OR " in sql_content):
+                    # print(input_path)
+                    # print(sql_content)
+                    continue
+                
                 # print(sql_content)
                 sql_content = transform_quotes_to_lowercase(sql_content)
                 sql_content = sql_content.replace("double", "double precision")

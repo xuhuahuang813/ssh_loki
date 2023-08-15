@@ -42,7 +42,7 @@ folder_path = "./benchmark_small"
 dir_list = os.listdir(folder_path)
 
 for dir_name in dir_list:
-    if dir_name == "results.csv":
+    if ".csv" in dir_name:
         continue
     
     QDIR = os.path.join(folder_path, dir_name, "queries_processed")
@@ -96,7 +96,7 @@ for dir_name in dir_list:
         sql = sql.replace("LIKE", "like")
         sqls[i] = sql
 
-    parse_sql_preds(sql)    
+    # parse_sql_preds(sql)    
         
     start = time.time()
     opdf,exprdf = parse_sqls_par(sqls, COLS_TO_TABLES)

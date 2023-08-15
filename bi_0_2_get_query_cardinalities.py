@@ -85,10 +85,10 @@ def read_flags():
                         required=False, default=0)
     #
     parser.add_argument("--card_type", type=str, required=False,
-                        default="total")
+                        default="actual")
     #
     parser.add_argument("--key_name", type=str, required=False,
-                        default="total")
+                        default="actual")
     
     parser.add_argument("--true_timeout", type=int,
                         required=False, default=1800000*5)
@@ -432,7 +432,7 @@ def main():
     dir_list = os.listdir(folder_path)
 
     for dir_name in dir_list:
-        if dir_name == "results.csv":
+        if ".csv" in dir_name:
             continue
         
         fns = list(glob.glob(os.path.join(folder_path, dir_name, "workload")+ "/*"))

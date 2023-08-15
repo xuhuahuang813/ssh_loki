@@ -20,7 +20,7 @@ folder_path = "./benchmark_small"
 dir_list = os.listdir(folder_path)
 
 for dir_name in dir_list:
-    if dir_name == "results.csv":
+    if ".csv" in dir_name:
         continue
     
     dir_path = os.path.join(folder_path, dir_name, "queries_processed")
