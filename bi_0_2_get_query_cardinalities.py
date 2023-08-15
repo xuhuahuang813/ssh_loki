@@ -60,7 +60,7 @@ def read_flags():
     parser = argparse.ArgumentParser()
 
     parser.add_argument("--db_name", type=str, required=False,
-                        default="bibench2")
+                        default="bibench5")
     parser.add_argument("--db_host", type=str, required=False,
                         default="49.52.27.35")
     parser.add_argument("--user", type=str, required=False,
@@ -237,7 +237,7 @@ def get_cardinality(qrep, card_type, key_name, db_host, db_name, user, pwd,
         source_node = tuple(["SOURCE"])
         if source_node in node_list:
             node_list.remove(source_node)
-    elif args.db_name == "bibench2":
+    elif args.db_name == "bibench5":
         source_node = tuple(["s"])
         if source_node in node_list:
             node_list.remove(source_node)

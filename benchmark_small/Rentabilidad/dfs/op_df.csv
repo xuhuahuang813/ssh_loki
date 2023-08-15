@@ -1,0 +1,63 @@
+op,dtype,optype,constant,input,column,opstring,is_id,jobid,discrete_ops,cont_ops,like_ops,alias,exprhash,InputCardinality,Selectivity,RowCount,workload,db
+=,string,=,'Bogota Sur',rentabilidad_1,locación,rentabilidad_1.locación = 'Bogota Sur',0,0,1,0,0,rentabilidad_1,539761932221271619691283991045319524550303365914,243025,1.0,399545,ceb,ceb
+=,string,=,'CE',rentabilidad_1,zona,rentabilidad_1.zona = 'CE',0,0,1,0,0,rentabilidad_1,539761932221271619691283991045319524550303365914,243025,1.0,399545,ceb,ceb
+=,string,=,'Bogota Sur',rentabilidad_1,locación,rentabilidad_1.locación = 'Bogota Sur',0,1,1,0,0,rentabilidad_1,221685602256477811616934350241545211120810169859,243025,1.0,399545,ceb,ceb
+=,string,=,'CE',rentabilidad_1,zona,rentabilidad_1.zona = 'CE',0,1,1,0,0,rentabilidad_1,221685602256477811616934350241545211120810169859,243025,1.0,399545,ceb,ceb
+=,string,=,'Preventa On Premise',rentabilidad_1,figura,rentabilidad_1.figura = 'Preventa On Premise',0,2,1,0,0,rentabilidad_1,432586241189895665334053226186780240496249104035,243025,1.0,399545,ceb,ceb
+=,string,=,'Sede',rentabilidad_1,sedeforaneosintec,rentabilidad_1.sedeforaneosintec = 'Sede',0,2,1,0,0,rentabilidad_1,432586241189895665334053226186780240496249104035,243025,1.0,399545,ceb,ceb
+=,string,=,'OC',rentabilidad_1,zona,rentabilidad_1.zona = 'OC',0,2,1,0,0,rentabilidad_1,432586241189895665334053226186780240496249104035,243025,1.0,399545,ceb,ceb
+=,string,=,'GVC 1.0',rentabilidad_1,implementaciónventa,rentabilidad_1.implementaciónventa = 'GVC 1.0',0,3,1,0,0,rentabilidad_1,1117085757525025864140309889908482091579764403078,243025,1.0,399545,ceb,ceb
+=,string,=,'Duitama',rentabilidad_1,locación,rentabilidad_1.locación = 'Duitama',0,3,1,0,0,rentabilidad_1,1117085757525025864140309889908482091579764403078,243025,1.0,399545,ceb,ceb
+=,string,=,'Sede',rentabilidad_1,sedeforaneosintec,rentabilidad_1.sedeforaneosintec = 'Sede',0,3,1,0,0,rentabilidad_1,1117085757525025864140309889908482091579764403078,243025,1.0,399545,ceb,ceb
+=,string,=,'OC',rentabilidad_1,zona,rentabilidad_1.zona = 'OC',0,3,1,0,0,rentabilidad_1,1117085757525025864140309889908482091579764403078,243025,1.0,399545,ceb,ceb
+=,string,=,'Foraneo',rentabilidad_1,sedeforaneosintec,rentabilidad_1.sedeforaneosintec = 'Foraneo',0,4,1,0,0,rentabilidad_1,1449714127572847891549623462917354549722116602879,243025,1.0,399545,ceb,ceb
+=,string,=,'NR',rentabilidad_1,zona,rentabilidad_1.zona = 'NR',0,4,1,0,0,rentabilidad_1,1449714127572847891549623462917354549722116602879,243025,1.0,399545,ceb,ceb
+=,string,=,'Foraneo',rentabilidad_1,sedeforaneosintec,rentabilidad_1.sedeforaneosintec = 'Foraneo',0,5,1,0,0,rentabilidad_1,215239235615245237818243817751392890594028326475,243025,1.0,399545,ceb,ceb
+=,string,=,'NR',rentabilidad_1,zona,rentabilidad_1.zona = 'NR',0,5,1,0,0,rentabilidad_1,215239235615245237818243817751392890594028326475,243025,1.0,399545,ceb,ceb
+=,string,=,'Foraneo',rentabilidad_1,sedeforaneosintec,rentabilidad_1.sedeforaneosintec = 'Foraneo',0,8,1,0,0,rentabilidad_1,121451763057750615066447574669426503893690484805,243025,1.0,399545,ceb,ceb
+=,string,=,'NR',rentabilidad_1,zona,rentabilidad_1.zona = 'NR',0,8,1,0,0,rentabilidad_1,121451763057750615066447574669426503893690484805,243025,1.0,399545,ceb,ceb
+=,string,=,'Foraneo',rentabilidad_1,sedeforaneosintec,rentabilidad_1.sedeforaneosintec = 'Foraneo',0,9,1,0,0,rentabilidad_1,1072393952964946932274718141236766214830053602051,243025,1.0,399545,ceb,ceb
+=,string,=,'NR',rentabilidad_1,zona,rentabilidad_1.zona = 'NR',0,9,1,0,0,rentabilidad_1,1072393952964946932274718141236766214830053602051,243025,1.0,399545,ceb,ceb
+=,string,=,'Bogota Sur',rentabilidad_1,locación,rentabilidad_1.locación = 'Bogota Sur',0,10,1,0,0,rentabilidad_1,156181949821936984861961753725351498699364045572,243025,1.0,399545,ceb,ceb
+=,string,=,'CE',rentabilidad_1,zona,rentabilidad_1.zona = 'CE',0,10,1,0,0,rentabilidad_1,156181949821936984861961753725351498699364045572,243025,1.0,399545,ceb,ceb
+=,string,=,'Preventa On Premise',rentabilidad_1,figura,rentabilidad_1.figura = 'Preventa On Premise',0,11,1,0,0,rentabilidad_1,1061895459453512736754286188418322884664259212534,243025,1.0,399545,ceb,ceb
+=,string,=,'Sede',rentabilidad_1,sedeforaneosintec,rentabilidad_1.sedeforaneosintec = 'Sede',0,11,1,0,0,rentabilidad_1,1061895459453512736754286188418322884664259212534,243025,1.0,399545,ceb,ceb
+=,string,=,'OC',rentabilidad_1,zona,rentabilidad_1.zona = 'OC',0,11,1,0,0,rentabilidad_1,1061895459453512736754286188418322884664259212534,243025,1.0,399545,ceb,ceb
+=,string,=,'Preventa On Premise',rentabilidad_1,figura,rentabilidad_1.figura = 'Preventa On Premise',0,12,1,0,0,rentabilidad_1,809203043023081927792179038401859690779555149799,243025,1.0,399545,ceb,ceb
+=,string,=,'Sede',rentabilidad_1,sedeforaneosintec,rentabilidad_1.sedeforaneosintec = 'Sede',0,12,1,0,0,rentabilidad_1,809203043023081927792179038401859690779555149799,243025,1.0,399545,ceb,ceb
+=,string,=,'OC',rentabilidad_1,zona,rentabilidad_1.zona = 'OC',0,12,1,0,0,rentabilidad_1,809203043023081927792179038401859690779555149799,243025,1.0,399545,ceb,ceb
+=,string,=,'Preventa On Premise',rentabilidad_1,figura,rentabilidad_1.figura = 'Preventa On Premise',0,13,1,0,0,rentabilidad_1,684735656012738421520061943841042538425489587635,243025,1.0,399545,ceb,ceb
+=,string,=,'Sede',rentabilidad_1,sedeforaneosintec,rentabilidad_1.sedeforaneosintec = 'Sede',0,13,1,0,0,rentabilidad_1,684735656012738421520061943841042538425489587635,243025,1.0,399545,ceb,ceb
+=,string,=,'OC',rentabilidad_1,zona,rentabilidad_1.zona = 'OC',0,13,1,0,0,rentabilidad_1,684735656012738421520061943841042538425489587635,243025,1.0,399545,ceb,ceb
+=,string,=,'Preventa On Premise',rentabilidad_3,figura,rentabilidad_3.figura = 'Preventa On Premise',0,14,1,0,0,rentabilidad_3,1237385210648591088013586591935100241759725403912,242780,1.0,399545,ceb,ceb
+=,string,=,'Sede',rentabilidad_3,sedeforaneosintec,rentabilidad_3.sedeforaneosintec = 'Sede',0,14,1,0,0,rentabilidad_3,1237385210648591088013586591935100241759725403912,242780,1.0,399545,ceb,ceb
+=,string,=,'OC',rentabilidad_3,zona,rentabilidad_3.zona = 'OC',0,14,1,0,0,rentabilidad_3,1237385210648591088013586591935100241759725403912,242780,1.0,399545,ceb,ceb
+=,string,=,'Sede',rentabilidad_5,sedeforaneosintec,rentabilidad_5.sedeforaneosintec = 'Sede',0,15,1,0,0,rentabilidad_5,1382158267803942164221044529554320836243125835215,242945,1.0,399545,ceb,ceb
+=,string,=,'OC',rentabilidad_5,zona,rentabilidad_5.zona = 'OC',0,15,1,0,0,rentabilidad_5,1382158267803942164221044529554320836243125835215,242945,1.0,399545,ceb,ceb
+=,string,=,'Preventa On Premise',rentabilidad_6,figura,rentabilidad_6.figura = 'Preventa On Premise',0,16,1,0,0,rentabilidad_6,1113416189019391533478577098154073465686879321022,242890,1.0,399545,ceb,ceb
+=,string,=,'Sede',rentabilidad_6,sedeforaneosintec,rentabilidad_6.sedeforaneosintec = 'Sede',0,16,1,0,0,rentabilidad_6,1113416189019391533478577098154073465686879321022,242890,1.0,399545,ceb,ceb
+=,string,=,'OC',rentabilidad_6,zona,rentabilidad_6.zona = 'OC',0,16,1,0,0,rentabilidad_6,1113416189019391533478577098154073465686879321022,242890,1.0,399545,ceb,ceb
+=,string,=,'Preventa On Premise',rentabilidad_7,figura,rentabilidad_7.figura = 'Preventa On Premise',0,17,1,0,0,rentabilidad_7,236199116314081114089953999180466725748536294564,242990,1.0,399545,ceb,ceb
+=,string,=,'Sede',rentabilidad_7,sedeforaneosintec,rentabilidad_7.sedeforaneosintec = 'Sede',0,17,1,0,0,rentabilidad_7,236199116314081114089953999180466725748536294564,242990,1.0,399545,ceb,ceb
+=,string,=,'OC',rentabilidad_7,zona,rentabilidad_7.zona = 'OC',0,17,1,0,0,rentabilidad_7,236199116314081114089953999180466725748536294564,242990,1.0,399545,ceb,ceb
+=,string,=,'GVC 1.0',rentabilidad_8,implementaciónventa,rentabilidad_8.implementaciónventa = 'GVC 1.0',0,18,1,0,0,rentabilidad_8,1281611189638205630524242080033559793820916020096,243000,1.0,399545,ceb,ceb
+=,string,=,'Duitama',rentabilidad_8,locación,rentabilidad_8.locación = 'Duitama',0,18,1,0,0,rentabilidad_8,1281611189638205630524242080033559793820916020096,243000,1.0,399545,ceb,ceb
+=,string,=,'Sede',rentabilidad_8,sedeforaneosintec,rentabilidad_8.sedeforaneosintec = 'Sede',0,18,1,0,0,rentabilidad_8,1281611189638205630524242080033559793820916020096,243000,1.0,399545,ceb,ceb
+=,string,=,'OC',rentabilidad_8,zona,rentabilidad_8.zona = 'OC',0,18,1,0,0,rentabilidad_8,1281611189638205630524242080033559793820916020096,243000,1.0,399545,ceb,ceb
+=,string,=,'Foraneo',rentabilidad_1,sedeforaneosintec,rentabilidad_1.sedeforaneosintec = 'Foraneo',0,19,1,0,0,rentabilidad_1,442866564577719955728796714181221606417652563979,243025,1.0,399545,ceb,ceb
+=,string,=,'NR',rentabilidad_1,zona,rentabilidad_1.zona = 'NR',0,19,1,0,0,rentabilidad_1,442866564577719955728796714181221606417652563979,243025,1.0,399545,ceb,ceb
+=,string,=,'Preventa On Premise',rentabilidad_8,figura,rentabilidad_8.figura = 'Preventa On Premise',0,20,1,0,0,rentabilidad_8,368545883757173259580391103084001490404944837238,243000,1.0,399545,ceb,ceb
+=,string,=,'Sede',rentabilidad_8,sedeforaneosintec,rentabilidad_8.sedeforaneosintec = 'Sede',0,20,1,0,0,rentabilidad_8,368545883757173259580391103084001490404944837238,243000,1.0,399545,ceb,ceb
+=,string,=,'OC',rentabilidad_8,zona,rentabilidad_8.zona = 'OC',0,20,1,0,0,rentabilidad_8,368545883757173259580391103084001490404944837238,243000,1.0,399545,ceb,ceb
+=,string,=,'Foraneo',rentabilidad_1,sedeforaneosintec,rentabilidad_1.sedeforaneosintec = 'Foraneo',0,21,1,0,0,rentabilidad_1,861350469501136334423272947116201293439914527358,243025,1.0,399545,ceb,ceb
+=,string,=,'NR',rentabilidad_1,zona,rentabilidad_1.zona = 'NR',0,21,1,0,0,rentabilidad_1,861350469501136334423272947116201293439914527358,243025,1.0,399545,ceb,ceb
+=,string,=,'Preventa On Premise',rentabilidad_1,figura,rentabilidad_1.figura = 'Preventa On Premise',0,22,1,0,0,rentabilidad_1,1336712518600642066134846628339359554845852038009,243025,1.0,399545,ceb,ceb
+=,string,=,'Sede',rentabilidad_1,sedeforaneosintec,rentabilidad_1.sedeforaneosintec = 'Sede',0,22,1,0,0,rentabilidad_1,1336712518600642066134846628339359554845852038009,243025,1.0,399545,ceb,ceb
+=,string,=,'OC',rentabilidad_1,zona,rentabilidad_1.zona = 'OC',0,22,1,0,0,rentabilidad_1,1336712518600642066134846628339359554845852038009,243025,1.0,399545,ceb,ceb
+=,string,=,'Sede',rentabilidad_1,sedeforaneosintec,rentabilidad_1.sedeforaneosintec = 'Sede',0,23,1,0,0,rentabilidad_1,1263330253363039702898132836908715455607305444736,243025,1.0,399545,ceb,ceb
+=,string,=,'OC',rentabilidad_1,zona,rentabilidad_1.zona = 'OC',0,23,1,0,0,rentabilidad_1,1263330253363039702898132836908715455607305444736,243025,1.0,399545,ceb,ceb
+=,string,=,'Bogota Sur',rentabilidad_1,locación,rentabilidad_1.locación = 'Bogota Sur',0,24,1,0,0,rentabilidad_1,1411327471235275166924023335679996346372391126826,243025,1.0,399545,ceb,ceb
+=,string,=,'CE',rentabilidad_1,zona,rentabilidad_1.zona = 'CE',0,24,1,0,0,rentabilidad_1,1411327471235275166924023335679996346372391126826,243025,1.0,399545,ceb,ceb
+=,string,=,'Preventa On Premise',rentabilidad_9,figura,rentabilidad_9.figura = 'Preventa On Premise',0,25,1,0,0,rentabilidad_9,1275508916291879005460920720652128646367814448010,242980,1.0,399545,ceb,ceb
+=,string,=,'Sede',rentabilidad_9,sedeforaneosintec,rentabilidad_9.sedeforaneosintec = 'Sede',0,25,1,0,0,rentabilidad_9,1275508916291879005460920720652128646367814448010,242980,1.0,399545,ceb,ceb
+=,string,=,'OC',rentabilidad_9,zona,rentabilidad_9.zona = 'OC',0,25,1,0,0,rentabilidad_9,1275508916291879005460920720652128646367814448010,242980,1.0,399545,ceb,ceb

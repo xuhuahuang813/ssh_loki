@@ -1,0 +1,1 @@
+SELECT rentabilidad_1.deudor AS deudor,   rentabilidad_1.gec(group) AS gec(group),   SUM(rentabilidad_1.cf) AS sum:cf:ok,   SUM(rentabilidad_1.in) AS sum:in:ok FROM rentabilidad_1 WHERE ((rentabilidad_1.locación = 'Bogota Sur') AND (rentabilidad_1.zona = 'CE')) GROUP BY rentabilidad_1.deudor,   rentabilidad_1.gec(group);

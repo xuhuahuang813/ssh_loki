@@ -9,7 +9,7 @@ def transform_quotes_to_lowercase(line):
     for char in line:
         if char == '"':
             if in_quotes:
-                result.append(current_word.lower())
+                result.append(current_word.lower().replace(" ", ""))
                 current_word = ""
             in_quotes = not in_quotes
         else:

@@ -1,0 +1,1 @@
+SELECT rentabilidad_6.implementaciónventa AS implementaciónventa FROM rentabilidad_6 WHERE ((rentabilidad_6.figura = 'Preventa On Premise') AND (rentabilidad_6.sedeforaneosintec = 'Sede') AND (rentabilidad_6.zona = 'OC')) GROUP BY rentabilidad_6.implementaciónventa;

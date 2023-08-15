@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import pandas as pd
 import psycopg2 as pg
 import os
@@ -9,7 +11,7 @@ import json
 
 WK = "ceb"
 if WK in ["ceb", "job"]:
-    DBNAME="bibench2"
+    DBNAME="bibench5"
 else:
     DBNAME = WK
 
@@ -25,7 +27,7 @@ def get_total(sql):
         return -1,-1
 
     con = pg.connect(user=USER, host=DBHOST, port=PORT,
-            password=PWD, database=DBNAME)
+            password=PWD, database=DBNAME, client_encoding="UTF8")
     cursor = con.cursor()
 
     totalsql = sql[0:sql.find("WHERE")]
@@ -56,12 +58,12 @@ def get_rowcount(sql):
         return CARDCACHE[sql]
 
     con = pg.connect(user=USER, host=DBHOST, port=PORT,
-            password=PWD, database=DBNAME)
+            password=PWD, database=DBNAME, client_encoding="UTF8")
     cursor = con.cursor()
     try:
         cursor.execute(sql)
     except Exception as e:
-        # print("Exception!")
+        print("Exception!")
         print(e)
         print(sql)
         # if "mii" not in sql:
