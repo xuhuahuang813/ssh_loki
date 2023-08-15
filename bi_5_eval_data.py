@@ -96,7 +96,7 @@ def run_filters(sqls, ehashes, inputs, trueys, logger, csv_handler):
                     new_tab = NEW_NAME_FMT.format(INP = inp,
                                                   DATA_KIND = args.data_kind)
                 sql = sql.replace(table_name, new_tab, 1)
-                print(sql)
+                # print(sql)
                 # pdb.set_trace()
 
             start = time.time()
@@ -136,7 +136,7 @@ def run_filters(sqls, ehashes, inputs, trueys, logger, csv_handler):
                 rcs.append(rc)
 
     logger.info("Total execution time: {}".format(np.sum(exec_times)))
-    print("Total execution time: {}".format(np.sum(exec_times)))
+    # print("Total execution time: {}".format(np.sum(exec_times)))
 
     return rcs
 
@@ -144,7 +144,9 @@ def qerr_func(ytrue, yhat):
     errors = np.maximum((ytrue / yhat), (yhat / ytrue))
     return errors
 
-def main():    
+def main():
+    print("========================================bi_5_eval_data.py========================================")
+        
     folder_path = "./benchmark_small"
     
     result_all_path = os.path.join(folder_path, "results.csv")
@@ -193,7 +195,7 @@ def main():
 
             # EXPRFN = "./benchmark_small/CMSprovider/dfs/expr_df.csv"
             EXPRFN = os.path.join(folder_path, dir_name, "dfs", "expr_df.csv")
-            print(EXPRFN)
+            # print(EXPRFN)
             exprdf = pd.read_csv(EXPRFN)
 
             # inps = args.inp_to_eval.split(",")
@@ -223,7 +225,7 @@ def main():
             logger.info(str(args))
             logger.info("Number of sqls to evaluate: {}".format(len(exprdf)))
 
-            print("Number of sqls to evaluate: {}".format(len(exprdf)))
+            # print("Number of sqls to evaluate: {}".format(len(exprdf)))
 
             sqls = exprdf["filtersql"].values
 

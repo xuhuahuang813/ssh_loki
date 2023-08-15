@@ -13,6 +13,7 @@ sys.path.append("./")
 
 外层遍历所有文件夹，内层遍历每个文件夹的queries列表，获取图数据并存在workload文件夹中
 '''
+print("========================================runnning bi_0_1_sql_to_qrep.py========================================")
 
 folder_path = "./benchmark_small"
 # 遍历文件夹

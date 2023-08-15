@@ -75,7 +75,7 @@ def get_rowcount(sql):
     return rc
 
 def parse_filter(sql):
-    print("parse_filter sql is ", sql)
+    # print("parse_filter sql is ", sql)
     coldata = defaultdict(list)
     sql = sql[sql.find("WHERE")+5:]
     ands = sql.split("AND")
@@ -173,7 +173,7 @@ def get_rowcounts_consts(sqls, exprhashes, inputs, jobids):
     countdata = defaultdict(list)
 
     for si, sql in enumerate(sqls):
-        print("si is ", si)
+        # print("si is ", si)
         coldata = parse_filter(sql)
         ehash = exprhashes[si]
         expr_inp = inputs[si]
@@ -256,6 +256,9 @@ def get_rowcounts_consts(sqls, exprhashes, inputs, jobids):
     countdf = pd.DataFrame(countdata)
     return countdf
 
+
+print("========================================bi_2_get_const_rowcounts.py========================================")
+
 folder_path = "./benchmark_small"
 # 遍历文件夹
 dir_list = os.listdir(folder_path)
@@ -284,20 +287,20 @@ for dir_name in dir_list:
     exprhashes = exprdf["exprhash"].values
 
     ## for each sql expression, divide into each AND operator, and each IN (...)
-    print("sqls len is ", len(sqls))
+    # print("sqls len is ", len(sqls))
 
     start = time.time()
     rdata = get_rowcounts_consts(sqls, exprhashes, inputs, jobids)
 
-    print("took: ", time.time()-start)
+    # print("took: ", time.time()-start)
 
     rdata["Selectivity"] = rdata.apply(lambda x: float(x["RowCount"]) / x["InputCardinality"] ,axis=1)
     tmp2 = rdata[rdata["RowCount"] != -1]
-    print(opdf.keys())
+    # print(opdf.keys())
 
     # print(LITERAL_DATA_FN)
     rdata.to_csv(LITERAL_DATA_FN, index=False)
-    print(OPFN)
+    # print(OPFN)
     opdf.to_csv(OPFN, index=False)
 
     # pdb.set_trace()

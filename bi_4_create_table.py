@@ -48,6 +48,7 @@ def read_flags():
     return parser.parse_args()
 
 def main():
+    print("========================================bi_4_create_table.py========================================")
 
     folder_path = "./benchmark_small"
     # 遍历文件夹
@@ -208,10 +209,10 @@ def main():
                                                 PORT = args.port,
                                                 DB = DBNAME)
                 engine = create_engine(engine_cmd)
-                print("new_table_name is ", new_table_name)
+                # print("new_table_name is ", new_table_name)
                 df.to_sql(new_table_name, engine)
                 # df.to_csv(new_table_name + ".csv")
-                print("finish create table")
+                # print("finish create table")
 
 args = read_flags()
 main()

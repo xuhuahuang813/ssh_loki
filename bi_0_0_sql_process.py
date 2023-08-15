@@ -20,6 +20,7 @@ def transform_quotes_to_lowercase(line):
     
     return ''.join(result)
 
+print("========================================runnning bi_0_0_sql_process.py========================================")
 folder_path = "./benchmark_small"
 # 遍历文件夹
 dir_list = os.listdir(folder_path)
@@ -63,4 +64,3 @@ for dir_name in dir_list:
                 with open(output_path, "w") as output_file:
                     output_file.write(sql_content)
 
-print("finish 0_0_sql_process")

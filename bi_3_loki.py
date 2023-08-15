@@ -14,6 +14,8 @@ from loki.util import constraints, postprocessing
 from loki.solver import sat
 
 if __name__ == '__main__':
+    print("========================================bi_3_loki.py========================================")
+    
     parser = argparse.ArgumentParser(description='Run Loki.')
     parser.add_argument('--vars_per_col', '-n', default=1000)
     parser.add_argument('--verbose', '-v', default=True, action='store_true')
@@ -32,9 +34,9 @@ if __name__ == '__main__':
         
         if not os.path.exists(log_file_path):
             os.makedirs(log_file_path)
-            print(f"文件夹 '{log_file_path}' 已创建")
-        else:
-            print(f"文件夹 '{log_file_path}' 已存在")
+            # print(f"文件夹 '{log_file_path}' 已创建")
+        # else:
+            # print(f"文件夹 '{log_file_path}' 已存在")
 
         logging.basicConfig(
             level=logging.DEBUG if args.verbose else logging.INFO,
@@ -48,7 +50,7 @@ if __name__ == '__main__':
         
         tables = set(df['input']) 
         table_columns = {table: set(df['column'].where(df['input'] == table).dropna()) for table in tables}
-        print("table_columns is", table_columns)
+        # print("table_columns is", table_columns)
         
         c_df = pd.read_csv(os.path.join(folder_path, dir_name, "dfs", "literal_df.csv")) #literal_df.csv
         
@@ -56,9 +58,9 @@ if __name__ == '__main__':
         result_folder = os.path.join(folder_path, dir_name, "results")
         if not os.path.exists(result_folder):
             os.makedirs(result_folder)
-            print(f"文件夹 '{result_folder}' 已创建")
-        else:
-            print(f"文件夹 '{result_folder}' 已存在")
+            # print(f"文件夹 '{result_folder}' 已创建")
+        # else:
+            # print(f"文件夹 '{result_folder}' 已存在")
             
         # table不能直接取第一个，因为同一个文件夹下的sql会针对多个数据表，只是单个sql本身不会join多个表
         tableList = list(tables)

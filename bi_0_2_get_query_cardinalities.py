@@ -198,7 +198,7 @@ def get_cardinality(qrep, card_type, key_name, db_host, db_name, user, pwd,
     updates qrep's fields with the needed cardinality estimates, and returns
     the qrep.
     '''
-    print("get cardinality!")
+    # print("get cardinality!")
     
     # key_name分别是expected，actual，total
     if key_name is None:
@@ -218,8 +218,8 @@ def get_cardinality(qrep, card_type, key_name, db_host, db_name, user, pwd,
 
         cursor = con.cursor()
 
-    if idx % 10 == 0:
-        print("query: ", idx)
+    # if idx % 10 == 0:
+    #     print("query: ", idx)
 
     # load the cache for few types
     if card_type in CACHE_CARD_TYPES:
@@ -410,18 +410,17 @@ def get_cardinality(qrep, card_type, key_name, db_host, db_name, user, pwd,
         else:
             assert False
 
-    if card_type == "actual":
-        print("total: {}, timeout: {}, existing: {}, found in cache: {}".format(
-            len(qrep["subset_graph"].nodes()), num_timeout, existing, found_in_cache))
-        # print("site cj: ", site_cj)
-        if len(query_exec_times) != 0:
-            print("avg exec time: ", sum(
-                query_exec_times) / len(query_exec_times))
+    # if card_type == "actual":
+        # print("total: {}, timeout: {}, existing: {}, found in cache: {}".format(
+        #     len(qrep["subset_graph"].nodes()), num_timeout, existing, found_in_cache))
+        # if len(query_exec_times) != 0:
+        #     print("avg exec time: ", sum(
+        #         query_exec_times) / len(query_exec_times))
 
     if fn is not None:
         # update_qrep(qrep)
         save_qrep(fn, qrep)
-        print("updated sql rep!")
+        # print("updated sql rep!")
 
     sys.stdout.flush()
     return qrep
@@ -465,7 +464,7 @@ def main():
                 qrep["join_graph"] = json_graph.adjacency_graph(qrep["join_graph"])
                 fn = fn.replace(".sql", ".pkl")
                 save_qrep(fn, qrep)
-                print("updated sql rep!")
+                # print("updated sql rep!")
                 continue
 
             if args.no_parallel:
@@ -534,11 +533,11 @@ def main():
             
         else:
             num_proc = args.num_proc
-        print("num_proc is ", num_proc)
+        # print("num_proc is ", num_proc)
         with Pool(processes=num_proc) as pool:
             qreps = pool.starmap(par_func, par_args)
         print("Generated all cardinalities in {} seconds".format(time.time()-start))
 
-
+print("========================================bi_0_2_get_query_cardinalities.py========================================")
 args = read_flags()
 main()

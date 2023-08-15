@@ -34,6 +34,7 @@ def load_sql_rep(fn, dummy=None):
 
     return query
 
+print("========================================bi_1_ParsingSQLs.py========================================")
 WK = "ceb"
 
 folder_path = "./benchmark_small"
@@ -99,10 +100,10 @@ for dir_name in dir_list:
         
     start = time.time()
     opdf,exprdf = parse_sqls_par(sqls, COLS_TO_TABLES)
-    print("parse sqls took(s): ", int(time.time()-start))
-    print("Num Ops: ", len(opdf), "Num Expressions: ", len(exprdf))
+    # print("parse sqls took(s): ", int(time.time()-start))
+    # print("Num Ops: ", len(opdf), "Num Expressions: ", len(exprdf))
         
-    print("len(qreps) is ",len(qreps))
+    # print("len(qreps) is ",len(qreps))
     if len(qreps) != 0:
         rowcounts = []
         totals = []
@@ -114,8 +115,8 @@ for dir_name in dir_list:
             qrep = qreps[int(jid)]
             sql = sqls[int(jid)]
             try:
-                print([tuple([row["alias"],])])
-                print(qrep["subset_graph"].nodes())
+                # print([tuple([row["alias"],])])
+                # print(qrep["subset_graph"].nodes())
                 cards = qrep["subset_graph"].nodes()[tuple([row["alias"],])]["cardinality"]
                 rowcounts.append(cards["actual"])
                 totals.append(cards["total"])
@@ -158,6 +159,6 @@ for dir_name in dir_list:
     exprfn = os.path.join(OUTPATH, "expr_df.csv")
 
     opdf.to_csv(opfn, index=False)
-    print("opdf to csv took: ", time.time()-start)
+    # print("opdf to csv took: ", time.time()-start)
 
     exprdf.to_csv(exprfn, index=False)
