@@ -55,7 +55,7 @@ def read_flags():
 
 LOG_FMT = "{EHASH} - {INP} - {REP} - QErr:{QERR} [real:{REAL} - estimate:{ESTIMATE}] --> TIME:{TIME}"
 
-def run_filters(sqls, ehashes, inputs, trueys):
+def run_filters(sqls, ehashes, inputs, trueys, logger):
     exec_times = []
     con = pg.connect(user=args.user, host=args.db_host, port=args.port,
             password=args.pwd, database=args.db_name)
@@ -116,12 +116,12 @@ def run_filters(sqls, ehashes, inputs, trueys):
                     ESTIMATE=rc,
                     TIME = exec_time)
 
-            logging.info(logline)
+            logger.info(logline)
 
             if len(rcs) != len(sqls):
                 rcs.append(rc)
 
-    logging.info("Total execution time: {}".format(np.sum(exec_times)))
+    logger.info("Total execution time: {}".format(np.sum(exec_times)))
     print("Total execution time: {}".format(np.sum(exec_times)))
 
     return rcs
@@ -144,18 +144,28 @@ def main():
                   
             # filename = uuid.uuid4().hex + ".log"
             filename = os.path.join(dir_path, file_name.replace(".csv", ".log"))
+            
+             # 创建局部的logger对象
+            logger = logging.getLogger()
+            logger.setLevel(logging.INFO)
 
+            # 创建文件处理程序和标准输出处理程序
             file_handler = logging.FileHandler(filename=filename)
             stdout_handler = logging.StreamHandler(sys.stdout)
             file_handler.setLevel(logging.INFO)
             stdout_handler.setLevel(logging.INFO)
 
-            handlers = [file_handler, stdout_handler]
-            logging.basicConfig(
-                level=logging.INFO,
-                format='[%(asctime)s] {%(filename)s:%(lineno)d} %(levelname)s - %(message)s',
-                handlers=handlers
-            )
+            # 设置处理程序的格式
+            formatter = logging.Formatter('[%(asctime)s] {%(filename)s:%(lineno)d} %(levelname)s - %(message)s')
+            file_handler.setFormatter(formatter)
+            stdout_handler.setFormatter(formatter)
+
+            # 清空之前的处理程序
+            logger.handlers = []
+
+            # 将处理程序添加到局部logger对象
+            logger.addHandler(file_handler)
+            logger.addHandler(stdout_handler)
 
             # EXPRFN = "./benchmark_small/CMSprovider/dfs/expr_df.csv"
             EXPRFN = os.path.join(folder_path, dir_name, "dfs", "expr_df.csv")
@@ -186,8 +196,8 @@ def main():
             if args.num_queries != -1 and args.num_queries < len(exprdf):
                 exprdf = exprdf.head(args.num_queries)
 
-            logging.info(str(args))
-            logging.info("Number of sqls to evaluate: {}".format(len(exprdf)))
+            logger.info(str(args))
+            logger.info("Number of sqls to evaluate: {}".format(len(exprdf)))
 
             print("Number of sqls to evaluate: {}".format(len(exprdf)))
 
@@ -198,7 +208,7 @@ def main():
             truey = exprdf["RowCount"].values
             truey = np.maximum(truey, 1.0)
 
-            rcs = run_filters(sqls, ehashes, inputs, truey)
+            rcs = run_filters(sqls, ehashes, inputs, truey, logger)
             rcs = np.array(rcs)
             rcs = np.maximum(1, rcs)
 
