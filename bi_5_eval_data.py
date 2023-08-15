@@ -4,13 +4,25 @@ import pandas as pd
 import time
 import psycopg2 as pg
 import numpy as np
-
+import csv
 import argparse
 import pdb
 import uuid
 import logging
 import json
 
+class CSVHandler:
+    def __init__(self, file_path):
+        self.file_path = file_path
+        self.csv_file = open(file_path, mode='a', newline='')
+        self.csv_writer = csv.writer(self.csv_file)
+
+    def append_row(self, data_row):
+        self.csv_writer.writerow(data_row)
+
+    def close(self):
+        self.csv_file.close()
+        
 NEW_NAME_FMT = "{INP}_{DATA_KIND}"
 
 ALIAS_TO_TABS = {}
@@ -55,7 +67,7 @@ def read_flags():
 
 LOG_FMT = "{EHASH} - {INP} - {REP} - QErr:{QERR} [real:{REAL} - estimate:{ESTIMATE}] --> TIME:{TIME}"
 
-def run_filters(sqls, ehashes, inputs, trueys, logger):
+def run_filters(sqls, ehashes, inputs, trueys, logger, csv_handler):
     exec_times = []
     con = pg.connect(user=args.user, host=args.db_host, port=args.port,
             password=args.pwd, database=args.db_name)
@@ -117,6 +129,8 @@ def run_filters(sqls, ehashes, inputs, trueys, logger):
                     TIME = exec_time)
 
             logger.info(logline)
+            
+            csv_handler.append_row([inp, sql, true_est, rc, qerr])
 
             if len(rcs) != len(sqls):
                 rcs.append(rc)
@@ -130,12 +144,22 @@ def qerr_func(ytrue, yhat):
     errors = np.maximum((ytrue / yhat), (yhat / ytrue))
     return errors
 
-def main():
-    
+def main():    
     folder_path = "./benchmark_small"
+    
+    result_all_path = os.path.join(folder_path, "results.csv")
+    with open(result_all_path, mode='w', newline='') as csv_file:
+        csv_writer = csv.writer(csv_file)
+        csv_writer.writerow(["input", "sql", "real", "estimate", "qerr"])  # 写入标题行
+
+    csv_handler = CSVHandler(result_all_path)
+    
     # 遍历文件夹
     dir_list = os.listdir(folder_path)
     for dir_name in dir_list:
+        if dir_name == "results.csv":
+            continue
+        
         dir_path = os.path.join(folder_path, dir_name, "results")
         file_list = os.listdir(dir_path)
         
@@ -208,7 +232,7 @@ def main():
             truey = exprdf["RowCount"].values
             truey = np.maximum(truey, 1.0)
 
-            rcs = run_filters(sqls, ehashes, inputs, truey, logger)
+            rcs = run_filters(sqls, ehashes, inputs, truey, logger, csv_handler)
             rcs = np.array(rcs)
             rcs = np.maximum(1, rcs)
 
@@ -223,5 +247,7 @@ def main():
                 # if rc == 1:
                     # print(sqls[qi])
 
+    csv_handler.close()
+    print("数据已添加到 CSV 文件:", result_all_path)
 args = read_flags()
 main()
