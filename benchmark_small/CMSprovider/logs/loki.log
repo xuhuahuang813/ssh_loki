@@ -1,0 +1,19 @@
+2023-08-15 10:37:09 INFO     [MAIN]  Solving: {'hcpcs_description'}
+2023-08-15 10:37:17 INFO     [MAIN]  Solved: {'hcpcs_description'}
+2023-08-15 10:37:17 INFO     [MAIN]  Solving: {'nppes_provider_state'}
+2023-08-15 10:37:18 INFO     [MAIN]  Solved: {'nppes_provider_state'}
+2023-08-15 10:37:22 INFO     [MAIN]  Exiting Loki!
+2023-08-15 10:40:19 INFO     [MAIN]  Solving: {'nppes_provider_state', 'hcpcs_description'}
+2023-08-15 10:40:20 INFO     [MAIN]  Solved: {'nppes_provider_state', 'hcpcs_description'}
+2023-08-15 10:40:21 INFO     [MAIN]  Exiting Loki!
+2023-08-15 10:49:31 INFO     [MAIN]  Solving: {'hcpcs_description', 'nppes_provider_state'}
+2023-08-15 10:49:38 INFO     [MAIN]  Solved: {'hcpcs_description', 'nppes_provider_state'}
+2023-08-15 10:49:40 INFO     [MAIN]  table cmsprovider_2 solved!
+2023-08-15 10:49:40 INFO     [MAIN]  Solving: {'hcpcs_description', 'nppes_provider_state'}
+2023-08-15 10:54:36 INFO     [MAIN]  Solving: {'hcpcs_description', 'nppes_provider_state'}
+2023-08-15 10:54:37 INFO     [MAIN]  Solved: {'hcpcs_description', 'nppes_provider_state'}
+2023-08-15 10:54:38 INFO     [MAIN]  table cmsprovider_2 solved!
+2023-08-15 10:54:38 INFO     [MAIN]  Solving: {'hcpcs_description', 'nppes_provider_state'}
+2023-08-15 10:54:39 INFO     [MAIN]  Solved: {'hcpcs_description', 'nppes_provider_state'}
+2023-08-15 10:54:40 INFO     [MAIN]  table cmsprovider_1 solved!
+2023-08-15 10:54:40 INFO     [MAIN]  Exiting Loki!

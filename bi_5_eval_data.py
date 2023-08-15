@@ -19,10 +19,10 @@ ZDBS = ["financial"]
 def read_flags():
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("--result_dir", type=str, required=False,
-            default="./benchmark_small/CMSprovider/results")
-    parser.add_argument("--inp_to_eval", type=str, required=False,
-            default="cmsprovider_1")
+    # parser.add_argument("--result_dir", type=str, required=False,
+    #         default="./benchmark_small/CMSprovider/results")
+    # parser.add_argument("--inp_to_eval", type=str, required=False,
+    #         default="cmsprovider_2")
 
     parser.add_argument("--data_kind", type=str, required=False,
             default="gen_shuffle", help="suffix for the table")
@@ -40,7 +40,7 @@ def read_flags():
             default="ceb")
 
     parser.add_argument("--db_name", type=str, required=False,
-            default="bibench3")
+            default="bibench2")
     parser.add_argument("--db_host", type=str, required=False,
             default="49.52.27.35")
     parser.add_argument("--user", type=str, required=False,
@@ -131,80 +131,87 @@ def qerr_func(ytrue, yhat):
     return errors
 
 def main():
-    filename = uuid.uuid4().hex + ".log"
-    filename = os.path.join(args.result_dir, filename)
+    
+    folder_path = "./benchmark_small"
+    # 遍历文件夹
+    dir_list = os.listdir(folder_path)
+    for dir_name in dir_list:
+        dir_path = os.path.join(folder_path, dir_name, "results")
+        file_list = os.listdir(dir_path)
+        
+        # 遍历sql文件
+        for file_name in file_list:
+                  
+            # filename = uuid.uuid4().hex + ".log"
+            filename = os.path.join(dir_path, file_name.replace(".csv", ".log"))
 
-    file_handler = logging.FileHandler(filename=filename)
-    stdout_handler = logging.StreamHandler(sys.stdout)
-    file_handler.setLevel(logging.INFO)
-    stdout_handler.setLevel(logging.INFO)
+            file_handler = logging.FileHandler(filename=filename)
+            stdout_handler = logging.StreamHandler(sys.stdout)
+            file_handler.setLevel(logging.INFO)
+            stdout_handler.setLevel(logging.INFO)
 
-    handlers = [file_handler, stdout_handler]
-    # handlers = [file_handler]
-    logging.basicConfig(
-        level=logging.INFO,
-        format='[%(asctime)s] {%(filename)s:%(lineno)d} %(levelname)s - %(message)s',
-        handlers=handlers
-    )
+            handlers = [file_handler, stdout_handler]
+            logging.basicConfig(
+                level=logging.INFO,
+                format='[%(asctime)s] {%(filename)s:%(lineno)d} %(levelname)s - %(message)s',
+                handlers=handlers
+            )
 
-    # QDIR = WORKLOADS[args.workload]
-    # DATADIR = os.path.join(QDIR, "dfs")
-    EXPRFN = "./benchmark_small/CMSprovider/dfs/expr_df.csv"
-    #EXPRFN = os.path.join(DATADIR, "literal_df.csv")
-    print(EXPRFN)
-    exprdf = pd.read_csv(EXPRFN)
-    # if "RowSql" in exprdf.keys():
-        # exprdf = exprdf.rename(columns={"RowSql":"filtersql"})
+            # EXPRFN = "./benchmark_small/CMSprovider/dfs/expr_df.csv"
+            EXPRFN = os.path.join(folder_path, dir_name, "dfs", "expr_df.csv")
+            print(EXPRFN)
+            exprdf = pd.read_csv(EXPRFN)
 
-    inps = args.inp_to_eval.split(",")
+            # inps = args.inp_to_eval.split(",")
+            inps = [file_name.replace(".csv", "")]
 
-    if args.workload in ["financial"]:
-        inps = ['"{}"'.format(iname) for iname in inps]
+            if args.workload in ["financial"]:
+                inps = ['"{}"'.format(iname) for iname in inps]
 
-    exprdf = exprdf[exprdf.input.isin(inps)]
+            exprdf = exprdf[exprdf.input.isin(inps)]
 
-    if args.skip_likes:
-        exprdf = exprdf[~exprdf["filtersql"].str.contains("like")]
-        exprdf = exprdf[~exprdf["filtersql"].str.contains("LIKE")]
+            if args.skip_likes:
+                exprdf = exprdf[~exprdf["filtersql"].str.contains("like")]
+                exprdf = exprdf[~exprdf["filtersql"].str.contains("LIKE")]
 
-    if args.db_name in ZDBS:
-        exprdf = exprdf[~exprdf["filtersql"].str.contains("<")]
-        exprdf = exprdf[~exprdf["filtersql"].str.contains(">")]
-        exprdf = exprdf[~exprdf["filtersql"].str.contains("!=")]
-        exprdf = exprdf[~exprdf["filtersql"].str.contains("NOT")]
-        print("num queries left after filtering: ", len(exprdf))
+            if args.db_name in ZDBS:
+                exprdf = exprdf[~exprdf["filtersql"].str.contains("<")]
+                exprdf = exprdf[~exprdf["filtersql"].str.contains(">")]
+                exprdf = exprdf[~exprdf["filtersql"].str.contains("!=")]
+                exprdf = exprdf[~exprdf["filtersql"].str.contains("NOT")]
+                print("num queries left after filtering: ", len(exprdf))
 
-    exprdf = exprdf.drop_duplicates("filtersql")
+            exprdf = exprdf.drop_duplicates("filtersql")
 
-    if args.num_queries != -1 and args.num_queries < len(exprdf):
-        exprdf = exprdf.head(args.num_queries)
+            if args.num_queries != -1 and args.num_queries < len(exprdf):
+                exprdf = exprdf.head(args.num_queries)
 
-    logging.info(str(args))
-    logging.info("Number of sqls to evaluate: {}".format(len(exprdf)))
+            logging.info(str(args))
+            logging.info("Number of sqls to evaluate: {}".format(len(exprdf)))
 
-    print("Number of sqls to evaluate: {}".format(len(exprdf)))
+            print("Number of sqls to evaluate: {}".format(len(exprdf)))
 
-    sqls = exprdf["filtersql"].values
+            sqls = exprdf["filtersql"].values
 
-    ehashes = exprdf["exprhash"].values
-    inputs = exprdf["input"].values
-    truey = exprdf["RowCount"].values
-    truey = np.maximum(truey, 1.0)
+            ehashes = exprdf["exprhash"].values
+            inputs = exprdf["input"].values
+            truey = exprdf["RowCount"].values
+            truey = np.maximum(truey, 1.0)
 
-    rcs = run_filters(sqls, ehashes, inputs, truey)
-    rcs = np.array(rcs)
-    rcs = np.maximum(1, rcs)
+            rcs = run_filters(sqls, ehashes, inputs, truey)
+            rcs = np.array(rcs)
+            rcs = np.maximum(1, rcs)
 
-    qerrs = qerr_func(truey, rcs)
-    # logging.info("QError, mean: {}, median: {}, 90p: {}".format(
-        # np.mean(qerrs), np.median(qerrs), np.percentile(qerrs, 90)))
-    # print("QError, mean: {}, median: {}, 90p: {}".format(
-        # np.mean(qerrs), np.median(qerrs), np.percentile(qerrs, 90)))
+            qerrs = qerr_func(truey, rcs)
+            # logging.info("QError, mean: {}, median: {}, 90p: {}".format(
+                # np.mean(qerrs), np.median(qerrs), np.percentile(qerrs, 90)))
+            # print("QError, mean: {}, median: {}, 90p: {}".format(
+                # np.mean(qerrs), np.median(qerrs), np.percentile(qerrs, 90)))
 
-    # TODO: evaluate cardinality accuracy
-    # for qi, rc in enumerate(rcs):
-        # if rc == 1:
-            # print(sqls[qi])
+            # TODO: evaluate cardinality accuracy
+            # for qi, rc in enumerate(rcs):
+                # if rc == 1:
+                    # print(sqls[qi])
 
 args = read_flags()
 main()

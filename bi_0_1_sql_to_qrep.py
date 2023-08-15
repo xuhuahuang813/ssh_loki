@@ -15,7 +15,6 @@ sys.path.append("./")
 '''
 
 folder_path = "./benchmark_small"
-
 # 遍历文件夹
 dir_list = os.listdir(folder_path)
 

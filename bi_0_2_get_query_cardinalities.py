@@ -60,7 +60,7 @@ def read_flags():
     parser = argparse.ArgumentParser()
 
     parser.add_argument("--db_name", type=str, required=False,
-                        default="bibench3")
+                        default="bibench2")
     parser.add_argument("--db_host", type=str, required=False,
                         default="49.52.27.35")
     parser.add_argument("--user", type=str, required=False,
@@ -85,10 +85,10 @@ def read_flags():
                         required=False, default=0)
     #
     parser.add_argument("--card_type", type=str, required=False,
-                        default="pg")
+                        default="total")
     #
     parser.add_argument("--key_name", type=str, required=False,
-                        default="expected")
+                        default="total")
     
     parser.add_argument("--true_timeout", type=int,
                         required=False, default=1800000*5)
@@ -237,7 +237,7 @@ def get_cardinality(qrep, card_type, key_name, db_host, db_name, user, pwd,
         source_node = tuple(["SOURCE"])
         if source_node in node_list:
             node_list.remove(source_node)
-    elif args.db_name == "bibench3":
+    elif args.db_name == "bibench2":
         source_node = tuple(["s"])
         if source_node in node_list:
             node_list.remove(source_node)
@@ -312,13 +312,13 @@ def get_cardinality(qrep, card_type, key_name, db_host, db_name, user, pwd,
                 cards[key_name] = -1
             elif(len(subset) == 1):
                 subsql = "EXPLAIN " + subsql
-                print("pg subsql is \n", subsql)
+                # print("pg subsql is \n", subsql)
                 output = execute_query(subsql, user, db_host,
                                     port, pwd, db_name, [])
                 card = pg_est_from_explain(output)
                 cards[key_name] = card
             else:
-                print("something gi wrong!")
+                print("something go wrong!")
             if subqi % 10 == 0:
                 save_qrep(fn, qrep)
 

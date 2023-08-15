@@ -9,7 +9,7 @@ import json
 
 WK = "ceb"
 if WK in ["ceb", "job"]:
-    DBNAME="bibench3"
+    DBNAME="bibench2"
 else:
     DBNAME = WK
 

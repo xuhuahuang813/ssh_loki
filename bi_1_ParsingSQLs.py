@@ -42,7 +42,7 @@ WK = "ceb"
 
 # QDIR = settings["sqlPath"]
 # OUTPATH = settings["dfsPath"]
-QDIR = "./benchmark_small/CMSprovider/queries"
+QDIR = "./benchmark_small/CMSprovider/queries_processed"
 OUTPATH = "./benchmark_small/CMSprovider/dfs"
 
 make_dir(OUTPATH)

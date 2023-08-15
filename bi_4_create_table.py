@@ -16,11 +16,6 @@ import logging
 from sqlalchemy import create_engine
 
 ALIAS_TO_TABS = {}
-# ALIAS_TO_TABS["n"] = "name"
-# ALIAS_TO_TABS["n_unfilled"] = "name"
-# ALIAS_TO_TABS["n2"] = "name"
-# ALIAS_TO_TABS["mi"] = "movie_info"
-# ALIAS_TO_TABS["t"] = "title"
 
 CREATE_TEMPLATE = "CREATE TABLE {TABLE_NAME} AS {SEL_SQL}"
 
@@ -31,7 +26,7 @@ ENGINE_CMD_FMT = """postgresql://{USER}:{PWD}@{HOST}:{PORT}/{DB}"""
 NULL_VAL = "#NULL1234"
 WK = "ceb"
 if WK in ["ceb", "job"]:
-    DBNAME="bibench3"
+    DBNAME="bibench2"
 else:
     DBNAME = WK
 
@@ -42,8 +37,8 @@ PWD=""
 def read_flags():
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("--inp_fn", type=str, required=False,
-            default="./benchmark_small/CMSprovider/results/cmsprovider_1.csv")
+    # parser.add_argument("--inp_fn", type=str, required=False,
+    #         default="./benchmark_small/CMSprovider/results/cmsprovider_2.csv")
 
     parser.add_argument("--data_kind", type=str, required=False,
             default="gen_shuffle", help="suffix for the table")
@@ -54,162 +49,167 @@ def read_flags():
 
 def main():
 
-    if os.path.exists(args.inp_fn):
-        df = pd.read_csv(args.inp_fn)
-        # empty_cols = [col for col in df.columns if df[col].isnull().all()]
-        # print("Dropping columns: ", empty_cols)
-        # df.drop(empty_cols,
-                # axis=1,
-                # inplace=True)
+    folder_path = "./benchmark_small"
+    # 遍历文件夹
+    dir_list = os.listdir(folder_path)
+    for dir_name in dir_list:
+        dir_path = os.path.join(folder_path, dir_name, "results")
+        file_list = os.listdir(dir_path)
 
-        df = df.drop(columns="Unnamed: 0")
+        # 遍历sql文件
+        for file_name in file_list:
+            result_file_path = os.path.join(dir_path, file_name)  
+            
+            if os.path.exists(result_file_path):
+                df = pd.read_csv(result_file_path)
+                df = df.drop(columns="Unnamed: 0")
 
-    # basetable = os.path.basename(args.inp_fn).replace(".csv", "")
-    basetable = "cmsprovider_1"
+            # basetable = os.path.basename(args.inp_fn).replace(".csv", "")
+            basetable = result_file_path.split("/")[-1].replace(".csv", "")
 
-    if basetable not in ALIAS_TO_TABS:
-        pg_orig_table = basetable
-    else:
-        pg_orig_table = ALIAS_TO_TABS[basetable]
+            if basetable not in ALIAS_TO_TABS:
+                pg_orig_table = basetable
+            else:
+                pg_orig_table = ALIAS_TO_TABS[basetable]
 
-    new_table_name = NEW_NAME_FMT.format(INP = basetable,
-                                     DATA_KIND = args.data_kind)
-    drop_sql = DROP_TEMPLATE.format(TABLE_NAME = new_table_name)
-    con = pg.connect(user=USER, host=DBHOST, port=args.port,
-            password=PWD, database=DBNAME)
+            new_table_name = NEW_NAME_FMT.format(INP = basetable,
+                                            DATA_KIND = args.data_kind)
+            drop_sql = DROP_TEMPLATE.format(TABLE_NAME = new_table_name)
+            con = pg.connect(user=USER, host=DBHOST, port=args.port,
+                    password=PWD, database=DBNAME)
 
-    cursor = con.cursor()
-    cursor.execute(drop_sql)
-    con.commit()
+            cursor = con.cursor()
+            cursor.execute(drop_sql)
+            con.commit()
 
-    cursor.close()
-    con.close()
+            cursor.close()
+            con.close()
 
 
-    if "shuffle2" in args.data_kind:
-        df = df.sample(frac=1.0)
+            if "shuffle2" in args.data_kind:
+                df = df.sample(frac=1.0)
 
-        for k in df.keys():
-            df[k] = df[k].apply(lambda x: x if pd.notnull(x) else
-                    ''.join(random.choice(string.ascii_uppercase
-                        + string.digits) for _ in range(random.randint(1,50))))
+                for k in df.keys():
+                    df[k] = df[k].apply(lambda x: x if pd.notnull(x) else
+                            ''.join(random.choice(string.ascii_uppercase
+                                + string.digits) for _ in range(random.randint(1,50))))
 
-        print("done updating NULL values w/ random strings")
+                print("done updating NULL values w/ random strings")
 
-    elif "shuffle" in args.data_kind:
-        df = df.sample(frac=1.0)
+            elif "shuffle" in args.data_kind:
+                df = df.sample(frac=1.0)
 
-    fixedkeys = {}
-    for dk in df.keys():
-        fixedkeys[dk] = dk.replace('"','')
-    df = df.rename(columns=fixedkeys)
-    print(df.keys())
+            fixedkeys = {}
+            for dk in df.keys():
+                fixedkeys[dk] = dk.replace('"','')
+            df = df.rename(columns=fixedkeys)
+            print(df.keys())
 
-    if args.data_kind == "true_cols":
-        if basetable not in ALIAS_TO_TABS:
-            inp_table = basetable
-        else:
-            inp_table = ALIAS_TO_TABS[basetable]
+            if args.data_kind == "true_cols":
+                if basetable not in ALIAS_TO_TABS:
+                    inp_table = basetable
+                else:
+                    inp_table = ALIAS_TO_TABS[basetable]
 
-        cols = ",".join(list(df.keys()))
+                cols = ",".join(list(df.keys()))
 
-        if DBNAME == "bibench3":
-            cols = "id," + cols
-        elif DBNAME == "financial":
-            cols = "index," + cols
+                if DBNAME == "bibench2":
+                    cols = "id," + cols
+                elif DBNAME == "financial":
+                    cols = "index," + cols
 
-        sel_sql = "SELECT {} FROM {}".format(cols, inp_table)
-        print(sel_sql)
-        create_sql = CREATE_TEMPLATE.format(TABLE_NAME = new_table_name,
-                                            SEL_SQL = sel_sql)
-        print(create_sql)
-        con = pg.connect(user=USER, host=DBHOST, port=args.port,
-                password=PWD, database=DBNAME)
+                sel_sql = "SELECT {} FROM {}".format(cols, inp_table)
+                print(sel_sql)
+                create_sql = CREATE_TEMPLATE.format(TABLE_NAME = new_table_name,
+                                                    SEL_SQL = sel_sql)
+                print(create_sql)
+                con = pg.connect(user=USER, host=DBHOST, port=args.port,
+                        password=PWD, database=DBNAME)
 
-        cursor = con.cursor()
-        cursor.execute(create_sql)
-        con.commit()
+                cursor = con.cursor()
+                cursor.execute(create_sql)
+                con.commit()
 
-        cursor.close()
-        con.close()
+                cursor.close()
+                con.close()
 
-    elif args.data_kind == "random_domain":
-        # update each column to be from same domain but randomly chosen
-        newdf = copy.deepcopy(df)
-        for key in df.keys():
-            domain = list(set(df[key].dropna()))
-            newdf[key] = np.array([random.choice(domain) for _ in range(len(df))])
-            # newdf[key.replace('"','')] = np.array([random.choice(domain) for _ in range(len(df))])
+            elif args.data_kind == "random_domain":
+                # update each column to be from same domain but randomly chosen
+                newdf = copy.deepcopy(df)
+                for key in df.keys():
+                    domain = list(set(df[key].dropna()))
+                    newdf[key] = np.array([random.choice(domain) for _ in range(len(df))])
+                    # newdf[key.replace('"','')] = np.array([random.choice(domain) for _ in range(len(df))])
 
-        df = newdf
-        engine_cmd = ENGINE_CMD_FMT.format(USER = USER,
-                                           PWD = PWD,
-                                           HOST = DBHOST,
-                                           PORT = args.port,
-                                           DB = DBNAME)
+                df = newdf
+                engine_cmd = ENGINE_CMD_FMT.format(USER = USER,
+                                                PWD = PWD,
+                                                HOST = DBHOST,
+                                                PORT = args.port,
+                                                DB = DBNAME)
 
-        engine = create_engine(engine_cmd)
-        df.to_sql(new_table_name, engine)
+                engine = create_engine(engine_cmd)
+                df.to_sql(new_table_name, engine)
 
-    elif args.data_kind == "random_domain2":
-        # update each column to be from same domain but randomly chosen
-        # newdf = copy.deepcopy(df)
+            elif args.data_kind == "random_domain2":
+                # update each column to be from same domain but randomly chosen
+                # newdf = copy.deepcopy(df)
 
-        for key in df.keys():
-            domain = list(set(df[key].dropna()))
-            print(domain)
-            print(len(domain))
-            domain.append(None)
-            df[key] = np.array([random.choice(domain) for _ in range(len(df))])
+                for key in df.keys():
+                    domain = list(set(df[key].dropna()))
+                    print(domain)
+                    print(len(domain))
+                    domain.append(None)
+                    df[key] = np.array([random.choice(domain) for _ in range(len(df))])
 
-        # df = newdf
-        print(df.head(30))
-        engine_cmd = ENGINE_CMD_FMT.format(USER = USER,
-                                           PWD = PWD,
-                                           HOST = DBHOST,
-                                           PORT = args.port,
-                                           DB = DBNAME)
+                # df = newdf
+                print(df.head(30))
+                engine_cmd = ENGINE_CMD_FMT.format(USER = USER,
+                                                PWD = PWD,
+                                                HOST = DBHOST,
+                                                PORT = args.port,
+                                                DB = DBNAME)
 
-        engine = create_engine(engine_cmd)
-        df.to_sql(new_table_name, engine)
+                engine = create_engine(engine_cmd)
+                df.to_sql(new_table_name, engine)
 
-    elif args.data_kind == "random_domain3":
-        engine_cmd = ENGINE_CMD_FMT.format(USER = USER,
-                                           PWD = PWD,
-                                           HOST = DBHOST,
-                                           PORT = args.port,
-                                           DB = DBNAME)
+            elif args.data_kind == "random_domain3":
+                engine_cmd = ENGINE_CMD_FMT.format(USER = USER,
+                                                PWD = PWD,
+                                                HOST = DBHOST,
+                                                PORT = args.port,
+                                                DB = DBNAME)
 
-        engine = create_engine(engine_cmd)
-        df = pd.read_sql_query('select * from {}'.format(pg_orig_table),con=engine)
-        print(df.keys())
+                engine = create_engine(engine_cmd)
+                df = pd.read_sql_query('select * from {}'.format(pg_orig_table),con=engine)
+                print(df.keys())
 
-        for key in df.keys():
-            domain = list(set(df[key].dropna()))
-            domain.append(None)
-            df[key] = np.array([random.choice(domain) for _ in range(len(df))])
+                for key in df.keys():
+                    domain = list(set(df[key].dropna()))
+                    domain.append(None)
+                    df[key] = np.array([random.choice(domain) for _ in range(len(df))])
 
-        print(df.head(30))
-        # engine_cmd = ENGINE_CMD_FMT.format(USER = USER,
-                                           # PWD = PWD,
-                                           # HOST = DBHOST,
-                                           # args.port = args.port,
-                                           # DB = DBNAME)
+                print(df.head(30))
+                # engine_cmd = ENGINE_CMD_FMT.format(USER = USER,
+                                                # PWD = PWD,
+                                                # HOST = DBHOST,
+                                                # args.port = args.port,
+                                                # DB = DBNAME)
 
-        # engine = create_engine(engine_cmd)
-        df.to_sql(new_table_name, engine)
+                # engine = create_engine(engine_cmd)
+                df.to_sql(new_table_name, engine)
 
-    else:
-        engine_cmd = ENGINE_CMD_FMT.format(USER = USER,
-                                           PWD = PWD,
-                                           HOST = DBHOST,
-                                           PORT = args.port,
-                                           DB = DBNAME)
-        engine = create_engine(engine_cmd)
-        print("new_table_name is ", new_table_name)
-        df.to_sql(new_table_name, engine)
-        # df.to_csv(new_table_name + ".csv")
-        print("finish create table")
+            else:
+                engine_cmd = ENGINE_CMD_FMT.format(USER = USER,
+                                                PWD = PWD,
+                                                HOST = DBHOST,
+                                                PORT = args.port,
+                                                DB = DBNAME)
+                engine = create_engine(engine_cmd)
+                print("new_table_name is ", new_table_name)
+                df.to_sql(new_table_name, engine)
+                # df.to_csv(new_table_name + ".csv")
+                print("finish create table")
 
 args = read_flags()
 main()
