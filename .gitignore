@@ -1,5 +1,7 @@
 __pycache__/
 .idea
 results
-*.pkl
-*.sql
+cardinality_cache
+imdb-new-dfs/1a_simple
+imdb-new-sqls/1a_simple
+imdb-new-workload/1a_simple
