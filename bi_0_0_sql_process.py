@@ -1,4 +1,5 @@
 import os
+import shutil
 
 def transform_quotes_to_lowercase(line):
     result = []
@@ -26,6 +27,10 @@ output_folder = input_folder.replace("queries", "queries_processed")
 # 确保输出文件夹存在，如果不存在则创建
 if not os.path.exists(output_folder):
     os.makedirs(output_folder)
+else:
+    # os.rmdir(output_folder)  # 删除文件夹
+    shutil.rmtree(output_folder) # 删除文件夹
+    os.makedirs(output_folder)  # 重新创建文件夹
 
 # 列出输入文件夹下的所有文件
 files = os.listdir(input_folder)
@@ -44,9 +49,10 @@ for filename in files:
         # 读取输入文件内容并转为小写，然后写入输出文件
         with open(input_path, "r") as input_file:
             sql_content = input_file.read()
-            print(sql_content)
+            # print(sql_content)
             sql_content = transform_quotes_to_lowercase(sql_content)
-            print(sql_content)
+            sql_content = sql_content.replace("double", "double precision")
+            # print(sql_content)
             with open(output_path, "w") as output_file:
                 output_file.write(sql_content)
 
