@@ -1,0 +1,1 @@
+SELECT COUNT(DISTINCT "CommonGovernment_13"."refidvid_piid") AS "ctd_refidvid_piid_ok",   SUM("CommonGovernment_13"."obligatedamount") AS "sum_obligatedamount_ok" FROM "CommonGovernment_13" HAVING (COUNT(1) > 0);

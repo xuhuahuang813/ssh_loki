@@ -1,0 +1,1 @@
+SELECT "Uberlandia_1"."nome_da_sit_matricula__situacao_detalhada_" AS "nome_da_sit_matricula__situacao_detalhada_" FROM "Uberlandia_1" GROUP BY "Uberlandia_1"."nome_da_sit_matricula__situacao_detalhada_" LIMIT 26;

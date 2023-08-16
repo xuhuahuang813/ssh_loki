@@ -1,0 +1,1 @@
+SELECT "TrainsUK1_4"."v_Headcode_Description" AS "v_Headcode_Description" FROM "TrainsUK1_4" WHERE ((NOT ("TrainsUK1_4"."Timetable" IN ('', 'Timetable'))) AND ("TrainsUK1_4"."Operator" = 'EB')) GROUP BY "TrainsUK1_4"."v_Headcode_Description";

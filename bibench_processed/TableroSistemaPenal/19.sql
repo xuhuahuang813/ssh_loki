@@ -1,0 +1,1 @@
+SELECT "TableroSistemaPenal_5"."SENTENCIA" AS "SENTENCIA",   SUM(CAST("TableroSistemaPenal_5"."Number_of_Records" AS BIGINT)) AS "sum_Number_of_Records_ok" FROM "TableroSistemaPenal_5" WHERE (("TableroSistemaPenal_5"."PAIS" = 'PAÍS') AND (CAST(EXTRACT(YEAR FROM "TableroSistemaPenal_5"."FECHA_AUDIENCIA") AS BIGINT) = 2010)) GROUP BY "TableroSistemaPenal_5"."SENTENCIA";

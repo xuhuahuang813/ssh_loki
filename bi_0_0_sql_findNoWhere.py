@@ -4,21 +4,38 @@ import shutil
 import sqlparse
 
 folder_path = "./benchmark"
-# 遍历文件夹
 dir_list = os.listdir(folder_path)
-num = 0
-output_file = "sql_without_where.csv"
-# 打开输出 CSV 文件并写入标题行
-with open(os.path.join(folder_path, output_file), mode='w', newline='') as csv_file:
-    csv_writer = csv.writer(csv_file)
-    csv_writer.writerow(["File", "SQL Statement"])
+
+noWhere_num = 0
+andOr_num = 0
+processed_num = 0
+
+
+# output_file = "sql_without_where.csv"
+# # 打开输出 CSV 文件并写入标题行
+# with open(os.path.join(folder_path, output_file), mode='w', newline='') as csv_file:
+#     csv_writer = csv.writer(csv_file)
+#     csv_writer.writerow(["File", "SQL Statement"])
+
+def create_folder_with_os(folder_name):
+    try:
+        os.makedirs(folder_name, exist_ok=True) #递归创建
+    except Exception as e:
+        print("An error occurred:", str(e))
+
+no_where_folder = "bibench_noWhere"
+and_or_folder = "bibench_andOR"
+processed_folder = "bibench_processed"
+create_folder_with_os(no_where_folder)
+create_folder_with_os(and_or_folder)
+create_folder_with_os(processed_folder)
 
 for dir_name in dir_list:
     if ".csv" in dir_name:
         continue
     
     # 输入文件夹和输出文件夹的路径
-    input_folder = os.path.join(folder_path, dir_name, "queries")
+    input_folder = os.path.join(folder_path, dir_name, "queries_filter")
     
     # 列出输入文件夹下的所有文件
     files = os.listdir(input_folder)
@@ -34,14 +51,29 @@ for dir_name in dir_list:
             # 读取输入文件内容并转为小写，然后写入输出文件
             with open(input_path, "r") as input_file:
                 sql_content = input_file.read()                         
-                if("WHERE" not in sql_content) or (" AND " in sql_content and " OR " in sql_content):
-                # if("WHERE" not in sql_content):
-                    with open(os.path.join(folder_path, output_file), mode='a', newline='') as csv_file:
-                        num += 1
-                        csv_writer = csv.writer(csv_file)
-                        csv_writer.writerow([input_path, sql_content])
-            
-print("num is ", num)
+                # if("WHERE" not in sql_content) or (" AND " in sql_content and " OR " in sql_content):
+                #     with open(os.path.join(folder_path, output_file), mode='a', newline='') as csv_file:
+                #         num += 1
+                #         csv_writer = csv.writer(csv_file)
+                #         csv_writer.writerow([input_path, sql_content])
+                
+                if("WHERE" not in sql_content):
+                    output_filename = os.path.join(no_where_folder, dir_name)
+                    create_folder_with_os(output_filename)
+                    with open(os.path.join(no_where_folder, dir_name, filename), 'w') as output_file:
+                            output_file.write(sql_content)
+                    noWhere_num += 1
+                elif(" AND " in sql_content and " OR " in sql_content):
+                    output_filename = os.path.join(and_or_folder, dir_name)
+                    create_folder_with_os(output_filename)
+                    with open(os.path.join(and_or_folder, dir_name, filename), 'w') as output_file:
+                            output_file.write(sql_content)
+                    andOr_num += 1
+                else:
+                    output_filename = os.path.join(processed_folder, dir_name)
+                    create_folder_with_os(output_filename)
+                    with open(os.path.join(processed_folder, dir_name, filename), 'w') as output_file:
+                            output_file.write(sql_content)    
+                    processed_num += 1
                     
-
-
+print(noWhere_num, " ",andOr_num," ", processed_num," ", andOr_num+processed_num+noWhere_num )

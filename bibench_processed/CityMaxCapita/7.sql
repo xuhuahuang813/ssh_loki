@@ -1,0 +1,1 @@
+SELECT "CityMaxCapita_1"."City" AS "City",   MAX("CityMaxCapita_1"."Keyword") AS "TEMP_attr_Keyword_nk__2694177860__0_",   MIN("CityMaxCapita_1"."Keyword") AS "TEMP_attr_Keyword_nk__4040898713__0_" FROM "CityMaxCapita_1" WHERE ("CityMaxCapita_1"."Keyword" = 'slut') GROUP BY "CityMaxCapita_1"."City";

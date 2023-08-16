@@ -1,0 +1,1 @@
+SELECT CAST("USCensus_3"."CIT" AS TEXT) AS "CIT",   CAST("USCensus_3"."REGION" AS BIGINT) AS "REGION",   SUM(CAST("USCensus_3"."Number_of_Records" AS BIGINT)) AS "sum_Number_of_Records_ok" FROM "USCensus_3" GROUP BY "CIT",   "USCensus_3"."REGION",   "USCensus_3"."REGION";
