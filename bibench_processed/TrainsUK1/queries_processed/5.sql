@@ -1,0 +1,1 @@
+SELECT trainsuk1_4.v_headcode_description AS v_headcode_description FROM trainsuk1_4 WHERE ((NOT (trainsuk1_4.timetable IN ('', 'Timetable'))) AND (trainsuk1_4.operator = 'EB')) GROUP BY trainsuk1_4.v_headcode_description;

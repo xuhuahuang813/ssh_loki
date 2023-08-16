@@ -1,0 +1,1 @@
+SELECT citymaxcapita_1.city AS city,   SUM(1) AS temp_calculation__1088745174867206144__2109769841__0_ FROM citymaxcapita_1 WHERE (citymaxcapita_1.keyword IN ('bimbo', 'twat')) GROUP BY citymaxcapita_1.city;

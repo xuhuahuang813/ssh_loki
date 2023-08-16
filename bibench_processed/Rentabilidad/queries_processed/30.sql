@@ -1,0 +1,1 @@
+SELECT rentabilidad_8.locacion AS locacion FROM rentabilidad_8 WHERE ((rentabilidad_8.figura = 'Preventa On Premise') AND (rentabilidad_8.sede_foraneo_sintec = 'Sede') AND (rentabilidad_8.zona = 'OC')) GROUP BY rentabilidad_8.locacion;

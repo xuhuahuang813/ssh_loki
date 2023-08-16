@@ -1,0 +1,1 @@
+SELECT nyc_2.borough AS borough,   nyc_2.complaint_type AS complaint_type FROM nyc_2 WHERE ((nyc_2.borough >= 'BRONX') AND (nyc_2.borough <= 'STATEN ISLAND')) GROUP BY nyc_2.borough,   nyc_2.complaint_type;
