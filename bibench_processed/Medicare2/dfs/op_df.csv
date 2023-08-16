@@ -1,9 +1,0 @@
-op,dtype,optype,constant,input,column,opstring,is_id,jobid,discrete_ops,cont_ops,like_ops,alias,exprhash,InputCardinality,Selectivity,RowCount,workload,db
-=,string,=,'NY',medicare2_1,nppes_provider_state,medicare2_1.nppes_provider_state = 'NY',0,0,1,0,0,medicare2_1,633563126790491668973301373177863590207362435661,915327,0.06422950486547431,58791,ceb,ceb
-=,string,=,'NY',medicare2_2,nppes_provider_state,medicare2_2.nppes_provider_state = 'NY',0,1,1,0,0,medicare2_2,832280881189033737557384720361128810517564657495,915327,0.06465995212639854,59185,ceb,ceb
-=,string,=,'NY',medicare2_2,nppes_provider_state,medicare2_2.nppes_provider_state = 'NY',0,2,1,0,0,medicare2_2,1202266024450593486209257639060863375457679143497,915327,1.0,915327,ceb,ceb
-=,string,=,'US',medicare2_2,nppes_provider_country,medicare2_2.nppes_provider_country = 'US',0,2,1,0,0,medicare2_2,1202266024450593486209257639060863375457679143497,915327,1.0,915327,ceb,ceb
-=,string,=,'NY',medicare2_2,nppes_provider_state,medicare2_2.nppes_provider_state = 'NY',0,3,1,0,0,medicare2_2,1276281723555815205598414208191514855843151354806,915327,1.0,915327,ceb,ceb
-=,string,=,'US',medicare2_2,nppes_provider_country,medicare2_2.nppes_provider_country = 'US',0,3,1,0,0,medicare2_2,1276281723555815205598414208191514855843151354806,915327,1.0,915327,ceb,ceb
-=,string,=,'NY',medicare2_2,nppes_provider_state,medicare2_2.nppes_provider_state = 'NY',0,4,1,0,0,medicare2_2,239843127518444044849457064918497422952256780778,915327,0.06465995212639854,59185,ceb,ceb
-=,string,=,'NY',medicare2_2,nppes_provider_state,medicare2_2.nppes_provider_state = 'NY',0,5,1,0,0,medicare2_2,1296284708301726599142524919814264334658453753205,915327,0.06465995212639854,59185,ceb,ceb

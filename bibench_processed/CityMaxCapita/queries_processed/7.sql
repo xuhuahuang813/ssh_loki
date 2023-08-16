@@ -1,1 +1,0 @@
-SELECT citymaxcapita_1.city AS city,   MAX(citymaxcapita_1.keyword) AS temp_attr_keyword_nk__2694177860__0_,   MIN(citymaxcapita_1.keyword) AS temp_attr_keyword_nk__4040898713__0_ FROM citymaxcapita_1 WHERE (citymaxcapita_1.keyword = 'slut') GROUP BY citymaxcapita_1.city;

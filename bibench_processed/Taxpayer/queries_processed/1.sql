@@ -1,1 +1,0 @@
-SELECT taxpayer_1.nppes_provider_first_name AS nppes_provider_first_name FROM taxpayer_1 WHERE ((taxpayer_1.nppes_provider_last_org_name = 'HOLDER') AND (taxpayer_1.nppes_provider_state = 'WA')) GROUP BY taxpayer_1.nppes_provider_first_name;

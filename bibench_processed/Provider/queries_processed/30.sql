@@ -1,1 +1,0 @@
-SELECT provider_8.nppes_provider_street1 AS nppes_provider_street1 FROM provider_8 WHERE ((provider_8.nppes_provider_state = 'NE') AND (provider_8.provider_type = 'Diagnostic Radiology')) GROUP BY provider_8.nppes_provider_street1;

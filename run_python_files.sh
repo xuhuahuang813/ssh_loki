@@ -8,7 +8,7 @@ python bi_0_2_get_query_cardinalities.py --card_type actual --key_name actual
 python bi_0_2_get_query_cardinalities.py --card_type total --key_name total
 
 
-# python bi_1_ParsingSQLs.py    
+python bi_1_ParsingSQLs.py    
 
 # python bi_2_get_const_rowcounts.py 
 # python bi_3_loki.py

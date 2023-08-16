@@ -1,2 +1,0 @@
-filtersql,jobid,input,alias,exprhash,unique_filter_cols,discrete_ops,cont_ops,like_ops,is_id,num_unique_ops,num_ops,num_discrete_consts,num_likes,like_lens,InputCardinality,Selectivity,RowCount,workload,db
-SELECT COUNT(*) from nyc_2 AS nyc_2 WHERE nyc_2.borough >= 'BRONX' AND nyc_2.borough <= 'STATEN ISLAND',0,nyc_2,nyc_2,634792851666767553639130544925360589418492086010,1,0,1,0,0,2,2,0,0,0,961822,1.0,961863,ceb,ceb

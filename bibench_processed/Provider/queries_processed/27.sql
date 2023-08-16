@@ -1,1 +1,0 @@
-SELECT provider_8.nppes_provider_state AS nppes_provider_state,   provider_8.provider_type AS provider_type FROM provider_8 WHERE (provider_8.nppes_provider_city = 'LINCOLN') GROUP BY provider_8.nppes_provider_state,   provider_8.provider_type;

@@ -1,1 +1,0 @@
-SELECT taxpayer_6.nppes_provider_city AS nppes_provider_city FROM taxpayer_6 WHERE ((taxpayer_6.hcpcs_description = 'Initial hospital care') AND (taxpayer_6.nppes_provider_state = 'WA')) GROUP BY taxpayer_6.nppes_provider_city;
