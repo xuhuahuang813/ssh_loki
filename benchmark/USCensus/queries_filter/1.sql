@@ -1,0 +1,1 @@
+SELECT "USCensus_1"."Agep__bin_" AS "Agep__bin_",   CAST("USCensus_1"."REGION" AS BIGINT) AS "REGION",   CAST("USCensus_1"."SCHL" AS TEXT) AS "SCHL",   SUM(CAST("USCensus_1"."Number_of_Records" AS BIGINT)) AS "sum_Number_of_Records_ok" FROM "USCensus_1" GROUP BY "USCensus_1"."Agep__bin_",   "USCensus_1"."REGION",   "SCHL",   "USCensus_1"."REGION";

@@ -1,0 +1,1 @@
+SELECT "CityMaxCapita_1"."City" AS "City",   SUM(1) AS "TEMP_Calculation__1088745174867206144__2109769841__0_" FROM "CityMaxCapita_1" WHERE ("CityMaxCapita_1"."Keyword" IN ('bimbo', 'twat')) GROUP BY "CityMaxCapita_1"."City";

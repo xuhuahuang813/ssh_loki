@@ -1,0 +1,1 @@
+SELECT "RealEstate1_2"."Property_Type" AS "Property_Type" FROM "RealEstate1_2" WHERE ((CAST("RealEstate1_2"."Date_of_Transfer" as DATE) >= cast('2005-01-01' as DATE)) AND (CAST("RealEstate1_2"."Date_of_Transfer" as DATE) <= cast('2015-03-31' as DATE))) GROUP BY "Property_Type" ORDER BY "Property_Type" ASC ;

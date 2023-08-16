@@ -1,0 +1,1 @@
+SELECT SUM("CommonGovernment_13"."obligatedamount") AS "sum_obligatedamount_ok",   "CommonGovernment_13"."vend_contoffbussizedeterm" AS "vend_contoffbussizedeterm" FROM "CommonGovernment_13" GROUP BY "CommonGovernment_13"."vend_contoffbussizedeterm";
