@@ -58,21 +58,21 @@ for dir_name in dir_list:
                 #         csv_writer.writerow([input_path, sql_content])
                 
                 if("WHERE" not in sql_content):
-                    output_filename = os.path.join(no_where_folder, dir_name)
+                    output_filename = os.path.join(no_where_folder, dir_name, "queries")
                     create_folder_with_os(output_filename)
-                    with open(os.path.join(no_where_folder, dir_name, filename), 'w') as output_file:
+                    with open(os.path.join(no_where_folder, dir_name, "queries", filename), 'w') as output_file:
                             output_file.write(sql_content)
                     noWhere_num += 1
                 elif(" AND " in sql_content and " OR " in sql_content):
-                    output_filename = os.path.join(and_or_folder, dir_name)
+                    output_filename = os.path.join(and_or_folder, dir_name, "queries")
                     create_folder_with_os(output_filename)
-                    with open(os.path.join(and_or_folder, dir_name, filename), 'w') as output_file:
+                    with open(os.path.join(and_or_folder, dir_name, "queries", filename), 'w') as output_file:
                             output_file.write(sql_content)
                     andOr_num += 1
                 else:
-                    output_filename = os.path.join(processed_folder, dir_name)
+                    output_filename = os.path.join(processed_folder, dir_name, "queries")
                     create_folder_with_os(output_filename)
-                    with open(os.path.join(processed_folder, dir_name, filename), 'w') as output_file:
+                    with open(os.path.join(processed_folder, dir_name, "queries", filename), 'w') as output_file:
                             output_file.write(sql_content)    
                     processed_num += 1
                     

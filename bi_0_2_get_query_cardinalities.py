@@ -427,7 +427,7 @@ def get_cardinality(qrep, card_type, key_name, db_host, db_name, user, pwd,
 
 
 def main():
-    folder_path = "./benchmark_small"
+    folder_path = "./bibench_processed"
     # 遍历文件夹
     dir_list = os.listdir(folder_path)
 

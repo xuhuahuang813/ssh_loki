@@ -22,7 +22,7 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
     
-    folder_path = "./benchmark_small"
+    folder_path = "./bibench_processed"
     # 遍历文件夹
     dir_list = os.listdir(folder_path)
 

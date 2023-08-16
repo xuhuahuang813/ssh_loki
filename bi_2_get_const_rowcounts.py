@@ -261,7 +261,7 @@ def get_rowcounts_consts(sqls, exprhashes, inputs, jobids):
 
 print("========================================bi_2_get_const_rowcounts.py========================================")
 
-folder_path = "./benchmark_small"
+folder_path = "./bibench_processed"
 # 遍历文件夹
 dir_list = os.listdir(folder_path)
 

@@ -32,7 +32,7 @@ def read_flags():
     parser = argparse.ArgumentParser()
 
     # parser.add_argument("--result_dir", type=str, required=False,
-    #         default="./benchmark_small/CMSprovider/results")
+    #         default="./bibench_processed/CMSprovider/results")
     # parser.add_argument("--inp_to_eval", type=str, required=False,
     #         default="cmsprovider_2")
 
@@ -147,7 +147,7 @@ def qerr_func(ytrue, yhat):
 def main():
     print("========================================bi_5_eval_data.py========================================")
         
-    folder_path = "./benchmark_small"
+    folder_path = "./bibench_processed"
     
     result_all_path = os.path.join(folder_path, "results.csv")
     with open(result_all_path, mode='w', newline='') as csv_file:
@@ -193,7 +193,7 @@ def main():
             logger.addHandler(file_handler)
             logger.addHandler(stdout_handler)
 
-            # EXPRFN = "./benchmark_small/CMSprovider/dfs/expr_df.csv"
+            # EXPRFN = "./bibench_processed/CMSprovider/dfs/expr_df.csv"
             EXPRFN = os.path.join(folder_path, dir_name, "dfs", "expr_df.csv")
             # print(EXPRFN)
             exprdf = pd.read_csv(EXPRFN)

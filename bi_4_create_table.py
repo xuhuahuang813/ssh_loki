@@ -38,7 +38,7 @@ def read_flags():
     parser = argparse.ArgumentParser()
 
     # parser.add_argument("--inp_fn", type=str, required=False,
-    #         default="./benchmark_small/CMSprovider/results/cmsprovider_2.csv")
+    #         default="./bibench_processed/CMSprovider/results/cmsprovider_2.csv")
 
     parser.add_argument("--data_kind", type=str, required=False,
             default="gen_shuffle", help="suffix for the table")
@@ -50,7 +50,7 @@ def read_flags():
 def main():
     print("========================================bi_4_create_table.py========================================")
 
-    folder_path = "./benchmark_small"
+    folder_path = "./bibench_processed"
     # 遍历文件夹
     dir_list = os.listdir(folder_path)
     for dir_name in dir_list:
