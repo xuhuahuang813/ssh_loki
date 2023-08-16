@@ -1,1 +1,0 @@
-SELECT CAST(EXTRACT(HOUR FROM "HashTags_1"."Calculation_6610227171140491") AS BIGINT) AS "hr_Calculation_6610227171140491_ok",   SUM(CAST("HashTags_1"."Number_of_Records" AS BIGINT)) AS "sum_Number_of_Records_ok" FROM "HashTags_1" GROUP BY "hr_Calculation_6610227171140491_ok";

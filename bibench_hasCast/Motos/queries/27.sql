@@ -1,1 +1,0 @@
-SELECT SUM("Motos_2"."InversionUS") AS "sum_InversionUS_ok",   CAST(EXTRACT(YEAR FROM "Motos_2"."FECHA") AS BIGINT) AS "yr_FECHA_ok" FROM "Motos_2" WHERE ((CAST(EXTRACT(YEAR FROM "Motos_2"."FECHA") AS BIGINT) >= 2010) AND (CAST(EXTRACT(YEAR FROM "Motos_2"."FECHA") AS BIGINT) <= 2015) AND ("Motos_2"."Categoria" = 'MOTOCICLETAS')) GROUP BY "yr_FECHA_ok";

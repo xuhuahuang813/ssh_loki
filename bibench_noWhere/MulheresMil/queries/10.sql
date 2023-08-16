@@ -1,1 +1,0 @@
-SELECT "MulheresMil_1"."nome_da_sit_matricula__situacao_detalhada_" AS "nome_da_sit_matricula__situacao_detalhada_" FROM "MulheresMil_1" GROUP BY "MulheresMil_1"."nome_da_sit_matricula__situacao_detalhada_" LIMIT 28;

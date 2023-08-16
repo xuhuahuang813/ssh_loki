@@ -1,1 +1,0 @@
-SELECT SUM(CAST("HashTags_1"."Number_of_Records" AS BIGINT)) AS "sum_Number_of_Records_ok",   "HashTags_1"."twitter_user_screen_name" AS "twitter_user_screen_name" FROM "HashTags_1" GROUP BY "HashTags_1"."twitter_user_screen_name" HAVING (SUM(1) > 200);

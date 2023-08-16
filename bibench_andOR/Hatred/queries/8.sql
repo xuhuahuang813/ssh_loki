@@ -1,1 +1,0 @@
-SELECT "Hatred_1"."State_" AS "State_" FROM "Hatred_1" WHERE (((("Hatred_1"."State_" >= 'AK') AND ("Hatred_1"."State_" <= 'CT')) OR (("Hatred_1"."State_" >= 'DE') AND ("Hatred_1"."State_" <= 'WY'))) AND ("Hatred_1"."Keyword" IN ('bimbo', 'hag', 'twat'))) GROUP BY "Hatred_1"."State_" HAVING ((SUM(1) >= 30) AND (SUM(1) <= 100000));

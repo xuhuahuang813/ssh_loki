@@ -68,34 +68,34 @@ for dir_name in dir_list:
                 #         csv_writer.writerow([input_path, sql_content])
                 
                 if("WHERE" not in sql_content):
-                    output_filename = os.path.join(no_where_folder, dir_name, "queries")
-                    create_folder_with_os(output_filename)
-                    with open(os.path.join(no_where_folder, dir_name, "queries", filename), 'w') as output_file:
-                            output_file.write(sql_content)
+                    # output_filename = os.path.join(no_where_folder, dir_name, "queries")
+                    # create_folder_with_os(output_filename)
+                    # with open(os.path.join(no_where_folder, dir_name, "queries", filename), 'w') as output_file:
+                    #         output_file.write(sql_content)
                     noWhere_num += 1
                 elif(" AND " in sql_content and " OR " in sql_content):
-                    output_filename = os.path.join(and_or_folder, dir_name, "queries")
-                    create_folder_with_os(output_filename)
-                    with open(os.path.join(and_or_folder, dir_name, "queries", filename), 'w') as output_file:
-                            output_file.write(sql_content)
+                    # output_filename = os.path.join(and_or_folder, dir_name, "queries")
+                    # create_folder_with_os(output_filename)
+                    # with open(os.path.join(and_or_folder, dir_name, "queries", filename), 'w') as output_file:
+                    #         output_file.write(sql_content)
                     andOr_num += 1
                 elif("is null" in sql_content or "IS NULL" in sql_content):
-                    output_filename = os.path.join(is_null_folder, dir_name, "queries")
-                    create_folder_with_os(output_filename)
-                    with open(os.path.join(is_null_folder, dir_name, "queries", filename), 'w') as output_file:
-                            output_file.write(sql_content)
+                    # output_filename = os.path.join(is_null_folder, dir_name, "queries")
+                    # create_folder_with_os(output_filename)
+                    # with open(os.path.join(is_null_folder, dir_name, "queries", filename), 'w') as output_file:
+                    #         output_file.write(sql_content)
                     isNull_num += 1
                 elif("CAST" in sql_content or "cast" in sql_content):
-                    output_filename = os.path.join(has_cast_folder, dir_name, "queries")
-                    create_folder_with_os(output_filename)
-                    with open(os.path.join(has_cast_folder, dir_name, "queries", filename), 'w') as output_file:
-                            output_file.write(sql_content)
+                    # output_filename = os.path.join(has_cast_folder, dir_name, "queries")
+                    # create_folder_with_os(output_filename)
+                    # with open(os.path.join(has_cast_folder, dir_name, "queries", filename), 'w') as output_file:
+                    #         output_file.write(sql_content)
                     hasCast_num += 1
                 elif("'' = ''" in sql_content):
-                    output_filename = os.path.join(alwaysTrue_folder, dir_name, "queries")
-                    create_folder_with_os(output_filename)
-                    with open(os.path.join(alwaysTrue_folder, dir_name, "queries", filename), 'w') as output_file:
-                            output_file.write(sql_content)
+                    # output_filename = os.path.join(alwaysTrue_folder, dir_name, "queries")
+                    # create_folder_with_os(output_filename)
+                    # with open(os.path.join(alwaysTrue_folder, dir_name, "queries", filename), 'w') as output_file:
+                    #         output_file.write(sql_content)
                     alwaysTrue_num += 1
                 else:
                     output_filename = os.path.join(processed_folder, dir_name, "queries")

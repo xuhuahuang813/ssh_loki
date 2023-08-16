@@ -1,1 +1,0 @@
-SELECT COUNT(DISTINCT "CommonGovernment_13"."refidvid_piid") AS "ctd_refidvid_piid_ok",   "CommonGovernment_13"."funding_agency_name" AS "funding_agency_name",   SUM("CommonGovernment_13"."obligatedamount") AS "sum_obligatedamount_ok" FROM "CommonGovernment_13" GROUP BY "CommonGovernment_13"."funding_agency_name";

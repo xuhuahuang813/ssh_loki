@@ -1,1 +1,0 @@
-SELECT "YaleLanguages_2"."Calculation_1810108111146429" AS "Calculation_1810108111146429",   "YaleLanguages_2"."Patron_Group" AS "Patron_Group" FROM "YaleLanguages_2" WHERE ((CAST("YaleLanguages_2"."CHARGE_DATE" as DATE) >= cast('2002-01-01' as DATE)) AND ("YaleLanguages_2"."PATRON_TYPE__Pseudo_vs_Patron_" = 'Patron')) GROUP BY "Calculation_1810108111146429", "Patron_Group";

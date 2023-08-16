@@ -1,1 +1,0 @@
-SELECT "SalariesFrance_13"."ZE2010_LIB" AS "ZE2010_LIB",   AVG(CAST("SalariesFrance_13"."Latitude" AS double)) AS "avg_Latitude_ok",   AVG(CAST("SalariesFrance_13"."Longitude" AS double)) AS "avg_Longitude_ok",   SUM("SalariesFrance_13"."EMPSAL_NP1") AS "sum_EMPSAL_NP1_ok" FROM "SalariesFrance_13" GROUP BY "SalariesFrance_13"."ZE2010_LIB";

@@ -1,1 +1,0 @@
-SELECT COUNT(DISTINCT "TableroSistemaPenal_5"."ID_EVENTO") AS "ctd_ID_EVENTO_ok",   CAST(EXTRACT(YEAR FROM "TableroSistemaPenal_5"."FECHA_AUDIENCIA") AS BIGINT) AS "yr_FECHA_AUDIENCIA_ok" FROM "TableroSistemaPenal_5" WHERE ('Volver a Tramitacion Inicial' = 'Volver a Tramitacion Inicial') GROUP BY "yr_FECHA_AUDIENCIA_ok";
