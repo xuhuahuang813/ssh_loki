@@ -1,0 +1,2 @@
+filtersql,jobid,input,alias,exprhash,unique_filter_cols,discrete_ops,cont_ops,like_ops,is_id,num_unique_ops,num_ops,num_discrete_consts,num_likes,like_lens,InputCardinality,Selectivity,RowCount,workload,db
+"SELECT COUNT(*) from trainsuk1_4 AS trainsuk1_4 WHERE trainsuk1_4.timetable in ('', 'Timetable') AND trainsuk1_4.operator = 'EB'",2,trainsuk1_4,trainsuk1_4,630645019684766603281676633877952693101791390705,2,1,0,0,0,1,3,3,0,0,430324,1.0,430324,ceb,ceb

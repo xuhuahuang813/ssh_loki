@@ -1,0 +1,5 @@
+filtersql,jobid,input,alias,exprhash,unique_filter_cols,discrete_ops,cont_ops,like_ops,is_id,num_unique_ops,num_ops,num_discrete_consts,num_likes,like_lens,InputCardinality,Selectivity,RowCount,workload,db
+SELECT COUNT(*) from citymaxcapita_1 AS citymaxcapita_1 WHERE citymaxcapita_1.keyword = 'cunt',0,citymaxcapita_1,citymaxcapita_1,199957788218938161655964598075260233121812980378,1,1,0,0,0,1,1,1,0,0,912763,0.09462039981901108,86366,ceb,ceb
+"SELECT COUNT(*) from citymaxcapita_1 AS citymaxcapita_1 WHERE citymaxcapita_1.keyword in ('bimbo', 'twat')",1,citymaxcapita_1,citymaxcapita_1,588836486652003982883067239758142564157365174494,1,1,0,0,0,1,2,2,0,0,912763,0.0,0,ceb,ceb
+SELECT COUNT(*) from citymaxcapita_1 AS citymaxcapita_1 WHERE citymaxcapita_1.keyword = 'bitch',2,citymaxcapita_1,citymaxcapita_1,1081582314886111816851983860332483236813401767092,1,1,0,0,0,1,1,1,0,0,912763,0.0,0,ceb,ceb
+SELECT COUNT(*) from citymaxcapita_1 AS citymaxcapita_1 WHERE citymaxcapita_1.keyword = 'slut',3,citymaxcapita_1,citymaxcapita_1,625177819699858934615403891717637655915587684793,1,1,0,0,0,1,1,1,0,0,912763,0.0,0,ceb,ceb

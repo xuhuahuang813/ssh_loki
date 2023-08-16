@@ -619,7 +619,7 @@ def execute_query(sql, user, db_host, port, pwd, db_name, pre_execs):
     before the query.
     '''
     con = pg.connect(user=user, host=db_host, port=port,
-            password=pwd, database=db_name)
+            password=pwd, database=db_name, client_encoding="UTF8")
     cursor = con.cursor()
 
     for setup_sql in pre_execs:

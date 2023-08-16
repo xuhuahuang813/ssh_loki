@@ -1,0 +1,10 @@
+op,dtype,optype,constant,input,column,opstring,is_id,jobid,discrete_ops,cont_ops,like_ops,alias,exprhash,InputCardinality,Selectivity,RowCount,workload,db
+=,string,=,'Manutentionnaire',salariesfrance_2,appellation,salariesfrance_2.appellation = 'Manutentionnaire',0,0,1,0,0,salariesfrance_2,341841484272426235651698361983996251508350288996,98781,0.00022271489456474424,22,ceb,ceb
+=,string,=,'BOURGOGNE-FRANCHE-COMTÉ',salariesfrance_13,reg_lib,salariesfrance_13.reg_lib = 'BOURGOGNE-FRANCHE-COMTÉ',0,1,1,0,0,salariesfrance_13,1397053575769748137678413574591003201448935561314,134376,0.0684199559445139,9194,ceb,ceb
+=,string,=,'NOUVELLE-AQUITAinE',salariesfrance_13,reg_lib,salariesfrance_13.reg_lib = 'NOUVELLE-AQUITAinE',0,2,1,0,0,salariesfrance_13,637723963098213664776813763196957767856738960976,134376,0.10504852056914925,14116,ceb,ceb
+=,string,=,'BOURGOGNE-FRANCHE-COMTÉ',salariesfrance_13,reg_lib,salariesfrance_13.reg_lib = 'BOURGOGNE-FRANCHE-COMTÉ',0,3,1,0,0,salariesfrance_13,1387184434246959742339552981612872048654759117928,134376,1.0,134376,ceb,ceb
+=,string,=,'COSNE - CLAMECY',salariesfrance_13,ze2010_lib,salariesfrance_13.ze2010_lib = 'COSNE - CLAMECY',0,3,1,0,0,salariesfrance_13,1387184434246959742339552981612872048654759117928,134376,1.0,134376,ceb,ceb
+=,string,=,'BOURGOGNE-FRANCHE-COMTÉ',salariesfrance_13,reg_lib,salariesfrance_13.reg_lib = 'BOURGOGNE-FRANCHE-COMTÉ',0,4,1,0,0,salariesfrance_13,956509994506678813629880012993850026327987113641,134376,0.0684199559445139,9194,ceb,ceb
+=,string,=,'NOUVELLE-AQUITAinE',salariesfrance_13,reg_lib,salariesfrance_13.reg_lib = 'NOUVELLE-AQUITAinE',0,5,1,0,0,salariesfrance_13,777188550242475516438781170535082112837945287149,134376,0.10504852056914925,14116,ceb,ceb
+=,string,=,'BOURGOGNE-FRANCHE-COMTÉ',salariesfrance_13,reg_lib,salariesfrance_13.reg_lib = 'BOURGOGNE-FRANCHE-COMTÉ',0,6,1,0,0,salariesfrance_13,853997854546877562394110407514664808863710457052,134376,1.0,134376,ceb,ceb
+=,string,=,'COSNE - CLAMECY',salariesfrance_13,ze2010_lib,salariesfrance_13.ze2010_lib = 'COSNE - CLAMECY',0,6,1,0,0,salariesfrance_13,853997854546877562394110407514664808863710457052,134376,1.0,134376,ceb,ceb

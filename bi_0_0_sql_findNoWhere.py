@@ -9,6 +9,8 @@ dir_list = os.listdir(folder_path)
 noWhere_num = 0
 andOr_num = 0
 processed_num = 0
+isNull_num = 0
+hasCast_num = 0
 
 
 # output_file = "sql_without_where.csv"
@@ -26,9 +28,13 @@ def create_folder_with_os(folder_name):
 no_where_folder = "bibench_noWhere"
 and_or_folder = "bibench_andOR"
 processed_folder = "bibench_processed"
+is_null_floder = "bibench_isNull"
+has_cast_floder = "bibench_hasCast"
 create_folder_with_os(no_where_folder)
 create_folder_with_os(and_or_folder)
 create_folder_with_os(processed_folder)
+create_folder_with_os(is_null_floder)
+create_folder_with_os(has_cast_floder)
 
 for dir_name in dir_list:
     if ".csv" in dir_name:
@@ -69,6 +75,18 @@ for dir_name in dir_list:
                     with open(os.path.join(and_or_folder, dir_name, "queries", filename), 'w') as output_file:
                             output_file.write(sql_content)
                     andOr_num += 1
+                elif("is null" in sql_content or "IS NULL" in sql_content):
+                    output_filename = os.path.join(is_null_floder, dir_name, "queries")
+                    create_folder_with_os(output_filename)
+                    with open(os.path.join(is_null_floder, dir_name, "queries", filename), 'w') as output_file:
+                            output_file.write(sql_content)
+                    isNull_num += 1
+                elif("CAST" in sql_content or "cast" in sql_content):
+                    output_filename = os.path.join(has_cast_floder, dir_name, "queries")
+                    create_folder_with_os(output_filename)
+                    with open(os.path.join(has_cast_floder, dir_name, "queries", filename), 'w') as output_file:
+                            output_file.write(sql_content)
+                    hasCast_num += 1
                 else:
                     output_filename = os.path.join(processed_folder, dir_name, "queries")
                     create_folder_with_os(output_filename)
@@ -76,4 +94,4 @@ for dir_name in dir_list:
                             output_file.write(sql_content)    
                     processed_num += 1
                     
-print(noWhere_num, " ",andOr_num," ", processed_num," ", andOr_num+processed_num+noWhere_num )
+print(noWhere_num, " ",andOr_num," ",isNull_num," ",hasCast_num, " ", processed_num," ", andOr_num+processed_num+noWhere_num+isNull_num+hasCast_num )

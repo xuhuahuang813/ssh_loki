@@ -85,10 +85,10 @@ def read_flags():
                         required=False, default=0)
     #
     parser.add_argument("--card_type", type=str, required=False,
-                        default="actual")
+                        default="total")
     #
     parser.add_argument("--key_name", type=str, required=False,
-                        default="actual")
+                        default="total")
     
     parser.add_argument("--true_timeout", type=int,
                         required=False, default=1800000*5)

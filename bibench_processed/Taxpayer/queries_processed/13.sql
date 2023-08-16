@@ -1,0 +1,1 @@
+SELECT taxpayer_7.nppes_provider_last_org_name AS nppes_provider_last_org_name FROM taxpayer_7 WHERE ((taxpayer_7.nppes_provider_first_name = 'JOHN') AND (taxpayer_7.nppes_provider_state = 'WA')) GROUP BY taxpayer_7.nppes_provider_last_org_name;

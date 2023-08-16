@@ -1,0 +1,2 @@
+filtersql,jobid,input,alias,exprhash,unique_filter_cols,discrete_ops,cont_ops,like_ops,is_id,num_unique_ops,num_ops,num_discrete_consts,num_likes,like_lens,InputCardinality,Selectivity,RowCount,workload,db
+"SELECT COUNT(*) from medicare3_1 AS medicare3_1 WHERE medicare3_1.provider_type in ('Physical Medicine and Rehabilitation', 'Physical Therapist')",0,medicare3_1,medicare3_1,854215675980347075533714692638815117319426353770,1,1,0,0,0,1,2,2,0,0,928750,0.030134051144010767,27987,ceb,ceb

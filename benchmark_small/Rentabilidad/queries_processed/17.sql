@@ -1,1 +1,0 @@
-SELECT rentabilidad_1.poblacióndistribuidorgvf/gvi AS poblacióndistribuidorgvf/gvi FROM rentabilidad_1 WHERE ((rentabilidad_1.sedeforaneosintec = 'Foraneo') AND (rentabilidad_1.zona = 'NR')) GROUP BY rentabilidad_1.poblacióndistribuidorgvf/gvi;

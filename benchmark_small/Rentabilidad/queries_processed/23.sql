@@ -1,1 +1,0 @@
-SELECT rentabilidad_3.locación AS locación FROM rentabilidad_3 WHERE ((rentabilidad_3.figura = 'Preventa On Premise') AND (rentabilidad_3.sedeforaneosintec = 'Sede') AND (rentabilidad_3.zona = 'OC')) GROUP BY rentabilidad_3.locación;

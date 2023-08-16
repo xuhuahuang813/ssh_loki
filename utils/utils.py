@@ -2056,7 +2056,7 @@ def parse_sqls_single(sqls, batchnum=0, cols_to_tables={}):
         try:
             preds = parse_sql_preds(sql)
         except Exception as e:
-            # print(e)
+            print(e)
             print("FAIL")
             fails += 1
             continue
@@ -2143,6 +2143,8 @@ def parse_sqls_par(sqls, cols_to_tables={}):
     opdfs = [r[0] for r in res if r[0] is not None]
     edfs = [r[1] for r in res if r[1] is not None]
 
+    if(opdfs == [] or edfs == []):
+        print("opdfs or edfs is null")
     return pd.concat(opdfs, ignore_index=True), pd.concat(edfs,
             ignore_index=True)
 
