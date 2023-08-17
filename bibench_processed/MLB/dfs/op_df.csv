@@ -1,0 +1,2 @@
+op,dtype,optype,constant,input,column,opstring,is_id,jobid,discrete_ops,cont_ops,like_ops,alias,exprhash,InputCardinality,Selectivity,RowCount,workload,db
+=,string,=,'Gavin Cecchini',mlb_65,batter_name,mlb_65.batter_name = 'Gavin Cecchini',0,0,1,0,0,mlb_65,635705932782853927864131502399204489165112557231,100166,0.0002895193977996,29,ceb,ceb

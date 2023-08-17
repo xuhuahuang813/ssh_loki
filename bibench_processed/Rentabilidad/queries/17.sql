@@ -1,0 +1,1 @@
+SELECT "Rentabilidad_1"."Poblacion_Distribuidor_GVF_GVI" AS "Poblacion_Distribuidor_GVF_GVI" FROM "Rentabilidad_1" WHERE (("Rentabilidad_1"."Sede_Foraneo_Sintec" = 'Foraneo') AND ("Rentabilidad_1"."Zona" = 'NR')) GROUP BY "Rentabilidad_1"."Poblacion_Distribuidor_GVF_GVI";

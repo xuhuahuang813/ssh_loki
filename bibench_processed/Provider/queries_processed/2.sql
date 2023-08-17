@@ -1,0 +1,1 @@
+SELECT provider_2.nppes_provider_city AS nppes_provider_city FROM provider_2 WHERE ((provider_2.nppes_provider_state = 'WA') AND (provider_2.provider_type = 'Nephrology')) GROUP BY provider_2.nppes_provider_city;

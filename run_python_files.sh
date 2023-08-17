@@ -16,4 +16,3 @@ python bi_2_get_const_rowcounts.py
 python bi_3_loki.py
 python bi_4_create_table.py 
 python bi_5_eval_data.py
-

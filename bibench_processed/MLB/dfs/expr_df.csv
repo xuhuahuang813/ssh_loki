@@ -1,0 +1,2 @@
+filtersql,jobid,input,alias,exprhash,unique_filter_cols,discrete_ops,cont_ops,like_ops,is_id,num_unique_ops,num_ops,num_discrete_consts,num_likes,like_lens,InputCardinality,Selectivity,RowCount,workload,db
+SELECT COUNT(*) from mlb_65 AS mlb_65 WHERE mlb_65.batter_name = 'Gavin Cecchini',0,mlb_65,mlb_65,635705932782853927864131502399204489165112557231,1,1,0,0,0,1,1,1,0,0,100166,0.00028951939779965256,29,ceb,ceb
