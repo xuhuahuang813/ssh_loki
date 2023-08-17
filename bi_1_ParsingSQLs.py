@@ -80,20 +80,20 @@ for dir_name in dir_list:
         with open(fn, "r", encoding='utf-8') as f:
             sql = f.read()
 
-        sql = sql.replace("IN", "in")
-        sql = sql.replace("In", "in")
-        sql = sql.replace("ILIKE", "like")
-        sql = sql.replace("LIKE", "like")
+        sql = sql.replace(" IN ", " in ")
+        sql = sql.replace(" In ", " in ")
+        sql = sql.replace(" ILIKE ", " like ")
+        sql = sql.replace(" LIKE ", " like ")
         
         if "return_rank" in sql:
             print(sql)
         sqls.append(sql)
         
     for i, sql in enumerate(sqls):
-        sql = sql.replace("IN", "in")
-        sql = sql.replace("In", "in")
-        sql = sql.replace("ILIKE", "like")
-        sql = sql.replace("LIKE", "like")
+        sql = sql.replace(" IN ", " in ")
+        sql = sql.replace(" In ", " in ")
+        sql = sql.replace(" ILIKE ", " like ")
+        sql = sql.replace(" LIKE ", " like ")
         sqls[i] = sql
 
     # parse_sql_preds(sql)    
