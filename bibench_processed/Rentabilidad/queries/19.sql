@@ -1,1 +1,0 @@
-SELECT "Rentabilidad_1"."Ruta_de_Venta" AS "Ruta_de_Venta" FROM "Rentabilidad_1" WHERE (("Rentabilidad_1"."Locacion" = 'Bogota Sur') AND ("Rentabilidad_1"."Zona" = 'CE')) GROUP BY "Rentabilidad_1"."Ruta_de_Venta";

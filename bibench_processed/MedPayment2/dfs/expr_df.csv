@@ -1,2 +1,0 @@
-filtersql,jobid,input,alias,exprhash,unique_filter_cols,discrete_ops,cont_ops,like_ops,is_id,num_unique_ops,num_ops,num_discrete_consts,num_likes,like_lens,InputCardinality,Selectivity,RowCount,workload,db
-SELECT COUNT(*) from medpayment2_1 AS medpayment2_1 WHERE medpayment2_1.hcpcs_code = '27447' AND medpayment2_1.hcpcs_description = 'Total knee arthroplasty',0,medpayment2_1,medpayment2_1,106900569911984062552910221645526084316501245858,2,1,0,0,0,1,2,2,0,0,915327,1.0,915327,ceb,ceb

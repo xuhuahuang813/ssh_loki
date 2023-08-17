@@ -1,1 +1,0 @@
-SELECT AVG(CAST(CAST(salariesfrance_13.calculation_163536984210948109 AS BIGINT) AS double precision)) AS avg_calculation_163536984210948109_ok FROM salariesfrance_13 WHERE (salariesfrance_13.reg_lib = 'NOUVELLE-AQUITAINE') HAVING (COUNT(1) > 0);

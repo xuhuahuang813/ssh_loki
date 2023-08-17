@@ -1,1 +1,0 @@
-SELECT uscensus_3.agep__bin_ AS agep__bin_,   CAST(uscensus_3.schl AS TEXT) AS schl,   CAST(uscensus_3.sex AS BIGINT) AS sex,   SUM(CAST(uscensus_3.number_of_records AS BIGINT)) AS sum_number_of_records_ok FROM uscensus_3 WHERE ((uscensus_3.agep__bin_ >= 2) AND (uscensus_3.agep__bin_ <= 9)) GROUP BY uscensus_3.agep__bin_,   schl,   uscensus_3.sex,   uscensus_3.sex;

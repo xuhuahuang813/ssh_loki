@@ -29,7 +29,6 @@ if __name__ == '__main__':
     for dir_name in dir_list:
         if ".csv" in dir_name:
             continue
-        
         log_file_path = os.path.join(folder_path, dir_name, "logs")
         
         if not os.path.exists(log_file_path):
@@ -96,7 +95,8 @@ if __name__ == '__main__':
             
             final_solution_df.to_csv(os.path.join(folder_path, dir_name, "results") + f"/{table}.csv")
             
-            logger.info(f"table {table} solved!")
+            logger.info(f"table {table} solved!\n")
 
-            logger.info('Exiting Loki!')
+            # logger.info('Exiting Loki!')
+        logger.info(f"**********dir {dir_name} solved!************\n")
     sys.exit(0)

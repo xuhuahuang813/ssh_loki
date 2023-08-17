@@ -1,1 +1,0 @@
-SELECT "Rentabilidad_1"."Deudor" AS "Deudor",   "Rentabilidad_1"."GEC__group_" AS "GEC__group_",   SUM("Rentabilidad_1"."CF") AS "sum_CF_ok",   SUM("Rentabilidad_1"."IN") AS "sum_IN_ok" FROM "Rentabilidad_1" WHERE (("Rentabilidad_1"."Locacion" = 'Bogota Sur') AND ("Rentabilidad_1"."Zona" = 'CE')) GROUP BY "Rentabilidad_1"."Deudor",   "Rentabilidad_1"."GEC__group_";

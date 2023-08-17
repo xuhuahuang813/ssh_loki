@@ -1,3 +1,0 @@
-op,dtype,optype,constant,input,column,opstring,is_id,jobid,discrete_ops,cont_ops,like_ops,alias,exprhash,InputCardinality,Selectivity,RowCount,workload,db
-=,string,=,'27447',medpayment1_1,hcpcs_code,medpayment1_1.hcpcs_code = '27447',0,0,1,0,0,medpayment1_1,1419752718212149733923519202793517321948706485772,915327,1.0,915327,ceb,ceb
-=,string,=,'Total knee arthroplasty',medpayment1_1,hcpcs_description,medpayment1_1.hcpcs_description = 'Total knee arthroplasty',0,0,1,0,0,medpayment1_1,1419752718212149733923519202793517321948706485772,915327,1.0,915327,ceb,ceb

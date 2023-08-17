@@ -1,1 +1,0 @@
-SELECT medicare1_2.nppes_provider_state AS nppes_provider_state,   AVG(CAST(medicare1_2.calculation_7130826185400024 AS double precision)) AS avg_calculation_7130826185400024_ok FROM medicare1_2 WHERE (NOT (medicare1_2.nppes_provider_state IN ('AK', 'AS', 'GU', 'HI', 'MP', 'PR', 'VI'))) GROUP BY medicare1_2.nppes_provider_state;

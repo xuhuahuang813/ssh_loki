@@ -1,1 +1,0 @@
-SELECT rentabilidad_1.ruta_de_venta AS ruta_de_venta,   (CAST(SUM(rentabilidad_1.in) AS double precision) / NULLIF(SUM(rentabilidad_1.cf),0)) AS usr_calculation_0070818164712315_ok FROM rentabilidad_1 WHERE ((rentabilidad_1.figura = 'Preventa On Premise') AND (rentabilidad_1.sede_foraneo_sintec = 'Sede') AND (rentabilidad_1.zona = 'OC')) GROUP BY rentabilidad_1.ruta_de_venta;

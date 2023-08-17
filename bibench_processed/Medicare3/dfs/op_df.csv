@@ -1,3 +1,0 @@
-op,dtype,optype,constant,input,column,opstring,is_id,jobid,discrete_ops,cont_ops,like_ops,alias,exprhash,InputCardinality,Selectivity,RowCount,workload,db
-=,string,in,'Physical Medicine and Rehabilitation',medicare3_1,provider_type,"medicare3_1.provider_type in ('Physical Medicine and Rehabilitation', 'Physical Therapist')",0,0,1,0,0,medicare3_1,854215675980347075533714692638815117319426353770,928807,0.030029920101808,27892,ceb,ceb
-=,string,in,'Physical Therapist',medicare3_1,provider_type,"medicare3_1.provider_type in ('Physical Medicine and Rehabilitation', 'Physical Therapist')",0,0,1,0,0,medicare3_1,854215675980347075533714692638815117319426353770,928807,0.030029920101808,27892,ceb,ceb

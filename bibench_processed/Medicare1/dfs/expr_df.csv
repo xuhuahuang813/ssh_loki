@@ -1,3 +1,0 @@
-filtersql,jobid,input,alias,exprhash,unique_filter_cols,discrete_ops,cont_ops,like_ops,is_id,num_unique_ops,num_ops,num_discrete_consts,num_likes,like_lens,InputCardinality,Selectivity,RowCount,workload,db
-"SELECT COUNT(*) from medicare1_2 AS medicare1_2 WHERE medicare1_2.nppes_provider_state in ('AK', 'AS', 'GU', 'HI', 'MP', 'PR', 'VI')",0,medicare1_2,medicare1_2,896628348831257316991792080881328321270500617926,1,1,0,0,0,1,7,7,0,0,864507,1.0,864507,ceb,ceb
-"SELECT COUNT(*) from medicare1_2 AS medicare1_2 WHERE medicare1_2.nppes_provider_state in ('AK', 'AS', 'GU', 'HI', 'MP', 'PR', 'VI')",1,medicare1_2,medicare1_2,1074784390862962801568809114661738439356466881029,1,1,0,0,0,1,7,7,0,0,864507,1.0,864507,ceb,ceb

@@ -1,2 +1,0 @@
-filtersql,jobid,input,alias,exprhash,unique_filter_cols,discrete_ops,cont_ops,like_ops,is_id,num_unique_ops,num_ops,num_discrete_consts,num_likes,like_lens,InputCardinality,Selectivity,RowCount,workload,db
-SELECT COUNT(*) from uscensus_3 AS uscensus_3 WHERE uscensus_3.agep__bin_ >= 2 AND uscensus_3.agep__bin_ <= 9,0,uscensus_3,uscensus_3,1332672701209850596749972526925242848360758247845,1,0,1,0,0,2,2,0,0,0,313251,1.0,313280,ceb,ceb

@@ -1,1 +1,0 @@
-SELECT SUM(salariesfrance_13.salaire_vf) AS temp_calculation_393783518251319297__57485518__0_,   COUNT(salariesfrance_13.salaire_vf) AS temp_calculation_393783518251319297__879651027__0_ FROM salariesfrance_13 WHERE (salariesfrance_13.reg_lib = 'NOUVELLE-AQUITAINE') HAVING (COUNT(1) > 0);

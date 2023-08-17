@@ -1,1 +1,0 @@
-SELECT rentabilidad_1.poblacion_distribuidor_gvf_gvi AS poblacion_distribuidor_gvf_gvi FROM rentabilidad_1 WHERE ((rentabilidad_1.sede_foraneo_sintec = 'Foraneo') AND (rentabilidad_1.zona = 'NR')) GROUP BY rentabilidad_1.poblacion_distribuidor_gvf_gvi;

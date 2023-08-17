@@ -54,6 +54,7 @@ def main():
     # 遍历文件夹
     dir_list = os.listdir(folder_path)
     for dir_name in dir_list:
+        
         if ".csv" in dir_name:
             continue
         dir_path = os.path.join(folder_path, dir_name, "results")
@@ -208,11 +209,10 @@ def main():
                                                 HOST = DBHOST,
                                                 PORT = args.port,
                                                 DB = DBNAME)
-                engine = create_engine(engine_cmd)
-                # print("new_table_name is ", new_table_name)
+                engine = create_engine(engine_cmd, client_encoding='utf8')
+                print("new_table_name is ", new_table_name)
                 df.to_sql(new_table_name, engine)
-                # df.to_csv(new_table_name + ".csv")
-                # print("finish create table")
+                print("finish create table")
 
 args = read_flags()
 main()

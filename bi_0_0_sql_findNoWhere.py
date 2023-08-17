@@ -45,10 +45,6 @@ create_folder_with_os(processed_folder)
 for dir_name in dir_list:
     if ".csv" in dir_name:
         continue
-
-    if dir_name == "CityMaxCapita" or dir_name == "TableroSistemaPenal" or dir_name == "NYC":
-        special_num += 1
-        continue
     
     # 输入文件夹和输出文件夹的路径
     input_folder = os.path.join(folder_path, dir_name, "queries_filter")
@@ -58,22 +54,26 @@ for dir_name in dir_list:
 
     # 遍历文件列表
     for filename in files:
+        
+        if dir_name == "CityMaxCapita" or dir_name == "TableroSistemaPenal" or dir_name == "NYC":
+            special_num += 1
+            continue
+        
+        # 3_loki.py处理不了的
+        # Hatred 和 USCensus 和 Wins 是 IndexError: list index out of range
+        # IGlocations1是li_.csv为空
+        if dir_name == "Hatred" or dir_name == "IGlocations1" or dir_name == "USCensus" or dir_name == "Wins":
+            special_num += 1
+            continue
+    
         # 检查文件是否为sql文件（忽略大小写）
         if filename.lower().endswith(".sql"):
             # 构造输入文件的完整路径
             input_path = os.path.join(input_folder, filename)
-            
-            
             # 读取输入文件内容并转为小写，然后写入输出文件
             with open(input_path, "r") as input_file:
-                sql_content = input_file.read()                         
-                # if("WHERE" not in sql_content) or (" AND " in sql_content and " OR " in sql_content):
-                #     with open(os.path.join(folder_path, output_file), mode='a', newline='') as csv_file:
-                #         num += 1
-                #         csv_writer = csv.writer(csv_file)
-                #         csv_writer.writerow([input_path, sql_content])
-                
-                # if("WHERE" not in sql_content):
+                sql_content = input_file.read()     
+                    
                 if(sql_content.count("WHERE") == 0 or sql_content.count("WHERE") >= 2):
                     # output_filename = os.path.join(no_where_folder, dir_name, "queries")
                     # create_folder_with_os(output_filename)

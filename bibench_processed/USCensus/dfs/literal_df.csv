@@ -1,3 +1,0 @@
-exprhash,RowCount,InputCardinality,RowSql,Column,input,jobid,Op,Value
-1332672701209850596749972526925242848360758247845,236967,313280,SELECT COUNT(*) from uscensus_3 AS uscensus_3 WHERE uscensus_3.agep__bin_ >= 2,uscensus_3.agep__bin_,uscensus_3,0,>=,2
-1332672701209850596749972526925242848360758247845,313280,313280,SELECT COUNT(*) from uscensus_3 AS uscensus_3 WHERE uscensus_3.agep__bin_ <= 9,uscensus_3.agep__bin_,uscensus_3,0,<=,9

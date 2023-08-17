@@ -70,7 +70,7 @@ LOG_FMT = "{EHASH} - {INP} - {REP} - QErr:{QERR} [real:{REAL} - estimate:{ESTIMA
 def run_filters(sqls, ehashes, inputs, trueys, logger, csv_handler):
     exec_times = []
     con = pg.connect(user=args.user, host=args.db_host, port=args.port,
-            password=args.pwd, database=args.db_name)
+            password=args.pwd, database=args.db_name, client_encoding='utf8')
     cursor = con.cursor()
 
     rcs = []

@@ -1,1 +1,0 @@
-SELECT medicare2_2.hcpcs_description AS hcpcs_description,   medicare2_2.provider_type AS provider_type FROM medicare2_2 WHERE ((medicare2_2.nppes_provider_state = 'NY') AND (medicare2_2.nppes_provider_country = 'US')) GROUP BY medicare2_2.hcpcs_description,   medicare2_2.provider_type;

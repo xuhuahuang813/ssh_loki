@@ -1,1 +1,0 @@
-SELECT taxpayer_10.nppes_provider_city AS nppes_provider_city,   taxpayer_10.nppes_provider_state AS nppes_provider_state FROM taxpayer_10 WHERE ((taxpayer_10.nppes_provider_first_name = 'JOHN') AND (taxpayer_10.nppes_provider_last_org_name = 'HOLDER')) GROUP BY taxpayer_10.nppes_provider_city,   taxpayer_10.nppes_provider_state;
