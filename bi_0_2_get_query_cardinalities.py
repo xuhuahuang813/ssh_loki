@@ -350,6 +350,7 @@ def get_cardinality(qrep, card_type, key_name, db_host, db_name, user, pwd,
             elif(len(subset) == 1):
                 start = time.time()
                 pre_execs = ["SET statement_timeout = {}".format(true_timeout)]
+                print("actual subsql is ", subsql)
                 output = execute_query(subsql, user, db_host, port, pwd, db_name,
                                     pre_execs)
                 if isinstance(output, Exception):

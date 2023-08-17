@@ -66,7 +66,7 @@ def main():
             
             if os.path.exists(result_file_path):
                 df = pd.read_csv(result_file_path)
-                df = df.drop(columns="Unnamed: 0")
+                # df = df.drop(columns="Unnamed: 0")
 
             # basetable = os.path.basename(args.inp_fn).replace(".csv", "")
             basetable = result_file_path.split("/")[-1].replace(".csv", "")

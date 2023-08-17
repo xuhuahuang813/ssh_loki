@@ -10,7 +10,7 @@ op,dtype,optype,constant,input,column,opstring,is_id,jobid,discrete_ops,cont_ops
 =,string,=,'RI',provider_8,nppes_provider_state,provider_8.nppes_provider_state = 'RI',0,4,1,0,0,provider_8,620182615096366709263672993499961888151049020781,915327,1.0,915327,ceb,ceb
 =,string,=,'Diagnostic Radiology',provider_8,provider_type,provider_8.provider_type = 'Diagnostic Radiology',0,4,1,0,0,provider_8,620182615096366709263672993499961888151049020781,915327,1.0,915327,ceb,ceb
 =,string,=,'RI',provider_8,nppes_provider_state,provider_8.nppes_provider_state = 'RI',0,5,1,0,0,provider_8,661482699270830854039117976921728827337355553976,915327,1.0,915327,ceb,ceb
-=,string,=,'internal Medicine',provider_8,provider_type,provider_8.provider_type = 'internal Medicine',0,5,1,0,0,provider_8,661482699270830854039117976921728827337355553976,915327,1.0,915327,ceb,ceb
+=,string,=,'Internal Medicine',provider_8,provider_type,provider_8.provider_type = 'Internal Medicine',0,5,1,0,0,provider_8,661482699270830854039117976921728827337355553976,915327,1.0,915327,ceb,ceb
 =,string,=,'WA',provider_8,nppes_provider_state,provider_8.nppes_provider_state = 'WA',0,6,1,0,0,provider_8,439495489893487421530432837915933081658011538920,915327,1.0,915327,ceb,ceb
 =,string,=,'Diagnostic Radiology',provider_8,provider_type,provider_8.provider_type = 'Diagnostic Radiology',0,6,1,0,0,provider_8,439495489893487421530432837915933081658011538920,915327,1.0,915327,ceb,ceb
 =,string,=,'WA',provider_8,nppes_provider_state,provider_8.nppes_provider_state = 'WA',0,7,1,0,0,provider_8,1199433211619153717498437797589384193312505698445,915327,1.0,915327,ceb,ceb
@@ -26,27 +26,27 @@ op,dtype,optype,constant,input,column,opstring,is_id,jobid,discrete_ops,cont_ops
 =,string,=,'WA',provider_8,nppes_provider_state,provider_8.nppes_provider_state = 'WA',0,12,1,0,0,provider_8,485729611206862457425377267134574586513708497830,915327,1.0,915327,ceb,ceb
 =,string,=,'Diagnostic Radiology',provider_8,provider_type,provider_8.provider_type = 'Diagnostic Radiology',0,12,1,0,0,provider_8,485729611206862457425377267134574586513708497830,915327,1.0,915327,ceb,ceb
 =,string,=,'RI',provider_8,nppes_provider_state,provider_8.nppes_provider_state = 'RI',0,13,1,0,0,provider_8,3213425922734549651891931780361797305229936228,915327,1.0,915327,ceb,ceb
-=,string,=,'internal Medicine',provider_8,provider_type,provider_8.provider_type = 'internal Medicine',0,13,1,0,0,provider_8,3213425922734549651891931780361797305229936228,915327,1.0,915327,ceb,ceb
+=,string,=,'Internal Medicine',provider_8,provider_type,provider_8.provider_type = 'Internal Medicine',0,13,1,0,0,provider_8,3213425922734549651891931780361797305229936228,915327,1.0,915327,ceb,ceb
 =,string,=,'WA',provider_8,nppes_provider_state,provider_8.nppes_provider_state = 'WA',0,14,1,0,0,provider_8,986088983264391542287160214199931445116061451245,915327,1.0,915327,ceb,ceb
 =,string,=,'Nephrology',provider_8,provider_type,provider_8.provider_type = 'Nephrology',0,14,1,0,0,provider_8,986088983264391542287160214199931445116061451245,915327,1.0,915327,ceb,ceb
 =,string,=,'WA',provider_8,nppes_provider_state,provider_8.nppes_provider_state = 'WA',0,15,1,0,0,provider_8,316044006752308163521874850560685954520326476770,915327,1.0,915327,ceb,ceb
 =,string,=,'Emergency Medicine',provider_8,provider_type,provider_8.provider_type = 'Emergency Medicine',0,15,1,0,0,provider_8,316044006752308163521874850560685954520326476770,915327,1.0,915327,ceb,ceb
-=,string,=,'LinCOLN',provider_8,nppes_provider_city,provider_8.nppes_provider_city = 'LinCOLN',0,16,1,0,0,provider_8,914043825837837638929954954367649848884081653716,915327,0.0018397796634426,1684,ceb,ceb
+=,string,=,'LINCOLN',provider_8,nppes_provider_city,provider_8.nppes_provider_city = 'LINCOLN',0,16,1,0,0,provider_8,914043825837837638929954954367649848884081653716,915327,0.0018397796634426,1684,ceb,ceb
 =,string,=,'GREENVILLE',provider_8,nppes_provider_city,provider_8.nppes_provider_city = 'GREENVILLE',0,17,1,0,0,provider_8,1265227710854534120352199561518525570198409131480,915327,0.0042378297592008,3879,ceb,ceb
 =,string,=,'GREENVILLE',provider_8,nppes_provider_city,provider_8.nppes_provider_city = 'GREENVILLE',0,18,1,0,0,provider_8,388017247052539237011566456430994490258315849627,915327,1.0,915327,ceb,ceb
 =,string,=,'RI',provider_8,nppes_provider_state,provider_8.nppes_provider_state = 'RI',0,18,1,0,0,provider_8,388017247052539237011566456430994490258315849627,915327,1.0,915327,ceb,ceb
-=,string,=,'internal Medicine',provider_8,provider_type,provider_8.provider_type = 'internal Medicine',0,18,1,0,0,provider_8,388017247052539237011566456430994490258315849627,915327,1.0,915327,ceb,ceb
+=,string,=,'Internal Medicine',provider_8,provider_type,provider_8.provider_type = 'Internal Medicine',0,18,1,0,0,provider_8,388017247052539237011566456430994490258315849627,915327,1.0,915327,ceb,ceb
 =,string,=,'NE',provider_8,nppes_provider_state,provider_8.nppes_provider_state = 'NE',0,19,1,0,0,provider_8,59151071118377545778716062778045027949826527456,915327,1.0,915327,ceb,ceb
 =,string,=,'Diagnostic Radiology',provider_8,provider_type,provider_8.provider_type = 'Diagnostic Radiology',0,19,1,0,0,provider_8,59151071118377545778716062778045027949826527456,915327,1.0,915327,ceb,ceb
-=,string,=,'LinCOLN',provider_8,nppes_provider_city,provider_8.nppes_provider_city = 'LinCOLN',0,20,1,0,0,provider_8,939443128535474439801489109271436874020077421684,915327,1.0,915327,ceb,ceb
+=,string,=,'LINCOLN',provider_8,nppes_provider_city,provider_8.nppes_provider_city = 'LINCOLN',0,20,1,0,0,provider_8,939443128535474439801489109271436874020077421684,915327,1.0,915327,ceb,ceb
 =,string,=,'RI',provider_8,nppes_provider_state,provider_8.nppes_provider_state = 'RI',0,20,1,0,0,provider_8,939443128535474439801489109271436874020077421684,915327,1.0,915327,ceb,ceb
-=,string,=,'internal Medicine',provider_8,provider_type,provider_8.provider_type = 'internal Medicine',0,20,1,0,0,provider_8,939443128535474439801489109271436874020077421684,915327,1.0,915327,ceb,ceb
+=,string,=,'Internal Medicine',provider_8,provider_type,provider_8.provider_type = 'Internal Medicine',0,20,1,0,0,provider_8,939443128535474439801489109271436874020077421684,915327,1.0,915327,ceb,ceb
 =,string,=,'WA',provider_3,nppes_provider_state,provider_3.nppes_provider_state = 'WA',0,21,1,0,0,provider_3,899956187891098057701875396016304656209595012091,915327,1.0,915327,ceb,ceb
 =,string,=,'Nephrology',provider_3,provider_type,provider_3.provider_type = 'Nephrology',0,21,1,0,0,provider_3,899956187891098057701875396016304656209595012091,915327,1.0,915327,ceb,ceb
 =,string,=,'RI',provider_8,nppes_provider_state,provider_8.nppes_provider_state = 'RI',0,22,1,0,0,provider_8,1165789849585510323091821349627561182068056676857,915327,1.0,915327,ceb,ceb
 =,string,=,'Diagnostic Radiology',provider_8,provider_type,provider_8.provider_type = 'Diagnostic Radiology',0,22,1,0,0,provider_8,1165789849585510323091821349627561182068056676857,915327,1.0,915327,ceb,ceb
 =,string,=,'RI',provider_8,nppes_provider_state,provider_8.nppes_provider_state = 'RI',0,23,1,0,0,provider_8,51194166155419138917815592612670132721053000713,915327,1.0,915327,ceb,ceb
-=,string,=,'internal Medicine',provider_8,provider_type,provider_8.provider_type = 'internal Medicine',0,23,1,0,0,provider_8,51194166155419138917815592612670132721053000713,915327,1.0,915327,ceb,ceb
+=,string,=,'Internal Medicine',provider_8,provider_type,provider_8.provider_type = 'Internal Medicine',0,23,1,0,0,provider_8,51194166155419138917815592612670132721053000713,915327,1.0,915327,ceb,ceb
 =,string,=,'WA',provider_8,nppes_provider_state,provider_8.nppes_provider_state = 'WA',0,24,1,0,0,provider_8,1278891797961532632513443115114788687159048851920,915327,1.0,915327,ceb,ceb
 =,string,=,'Diagnostic Radiology',provider_8,provider_type,provider_8.provider_type = 'Diagnostic Radiology',0,24,1,0,0,provider_8,1278891797961532632513443115114788687159048851920,915327,1.0,915327,ceb,ceb
 =,string,=,'WA',provider_8,nppes_provider_state,provider_8.nppes_provider_state = 'WA',0,25,1,0,0,provider_8,409622636144991531542302190253609030260400340022,915327,1.0,915327,ceb,ceb
@@ -55,18 +55,18 @@ op,dtype,optype,constant,input,column,opstring,is_id,jobid,discrete_ops,cont_ops
 =,string,=,'Emergency Medicine',provider_8,provider_type,provider_8.provider_type = 'Emergency Medicine',0,26,1,0,0,provider_8,526378256823403456565333139823091192812674234093,915327,1.0,915327,ceb,ceb
 =,string,=,'WA',provider_6,nppes_provider_state,provider_6.nppes_provider_state = 'WA',0,27,1,0,0,provider_6,32987789617977536687637121432353168329670175780,915327,1.0,915327,ceb,ceb
 =,string,=,'Nephrology',provider_6,provider_type,provider_6.provider_type = 'Nephrology',0,27,1,0,0,provider_6,32987789617977536687637121432353168329670175780,915327,1.0,915327,ceb,ceb
-=,string,=,'LinCOLN',provider_8,nppes_provider_city,provider_8.nppes_provider_city = 'LinCOLN',0,28,1,0,0,provider_8,418392717315421765381039430547547419562151699239,915327,1.0,915327,ceb,ceb
+=,string,=,'LINCOLN',provider_8,nppes_provider_city,provider_8.nppes_provider_city = 'LINCOLN',0,28,1,0,0,provider_8,418392717315421765381039430547547419562151699239,915327,1.0,915327,ceb,ceb
 =,string,=,'RI',provider_8,nppes_provider_state,provider_8.nppes_provider_state = 'RI',0,28,1,0,0,provider_8,418392717315421765381039430547547419562151699239,915327,1.0,915327,ceb,ceb
-=,string,=,'internal Medicine',provider_8,provider_type,provider_8.provider_type = 'internal Medicine',0,28,1,0,0,provider_8,418392717315421765381039430547547419562151699239,915327,1.0,915327,ceb,ceb
+=,string,=,'Internal Medicine',provider_8,provider_type,provider_8.provider_type = 'Internal Medicine',0,28,1,0,0,provider_8,418392717315421765381039430547547419562151699239,915327,1.0,915327,ceb,ceb
 =,string,=,'GREENVILLE',provider_8,nppes_provider_city,provider_8.nppes_provider_city = 'GREENVILLE',0,29,1,0,0,provider_8,1093465678185039805439705576814487026607861053801,915327,1.0,915327,ceb,ceb
 =,string,=,'RI',provider_8,nppes_provider_state,provider_8.nppes_provider_state = 'RI',0,29,1,0,0,provider_8,1093465678185039805439705576814487026607861053801,915327,1.0,915327,ceb,ceb
-=,string,=,'internal Medicine',provider_8,provider_type,provider_8.provider_type = 'internal Medicine',0,29,1,0,0,provider_8,1093465678185039805439705576814487026607861053801,915327,1.0,915327,ceb,ceb
+=,string,=,'Internal Medicine',provider_8,provider_type,provider_8.provider_type = 'Internal Medicine',0,29,1,0,0,provider_8,1093465678185039805439705576814487026607861053801,915327,1.0,915327,ceb,ceb
 =,string,=,'NE',provider_8,nppes_provider_state,provider_8.nppes_provider_state = 'NE',0,30,1,0,0,provider_8,411551891653343260608990953671050204563027677242,915327,1.0,915327,ceb,ceb
 =,string,=,'Diagnostic Radiology',provider_8,provider_type,provider_8.provider_type = 'Diagnostic Radiology',0,30,1,0,0,provider_8,411551891653343260608990953671050204563027677242,915327,1.0,915327,ceb,ceb
 =,string,=,'RI',provider_8,nppes_provider_state,provider_8.nppes_provider_state = 'RI',0,31,1,0,0,provider_8,1103310253453671860617148851911108162036701324165,915327,1.0,915327,ceb,ceb
 =,string,=,'Diagnostic Radiology',provider_8,provider_type,provider_8.provider_type = 'Diagnostic Radiology',0,31,1,0,0,provider_8,1103310253453671860617148851911108162036701324165,915327,1.0,915327,ceb,ceb
 =,string,=,'RI',provider_8,nppes_provider_state,provider_8.nppes_provider_state = 'RI',0,32,1,0,0,provider_8,1401942402710663760025928929407670513364885017061,915327,1.0,915327,ceb,ceb
-=,string,=,'internal Medicine',provider_8,provider_type,provider_8.provider_type = 'internal Medicine',0,32,1,0,0,provider_8,1401942402710663760025928929407670513364885017061,915327,1.0,915327,ceb,ceb
+=,string,=,'Internal Medicine',provider_8,provider_type,provider_8.provider_type = 'Internal Medicine',0,32,1,0,0,provider_8,1401942402710663760025928929407670513364885017061,915327,1.0,915327,ceb,ceb
 =,string,=,'WA',provider_8,nppes_provider_state,provider_8.nppes_provider_state = 'WA',0,33,1,0,0,provider_8,1171902971884553770556992711720172929583116932393,915327,1.0,915327,ceb,ceb
 =,string,=,'Diagnostic Radiology',provider_8,provider_type,provider_8.provider_type = 'Diagnostic Radiology',0,33,1,0,0,provider_8,1171902971884553770556992711720172929583116932393,915327,1.0,915327,ceb,ceb
 =,string,=,'WA',provider_8,nppes_provider_state,provider_8.nppes_provider_state = 'WA',0,34,1,0,0,provider_8,1335221649972526689705234326632894078325945947549,915327,1.0,915327,ceb,ceb
@@ -78,4 +78,4 @@ op,dtype,optype,constant,input,column,opstring,is_id,jobid,discrete_ops,cont_ops
 =,string,=,'RI',provider_8,nppes_provider_state,provider_8.nppes_provider_state = 'RI',0,37,1,0,0,provider_8,936430588338916568117432546043059866535697363079,915327,1.0,915327,ceb,ceb
 =,string,=,'Diagnostic Radiology',provider_8,provider_type,provider_8.provider_type = 'Diagnostic Radiology',0,37,1,0,0,provider_8,936430588338916568117432546043059866535697363079,915327,1.0,915327,ceb,ceb
 =,string,=,'RI',provider_8,nppes_provider_state,provider_8.nppes_provider_state = 'RI',0,38,1,0,0,provider_8,84423808298495218905216809546336230066553712640,915327,1.0,915327,ceb,ceb
-=,string,=,'internal Medicine',provider_8,provider_type,provider_8.provider_type = 'internal Medicine',0,38,1,0,0,provider_8,84423808298495218905216809546336230066553712640,915327,1.0,915327,ceb,ceb
+=,string,=,'Internal Medicine',provider_8,provider_type,provider_8.provider_type = 'Internal Medicine',0,38,1,0,0,provider_8,84423808298495218905216809546336230066553712640,915327,1.0,915327,ceb,ceb

@@ -46,6 +46,8 @@ for dir_name in dir_list:
     if ".csv" in dir_name:
         continue
     
+    # **********************************************************************************************************************
+    
     # 输入文件夹和输出文件夹的路径
     input_folder = os.path.join(folder_path, dir_name, "queries_filter")
     
@@ -55,6 +57,12 @@ for dir_name in dir_list:
     # 遍历文件列表
     for filename in files:
         
+        # **********************************************************************************************************************
+        # if filename != "26.sql" and filename != "29.sql":
+        #     continue
+        # if filename != "2.sql":
+        #     continue
+        
         if dir_name == "CityMaxCapita" or dir_name == "TableroSistemaPenal" or dir_name == "NYC":
             special_num += 1
             continue
@@ -62,9 +70,9 @@ for dir_name in dir_list:
         # 3_loki.py处理不了的
         # Hatred 和 USCensus 和 Wins 是 IndexError: list index out of range
         # IGlocations1是li_.csv为空
-        if dir_name == "Hatred" or dir_name == "IGlocations1" or dir_name == "USCensus" or dir_name == "Wins":
-            special_num += 1
-            continue
+        # if dir_name == "Hatred" or dir_name == "IGlocations1" or dir_name == "USCensus" or dir_name == "Wins":
+            # special_num += 1
+            # continue
     
         # 检查文件是否为sql文件（忽略大小写）
         if filename.lower().endswith(".sql"):
@@ -72,7 +80,10 @@ for dir_name in dir_list:
             input_path = os.path.join(input_folder, filename)
             # 读取输入文件内容并转为小写，然后写入输出文件
             with open(input_path, "r") as input_file:
-                sql_content = input_file.read()     
+                sql_content = input_file.read() 
+                
+                sql_content.replace("((", "(")    
+                sql_content.replace("))", ")") 
                     
                 if(sql_content.count("WHERE") == 0 or sql_content.count("WHERE") >= 2):
                     # output_filename = os.path.join(no_where_folder, dir_name, "queries")

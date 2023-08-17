@@ -1,0 +1,3 @@
+op,dtype,optype,constant,input,column,opstring,is_id,jobid,discrete_ops,cont_ops,like_ops,alias,exprhash,InputCardinality,Selectivity,RowCount,workload,db
+>=,cont,cont,2,uscensus_3,agep__bin_,uscensus_3.agep__bin_ >= 2,0,0,0,1,0,uscensus_3,1332672701209850596749972526925242848360758247845,313251,1.0,313280,ceb,ceb
+<=,cont,cont,9,uscensus_3,agep__bin_,uscensus_3.agep__bin_ <= 9,0,0,0,1,0,uscensus_3,1332672701209850596749972526925242848360758247845,313251,1.0,313280,ceb,ceb

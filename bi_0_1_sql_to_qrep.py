@@ -32,6 +32,10 @@ for dir_name in dir_list:
 
     # 遍历sql文件
     for file_name in file_list:
+        
+        # if file_name != "29.sql":
+        #     continue
+        
         file_path = os.path.join(dir_path, file_name)  # ./benchmark/Arade/queries/2.sql
 
         with open(file_path, encoding="utf-8") as f:

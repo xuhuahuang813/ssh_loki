@@ -1,4 +1,5 @@
 #!/bin/bash
+
 python bi_0_0_sql_findNoWhere.py
 
 python bi_0_0_sql_process.py

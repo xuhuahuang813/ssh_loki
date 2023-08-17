@@ -1,0 +1,1 @@
+SELECT iglocations1_1.state AS state,   SUM(CAST(iglocations1_1.popestimate2014 AS BIGINT)) AS temp_calculation_8840730155303010__3219150654__0_ FROM iglocations1_1 WHERE (iglocations1_1.state NOT IN ('District of Columbia')) GROUP BY iglocations1_1.state;

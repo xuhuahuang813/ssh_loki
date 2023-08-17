@@ -45,6 +45,7 @@ for dir_name in dir_list:
 
     # 遍历文件列表
     for filename in files:
+        
         # 检查文件是否为sql文件（忽略大小写）
         if filename.lower().endswith(".sql"):
             # 构造输入文件的完整路径

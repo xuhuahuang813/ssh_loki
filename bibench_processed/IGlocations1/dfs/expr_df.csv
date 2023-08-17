@@ -1,0 +1,2 @@
+filtersql,jobid,input,alias,exprhash,unique_filter_cols,discrete_ops,cont_ops,like_ops,is_id,num_unique_ops,num_ops,num_discrete_consts,num_likes,like_lens,InputCardinality,Selectivity,RowCount,workload,db
+SELECT COUNT(*) from iglocations1_1 AS iglocations1_1 WHERE iglocations1_1.state NOT in ('District of Columbia'),0,iglocations1_1,iglocations1_1,166705674010325605820872440776969024783693586578,1,1,0,0,0,1,1,1,0,0,81611,0.9999509869993015,81607,ceb,ceb
