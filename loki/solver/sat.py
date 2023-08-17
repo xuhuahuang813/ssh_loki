@@ -57,9 +57,10 @@ def build_model(program, constraints, leftover_constraints, table_cardinality, v
             correlated_columns = [c[0] for c in k]
             correlated_values = [c[2] for c in k]
             correlations = list(zip(correlated_columns, correlated_values))
-            vs = [model.NewIntVar(0, 1, 'tmp_%i_%i' % (constraint_id, i)) for i in range(vars_per_col)]  # range of values for var is (0, 1) because it's either 1*1 or 0*something
+            vs = [model.NewBoolVar('tmp_%i_%i' % (constraint_id, i)) for i in range(vars_per_col)]  # range of values for var is (0, 1) because it's either 1*1 or 0*something
             for i in range(vars_per_col):
-                model.AddMultiplicationEquality(vs[i], [vars[cols.index(ccol) * vars_per_col + i][col_values_map[ccol][cvalue]] for ccol, cvalue in correlations])
+                model.AddBoolAnd([vars[cols.index(ccol) * vars_per_col + i][col_values_map[ccol][cvalue]] for ccol, cvalue in correlations]).OnlyEnforceIf(vs[i])
+                model.AddAtLeastOne([vars[cols.index(ccol) * vars_per_col + i][col_values_map[ccol][cvalue]].Not() for ccol, cvalue in correlations]).OnlyEnforceIf(vs[i].Not())
             model.Add(sum(vs) == downsampled_v)
         constraint_id += 1
 
