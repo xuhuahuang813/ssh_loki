@@ -11,7 +11,7 @@ import json
 
 WK = "ceb"
 if WK in ["ceb", "job"]:
-    DBNAME="bibench5"
+    DBNAME="bibench"
 else:
     DBNAME = WK
 
@@ -153,6 +153,7 @@ def parse_filter(sql):
         if literal is None:
             print("literal None!")
             print(token)
+            print(sql)
             # continue
             # pdb.set_trace()
 
@@ -296,8 +297,10 @@ for dir_name in dir_list:
 
     # print("took: ", time.time()-start)
 
-    rdata["Selectivity"] = rdata.apply(lambda x: float(x["RowCount"]) / x["InputCardinality"] ,axis=1)
-    tmp2 = rdata[rdata["RowCount"] != -1]
+    # 尝试注释Selectivity
+    # rdata["Selectivity"] = rdata.apply(lambda x: float(x["RowCount"]) / x["InputCardinality"] ,axis=1)
+    # 尝试注释tmp2
+    # tmp2 = rdata[rdata["RowCount"] != -1]
     # print(opdf.keys())
 
     # print(LITERAL_DATA_FN)
@@ -306,4 +309,6 @@ for dir_name in dir_list:
     opdf.to_csv(OPFN, index=False)
 
     # pdb.set_trace()
+    
+    print("finish ", dir_name, "\n")
 

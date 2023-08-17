@@ -1,0 +1,4 @@
+exprhash,RowCount,InputCardinality,RowSql,Column,input,jobid,Op,Value
+1419752718212149733923519202793517321948706485772,1010,915327,SELECT COUNT(*) from medpayment1_1 AS medpayment1_1 WHERE medpayment1_1.hcpcs_code = '27447',medpayment1_1.hcpcs_code,medpayment1_1,0,=,'27447'
+1419752718212149733923519202793517321948706485772,1010,915327,SELECT COUNT(*) from medpayment1_1 AS medpayment1_1 WHERE medpayment1_1.hcpcs_description = 'Total knee arthroplasty',medpayment1_1.hcpcs_description,medpayment1_1,0,=,'Total knee arthroplasty'
+1419752718212149733923519202793517321948706485772,1010,915327,SELECT COUNT(*) from medpayment1_1 AS medpayment1_1 WHERE medpayment1_1.hcpcs_code = '27447' AND medpayment1_1.hcpcs_description = 'Total knee arthroplasty',medpayment1_1.hcpcs_code|medpayment1_1.hcpcs_description,medpayment1_1,0,=|=,'27447'|'Total knee arthroplasty'

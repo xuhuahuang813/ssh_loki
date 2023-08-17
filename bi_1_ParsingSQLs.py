@@ -44,11 +44,7 @@ dir_list = os.listdir(folder_path)
 for dir_name in dir_list:
     if ".csv" in dir_name:
         continue
-    
-    # 调试用*******************************************************
-    # if dir_name != "Arade":
-    #     continue
-    
+      
     QDIR = os.path.join(folder_path, dir_name, "queries_processed")
     OUTPATH = os.path.join(folder_path, dir_name, "dfs")
     make_dir(OUTPATH)

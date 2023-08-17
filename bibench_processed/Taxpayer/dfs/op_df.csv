@@ -1,0 +1,59 @@
+op,dtype,optype,constant,input,column,opstring,is_id,jobid,discrete_ops,cont_ops,like_ops,alias,exprhash,InputCardinality,Selectivity,RowCount,workload,db
+=,string,=,'HOLDER',taxpayer_1,nppes_provider_last_org_name,taxpayer_1.nppes_provider_last_org_name = 'HOLDER',0,0,1,0,0,taxpayer_1,785009336794082367352611765337615134174301966652,915327,1.0,915327,ceb,ceb
+=,string,=,'WA',taxpayer_1,nppes_provider_state,taxpayer_1.nppes_provider_state = 'WA',0,0,1,0,0,taxpayer_1,785009336794082367352611765337615134174301966652,915327,1.0,915327,ceb,ceb
+=,string,=,'JOHN',taxpayer_4,nppes_provider_first_name,taxpayer_4.nppes_provider_first_name = 'JOHN',0,1,1,0,0,taxpayer_4,302476840212229262125885734017682565059088334906,915327,1.0,915327,ceb,ceb
+=,string,=,'HOLDER',taxpayer_4,nppes_provider_last_org_name,taxpayer_4.nppes_provider_last_org_name = 'HOLDER',0,1,1,0,0,taxpayer_4,302476840212229262125885734017682565059088334906,915327,1.0,915327,ceb,ceb
+=,string,=,'WA',taxpayer_4,nppes_provider_state,taxpayer_4.nppes_provider_state = 'WA',0,1,1,0,0,taxpayer_4,302476840212229262125885734017682565059088334906,915327,1.0,915327,ceb,ceb
+=,string,=,'JOHN',taxpayer_5,nppes_provider_first_name,taxpayer_5.nppes_provider_first_name = 'JOHN',0,2,1,0,0,taxpayer_5,136013593957103510232737857352208427581154330864,915327,1.0,915327,ceb,ceb
+=,string,=,'HOLDER',taxpayer_5,nppes_provider_last_org_name,taxpayer_5.nppes_provider_last_org_name = 'HOLDER',0,2,1,0,0,taxpayer_5,136013593957103510232737857352208427581154330864,915327,1.0,915327,ceb,ceb
+=,string,=,'initial hospital care',taxpayer_6,hcpcs_description,taxpayer_6.hcpcs_description = 'initial hospital care',0,3,1,0,0,taxpayer_6,798351785586383080018360958252751461041347348436,915327,1.0,915327,ceb,ceb
+=,string,=,'WA',taxpayer_6,nppes_provider_state,taxpayer_6.nppes_provider_state = 'WA',0,3,1,0,0,taxpayer_6,798351785586383080018360958252751461041347348436,915327,1.0,915327,ceb,ceb
+=,string,=,'JOHN',taxpayer_7,nppes_provider_first_name,taxpayer_7.nppes_provider_first_name = 'JOHN',0,4,1,0,0,taxpayer_7,634843813176733739762511834625573296746377302589,915327,1.0,915327,ceb,ceb
+=,string,=,'WA',taxpayer_7,nppes_provider_state,taxpayer_7.nppes_provider_state = 'WA',0,4,1,0,0,taxpayer_7,634843813176733739762511834625573296746377302589,915327,1.0,915327,ceb,ceb
+=,string,=,'JOHN',taxpayer_9,nppes_provider_first_name,taxpayer_9.nppes_provider_first_name = 'JOHN',0,5,1,0,0,taxpayer_9,344670357022617065710933210217122797554414655300,915327,1.0,915327,ceb,ceb
+=,string,=,'HOLDER',taxpayer_9,nppes_provider_last_org_name,taxpayer_9.nppes_provider_last_org_name = 'HOLDER',0,5,1,0,0,taxpayer_9,344670357022617065710933210217122797554414655300,915327,1.0,915327,ceb,ceb
+=,string,=,'WA',taxpayer_9,nppes_provider_state,taxpayer_9.nppes_provider_state = 'WA',0,5,1,0,0,taxpayer_9,344670357022617065710933210217122797554414655300,915327,1.0,915327,ceb,ceb
+=,string,=,'initial hospital care',taxpayer_10,hcpcs_description,taxpayer_10.hcpcs_description = 'initial hospital care',0,6,1,0,0,taxpayer_10,965059082612765910029148655565782860042331918232,915327,1.0,915327,ceb,ceb
+=,string,in,'BELLEVUE',taxpayer_10,nppes_provider_city,"taxpayer_10.nppes_provider_city in ('BELLEVUE', 'BELLVUE')",0,6,1,0,0,taxpayer_10,965059082612765910029148655565782860042331918232,915327,1.0,915327,ceb,ceb
+=,string,in,'BELLVUE',taxpayer_10,nppes_provider_city,"taxpayer_10.nppes_provider_city in ('BELLEVUE', 'BELLVUE')",0,6,1,0,0,taxpayer_10,965059082612765910029148655565782860042331918232,915327,1.0,915327,ceb,ceb
+=,string,=,'WA',taxpayer_10,nppes_provider_state,taxpayer_10.nppes_provider_state = 'WA',0,6,1,0,0,taxpayer_10,965059082612765910029148655565782860042331918232,915327,1.0,915327,ceb,ceb
+=,string,=,'initial hospital care',taxpayer_10,hcpcs_description,taxpayer_10.hcpcs_description = 'initial hospital care',0,7,1,0,0,taxpayer_10,538441700490393710451694631154765158641737977866,915327,1.0,915327,ceb,ceb
+=,string,in,'BELLEVUE',taxpayer_10,nppes_provider_city,"taxpayer_10.nppes_provider_city in ('BELLEVUE', 'BELLVUE')",0,7,1,0,0,taxpayer_10,538441700490393710451694631154765158641737977866,915327,1.0,915327,ceb,ceb
+=,string,in,'BELLVUE',taxpayer_10,nppes_provider_city,"taxpayer_10.nppes_provider_city in ('BELLEVUE', 'BELLVUE')",0,7,1,0,0,taxpayer_10,538441700490393710451694631154765158641737977866,915327,1.0,915327,ceb,ceb
+=,string,=,'WA',taxpayer_10,nppes_provider_state,taxpayer_10.nppes_provider_state = 'WA',0,7,1,0,0,taxpayer_10,538441700490393710451694631154765158641737977866,915327,1.0,915327,ceb,ceb
+=,string,=,'initial hospital care',taxpayer_10,hcpcs_description,taxpayer_10.hcpcs_description = 'initial hospital care',0,8,1,0,0,taxpayer_10,19189414014421975778748504709826184699259967283,915327,1.0,915327,ceb,ceb
+=,string,=,'JOHN',taxpayer_10,nppes_provider_first_name,taxpayer_10.nppes_provider_first_name = 'JOHN',0,8,1,0,0,taxpayer_10,19189414014421975778748504709826184699259967283,915327,1.0,915327,ceb,ceb
+=,string,=,'HOLDER',taxpayer_10,nppes_provider_last_org_name,taxpayer_10.nppes_provider_last_org_name = 'HOLDER',0,8,1,0,0,taxpayer_10,19189414014421975778748504709826184699259967283,915327,1.0,915327,ceb,ceb
+=,string,=,'WA',taxpayer_10,nppes_provider_state,taxpayer_10.nppes_provider_state = 'WA',0,8,1,0,0,taxpayer_10,19189414014421975778748504709826184699259967283,915327,1.0,915327,ceb,ceb
+=,string,=,'JOHN',taxpayer_10,nppes_provider_first_name,taxpayer_10.nppes_provider_first_name = 'JOHN',0,9,1,0,0,taxpayer_10,1159448332088002591585751994463987810739280570373,915327,1.0,915327,ceb,ceb
+=,string,=,'HOLDER',taxpayer_10,nppes_provider_last_org_name,taxpayer_10.nppes_provider_last_org_name = 'HOLDER',0,9,1,0,0,taxpayer_10,1159448332088002591585751994463987810739280570373,915327,1.0,915327,ceb,ceb
+=,string,=,'WA',taxpayer_10,nppes_provider_state,taxpayer_10.nppes_provider_state = 'WA',0,9,1,0,0,taxpayer_10,1159448332088002591585751994463987810739280570373,915327,1.0,915327,ceb,ceb
+=,string,=,'JOHN',taxpayer_8,nppes_provider_first_name,taxpayer_8.nppes_provider_first_name = 'JOHN',0,10,1,0,0,taxpayer_8,1283569300803038262703126877143874779048700399847,915327,1.0,915327,ceb,ceb
+=,string,=,'HOLDER',taxpayer_8,nppes_provider_last_org_name,taxpayer_8.nppes_provider_last_org_name = 'HOLDER',0,10,1,0,0,taxpayer_8,1283569300803038262703126877143874779048700399847,915327,1.0,915327,ceb,ceb
+=,string,=,'WA',taxpayer_8,nppes_provider_state,taxpayer_8.nppes_provider_state = 'WA',0,10,1,0,0,taxpayer_8,1283569300803038262703126877143874779048700399847,915327,1.0,915327,ceb,ceb
+=,string,=,'initial hospital care',taxpayer_10,hcpcs_description,taxpayer_10.hcpcs_description = 'initial hospital care',0,11,1,0,0,taxpayer_10,463181777376467746398395860778937957028987461813,915327,1.0,915327,ceb,ceb
+=,string,=,'WA',taxpayer_10,nppes_provider_state,taxpayer_10.nppes_provider_state = 'WA',0,11,1,0,0,taxpayer_10,463181777376467746398395860778937957028987461813,915327,1.0,915327,ceb,ceb
+=,string,in,'BELLEVUE',taxpayer_10,nppes_provider_city,"taxpayer_10.nppes_provider_city in ('BELLEVUE', 'BELLVUE')",0,12,1,0,0,taxpayer_10,474020292029050225698233735948437227210221356322,915327,1.0,915327,ceb,ceb
+=,string,in,'BELLVUE',taxpayer_10,nppes_provider_city,"taxpayer_10.nppes_provider_city in ('BELLEVUE', 'BELLVUE')",0,12,1,0,0,taxpayer_10,474020292029050225698233735948437227210221356322,915327,1.0,915327,ceb,ceb
+=,string,=,'WA',taxpayer_10,nppes_provider_state,taxpayer_10.nppes_provider_state = 'WA',0,12,1,0,0,taxpayer_10,474020292029050225698233735948437227210221356322,915327,1.0,915327,ceb,ceb
+=,string,=,'initial hospital care',taxpayer_10,hcpcs_description,taxpayer_10.hcpcs_description = 'initial hospital care',0,12,1,0,0,taxpayer_10,474020292029050225698233735948437227210221356322,915327,1.0,915327,ceb,ceb
+=,string,in,'BELLEVUE',taxpayer_7,nppes_provider_city,"taxpayer_7.nppes_provider_city in ('BELLEVUE', 'BELLVUE')",0,13,1,0,0,taxpayer_7,1226815144131440151322394279287720522499731315327,915327,1.0,915327,ceb,ceb
+=,string,in,'BELLVUE',taxpayer_7,nppes_provider_city,"taxpayer_7.nppes_provider_city in ('BELLEVUE', 'BELLVUE')",0,13,1,0,0,taxpayer_7,1226815144131440151322394279287720522499731315327,915327,1.0,915327,ceb,ceb
+=,string,=,'WA',taxpayer_7,nppes_provider_state,taxpayer_7.nppes_provider_state = 'WA',0,13,1,0,0,taxpayer_7,1226815144131440151322394279287720522499731315327,915327,1.0,915327,ceb,ceb
+=,string,=,'initial hospital care',taxpayer_7,hcpcs_description,taxpayer_7.hcpcs_description = 'initial hospital care',0,13,1,0,0,taxpayer_7,1226815144131440151322394279287720522499731315327,915327,1.0,915327,ceb,ceb
+=,string,=,'initial hospital care',taxpayer_10,hcpcs_description,taxpayer_10.hcpcs_description = 'initial hospital care',0,14,1,0,0,taxpayer_10,801730176729150447078184535292837105248916044613,915327,1.0,915327,ceb,ceb
+=,string,=,'WA',taxpayer_10,nppes_provider_state,taxpayer_10.nppes_provider_state = 'WA',0,14,1,0,0,taxpayer_10,801730176729150447078184535292837105248916044613,915327,1.0,915327,ceb,ceb
+=,string,=,'JOHN',taxpayer_10,nppes_provider_first_name,taxpayer_10.nppes_provider_first_name = 'JOHN',0,15,1,0,0,taxpayer_10,749394534873878861763116693088825119249782247466,915327,1.0,915327,ceb,ceb
+=,string,=,'HOLDER',taxpayer_10,nppes_provider_last_org_name,taxpayer_10.nppes_provider_last_org_name = 'HOLDER',0,15,1,0,0,taxpayer_10,749394534873878861763116693088825119249782247466,915327,1.0,915327,ceb,ceb
+=,string,=,'WA',taxpayer_10,nppes_provider_state,taxpayer_10.nppes_provider_state = 'WA',0,15,1,0,0,taxpayer_10,749394534873878861763116693088825119249782247466,915327,1.0,915327,ceb,ceb
+=,string,=,'JOHN',taxpayer_10,nppes_provider_first_name,taxpayer_10.nppes_provider_first_name = 'JOHN',0,16,1,0,0,taxpayer_10,759273341614302114130976570320658482964240443543,915327,1.0,915327,ceb,ceb
+=,string,=,'HOLDER',taxpayer_10,nppes_provider_last_org_name,taxpayer_10.nppes_provider_last_org_name = 'HOLDER',0,16,1,0,0,taxpayer_10,759273341614302114130976570320658482964240443543,915327,1.0,915327,ceb,ceb
+=,string,=,'HOLDER',taxpayer_10,nppes_provider_last_org_name,taxpayer_10.nppes_provider_last_org_name = 'HOLDER',0,17,1,0,0,taxpayer_10,421319816729475032399509828810980239050234247719,915327,1.0,915327,ceb,ceb
+=,string,=,'WA',taxpayer_10,nppes_provider_state,taxpayer_10.nppes_provider_state = 'WA',0,17,1,0,0,taxpayer_10,421319816729475032399509828810980239050234247719,915327,1.0,915327,ceb,ceb
+=,string,=,'JOHN',taxpayer_10,nppes_provider_first_name,taxpayer_10.nppes_provider_first_name = 'JOHN',0,18,1,0,0,taxpayer_10,265197247824401060949155552252538206465851562837,915327,1.0,915327,ceb,ceb
+=,string,=,'HOLDER',taxpayer_10,nppes_provider_last_org_name,taxpayer_10.nppes_provider_last_org_name = 'HOLDER',0,18,1,0,0,taxpayer_10,265197247824401060949155552252538206465851562837,915327,1.0,915327,ceb,ceb
+=,string,=,'WA',taxpayer_10,nppes_provider_state,taxpayer_10.nppes_provider_state = 'WA',0,18,1,0,0,taxpayer_10,265197247824401060949155552252538206465851562837,915327,1.0,915327,ceb,ceb
+=,string,=,'JOHN',taxpayer_2,nppes_provider_first_name,taxpayer_2.nppes_provider_first_name = 'JOHN',0,19,1,0,0,taxpayer_2,1319365341664235298065663931401773254851806747634,915327,1.0,915327,ceb,ceb
+=,string,=,'WA',taxpayer_2,nppes_provider_state,taxpayer_2.nppes_provider_state = 'WA',0,19,1,0,0,taxpayer_2,1319365341664235298065663931401773254851806747634,915327,1.0,915327,ceb,ceb
+=,string,=,'JOHN',taxpayer_3,nppes_provider_first_name,taxpayer_3.nppes_provider_first_name = 'JOHN',0,20,1,0,0,taxpayer_3,1267341960714042609974455877385110725083067496558,915327,1.0,915327,ceb,ceb
+=,string,=,'HOLDER',taxpayer_3,nppes_provider_last_org_name,taxpayer_3.nppes_provider_last_org_name = 'HOLDER',0,20,1,0,0,taxpayer_3,1267341960714042609974455877385110725083067496558,915327,1.0,915327,ceb,ceb

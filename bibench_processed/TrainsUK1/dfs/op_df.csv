@@ -1,0 +1,8 @@
+op,dtype,optype,constant,input,column,opstring,is_id,jobid,discrete_ops,cont_ops,like_ops,alias,exprhash,InputCardinality,Selectivity,RowCount,workload,db
+=,string,in,'',trainsuk1_4,timetable,"trainsuk1_4.timetable in ('', 'Timetable')",0,0,1,0,0,trainsuk1_4,218677683729375879089196299604215283618908996042,430324,1.0,430324,ceb,ceb
+=,string,in,'Timetable',trainsuk1_4,timetable,"trainsuk1_4.timetable in ('', 'Timetable')",0,0,1,0,0,trainsuk1_4,218677683729375879089196299604215283618908996042,430324,1.0,430324,ceb,ceb
+=,string,=,'EB',trainsuk1_4,operator,trainsuk1_4.operator = 'EB',0,0,1,0,0,trainsuk1_4,218677683729375879089196299604215283618908996042,430324,1.0,430324,ceb,ceb
+=,string,=,'M18',trainsuk1_2,timetable,trainsuk1_2.timetable = 'M18',0,1,1,0,0,trainsuk1_2,339571712291112637903791281695276055921574494389,430324,1.0,430324,ceb,ceb
+=,string,=,'1A04London Liverpool Street to Harwich Town at 06:38',trainsuk1_2,v_headcode_description,trainsuk1_2.v_headcode_description = '1A04London Liverpool Street to Harwich Town at 06:38',0,1,1,0,0,trainsuk1_2,339571712291112637903791281695276055921574494389,430324,1.0,430324,ceb,ceb
+=,string,=,'M18',trainsuk1_4,timetable,trainsuk1_4.timetable = 'M18',0,2,1,0,0,trainsuk1_4,630645019684766603281676633877952693101791390705,430324,1.0,430324,ceb,ceb
+=,string,=,'1A04London Liverpool Street to Harwich Town at 06:38',trainsuk1_4,v_headcode_description,trainsuk1_4.v_headcode_description = '1A04London Liverpool Street to Harwich Town at 06:38',0,2,1,0,0,trainsuk1_4,630645019684766603281676633877952693101791390705,430324,1.0,430324,ceb,ceb

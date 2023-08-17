@@ -2056,7 +2056,7 @@ def parse_sqls_single(sqls, batchnum=0, cols_to_tables={}):
         try:
             preds = parse_sql_preds(sql)
         except Exception as e:
-            print(e)
+            print(e, sql)
             print("FAIL")
             fails += 1
             continue

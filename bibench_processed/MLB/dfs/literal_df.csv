@@ -1,0 +1,2 @@
+exprhash,RowCount,InputCardinality,RowSql,Column,input,jobid,Op,Value
+635705932782853927864131502399204489165112557231,29,100166,SELECT COUNT(*) from mlb_65 AS mlb_65 WHERE mlb_65.batter_name = 'Gavin Cecchini',mlb_65.batter_name,mlb_65,0,=,'Gavin Cecchini'

@@ -60,7 +60,7 @@ def read_flags():
     parser = argparse.ArgumentParser()
 
     parser.add_argument("--db_name", type=str, required=False,
-                        default="bibench5")
+                        default="bibench")
     parser.add_argument("--db_host", type=str, required=False,
                         default="49.52.27.35")
     parser.add_argument("--user", type=str, required=False,
@@ -237,7 +237,7 @@ def get_cardinality(qrep, card_type, key_name, db_host, db_name, user, pwd,
         source_node = tuple(["SOURCE"])
         if source_node in node_list:
             node_list.remove(source_node)
-    elif args.db_name == "bibench5":
+    elif args.db_name == "bibench":
         source_node = tuple(["s"])
         if source_node in node_list:
             node_list.remove(source_node)
@@ -353,6 +353,7 @@ def get_cardinality(qrep, card_type, key_name, db_host, db_name, user, pwd,
                 output = execute_query(subsql, user, db_host, port, pwd, db_name,
                                     pre_execs)
                 if isinstance(output, Exception):
+                    print("output isinstance Exception")
                     print(output)
                     card = EXCEPTION_COUNT_CONSTANT
                     num_timeout += 1
@@ -368,7 +369,8 @@ def get_cardinality(qrep, card_type, key_name, db_host, db_name, user, pwd,
 
                 exec_time = time.time() - start
                 if exec_time > CACHE_TIMEOUT:
-                    print(exec_time)
+                    print("exec_time > CACHE_TIMEOUT", exec_time)
+                    # print(exec_time)
                     sql_cache.archive[hash_sql] = card
                 cards[key_name] = card
                 execs[key_name] = exec_time
