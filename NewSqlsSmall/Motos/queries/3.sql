@@ -1,0 +1,1 @@
+SELECT * FROM   motos_1  WHERE  (motos_1.fecha >= '2010-01-01' and motos_1.fecha <= '2015-12-31' AND (motos_1.categoria = 'MOTOCICLETAS'));

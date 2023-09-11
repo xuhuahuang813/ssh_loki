@@ -1,7 +1,7 @@
 import os
 
 # 遍历当前目录下的文件
-for filename in os.listdir("./sqlqueries"):
+for filename in os.listdir("./sqlqueries/sqlqueries"):
     # 使用下划线分割文件名
     parts = filename.split('_')
     if len(parts) >= 2:
@@ -9,10 +9,10 @@ for filename in os.listdir("./sqlqueries"):
         new_filename = parts[1]
 
         # 创建文件夹（如果不存在）
-        folder_path = os.path.join("./NewSqls", folder_name)
+        folder_path = os.path.join("./NewSqls", folder_name, "queries")
         if not os.path.exists(folder_path):
             os.makedirs(folder_path)
 
         # 移动文件到文件夹并重命名
         new_file_path = os.path.join(folder_path, new_filename)
-        os.rename("./sqlqueries/"+filename, new_file_path)
+        os.rename("./sqlqueries/sqlqueries/"+filename, new_file_path)
