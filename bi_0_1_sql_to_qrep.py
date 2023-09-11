@@ -16,6 +16,8 @@ sys.path.append("./")
 print("========================================runnning bi_0_1_sql_to_qrep.py========================================")
 
 folder_path = "./bibench_processed"
+folder_path = "./NewSqlsSmall"
+
 # 遍历文件夹
 dir_list = os.listdir(folder_path)
 

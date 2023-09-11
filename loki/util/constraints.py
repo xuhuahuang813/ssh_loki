@@ -73,22 +73,32 @@ def parse_constraints(program, constraints_df):
     # # 对选定的列名进行排序
     # selected_columns.sort()
     
-    for row in constraints_df.itertuples():  # Deal with input format mess
-        if max_cols == 3:
-            columns = [row.Column0, row.Column1, row.Column2] if not pd.isnull(row.Column0) and not pd.isnull(row.Column1) else [row.Column0]
-            ops = [row.Op0, row.Op1, row.Op2] if not pd.isnull(row.Op0) and not pd.isnull(row.Op1) else [row.Op0]
-            values = [row.Value0, row.Value1, row.Value2] if not pd.isnull(row.Value0) and not pd.isnull(row.Value1) else [row.Value0]
-        elif max_cols == 2:
-            columns = [row.Column0, row.Column1] if not pd.isnull(row.Column0) and not pd.isnull(row.Column1) else [row.Column0]
-            ops = [row.Op0, row.Op1] if not pd.isnull(row.Op0) and not pd.isnull(row.Op1) else [row.Op0]
-            values = [row.Value0, row.Value1] if not pd.isnull(row.Value0) and not pd.isnull(row.Value1) else [row.Value0]
-        else:
-            columns = [row.Column0]
-            ops = [row.Op0]
-            values = [row.Value0]
+    for row in constraints_df.itertuples(index=False):  # Deal with input format mess
+        columns = []
+        ops = []
+        values = []
+        for i in range(0, max_cols):
+            print(pd.isnull(eval('row.Column'+ str(i))))
+            if not pd.isnull(eval('row.Column'+ str(i))):
+                columns.append(eval('row.Column'+ str(i)))
+                ops.append(eval('row.Op'+ str(i)))
+                values.append(eval('row.Value'+ str(i)))
+                
+        # if max_cols == 3:
+        #     columns = [row.Column0, row.Column1, row.Column2] if not pd.isnull(row.Column0) and not pd.isnull(row.Column1) else [row.Column0]
+        #     ops = [row.Op0, row.Op1, row.Op2] if not pd.isnull(row.Op0) and not pd.isnull(row.Op1) else [row.Op0]
+        #     values = [row.Value0, row.Value1, row.Value2] if not pd.isnull(row.Value0) and not pd.isnull(row.Value1) else [row.Value0]
+        # elif max_cols == 2:
+        #     columns = [row.Column0, row.Column1] if not pd.isnull(row.Column0) and not pd.isnull(row.Column1) else [row.Column0]
+        #     ops = [row.Op0, row.Op1] if not pd.isnull(row.Op0) and not pd.isnull(row.Op1) else [row.Op0]
+        #     values = [row.Value0, row.Value1] if not pd.isnull(row.Value0) and not pd.isnull(row.Value1) else [row.Value0]
+        # else:
+        #     columns = [row.Column0]
+        #     ops = [row.Op0]
+        #     values = [row.Value0]
         if len(set(columns).intersection(set(program))) == 0:  # Kick out constraints that are not for this program
             continue
-
+        print(1)
         values = [value.replace('\'', '') for value in values]
         # Sorting by col ensures proper uniqueness above
         row_constraints = tuple(sorted([(col, op, val) for col, op, val in zip(columns, ops, values)]))

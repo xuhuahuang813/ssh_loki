@@ -1,1 +1,0 @@
-SELECT * FROM   motos_2  WHERE  ((motos_2.fecha >= '2015-01-01' and motos_2.fecha <= '2015-12-31') AND (motos_2.categoria = 'MOTOCICLETAS') AND (motos_2.medio = 'PRENSA'));

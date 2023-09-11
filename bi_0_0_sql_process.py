@@ -21,7 +21,9 @@ def transform_quotes_to_lowercase(line):
     return ''.join(result)
 
 print("========================================runnning bi_0_0_sql_process.py========================================")
-folder_path = "./bibench_processed"
+# folder_path = "./bibench_processed"
+folder_path = "./NewSqlsSmall"
+
 # 遍历文件夹
 dir_list = os.listdir(folder_path)
 

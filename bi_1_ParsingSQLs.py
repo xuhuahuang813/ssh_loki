@@ -37,7 +37,8 @@ def load_sql_rep(fn, dummy=None):
 print("========================================bi_1_ParsingSQLs.py========================================")
 WK = "ceb"
 
-folder_path = "./bibench_processed"
+# folder_path = "./bibench_processed"
+folder_path = "./NewSqlsSmall"
 # 遍历文件夹
 dir_list = os.listdir(folder_path)
 

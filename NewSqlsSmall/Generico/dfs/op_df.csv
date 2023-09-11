@@ -1,0 +1,6 @@
+op,dtype,optype,constant,input,column,opstring,is_id,jobid,discrete_ops,cont_ops,like_ops,alias,exprhash,InputCardinality,Selectivity,RowCount,workload,db
+=,string,in,'BANTRAB/TODOTICKET',generico_5,anunciante,"generico_5.anunciante in ('BANTRAB/TODOTICKET', 'TODOTICKET')",0,0,1,0,0,generico_5,432497650556028409264277412683358521794225321911,2336699,0.9999546368616584,2336593,ceb,ceb
+=,string,in,'TODOTICKET',generico_5,anunciante,"generico_5.anunciante in ('BANTRAB/TODOTICKET', 'TODOTICKET')",0,0,1,0,0,generico_5,432497650556028409264277412683358521794225321911,2336699,0.9999546368616584,2336593,ceb,ceb
+>=,cont,cont,'2014-01-01',generico_5,fecha,generico_5.fecha >= '2014-01-01',0,0,0,1,0,generico_5,432497650556028409264277412683358521794225321911,2336699,0.9999546368616584,2336593,ceb,ceb
+<=,cont,cont,'2015-12-31',generico_5,fecha,generico_5.fecha <= '2015-12-31',0,0,0,1,0,generico_5,432497650556028409264277412683358521794225321911,2336699,0.9999546368616584,2336593,ceb,ceb
+=,string,=,'RADIO',generico_5,medio,generico_5.medio = 'RADIO',0,0,1,0,0,generico_5,432497650556028409264277412683358521794225321911,2336699,0.9999546368616584,2336593,ceb,ceb

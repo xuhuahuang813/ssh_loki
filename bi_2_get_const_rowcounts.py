@@ -210,6 +210,7 @@ def get_rowcounts_consts(sqls, exprhashes, inputs, jobids):
 
         # combining colvals from two columns
         seencols = set()
+        print("coldata.items is:", coldata.items())
         for curcol, colvals in coldata.items():
             for curcol2, colvals2 in coldata.items():
                 if curcol == curcol2:
@@ -262,7 +263,9 @@ def get_rowcounts_consts(sqls, exprhashes, inputs, jobids):
 
 print("========================================bi_2_get_const_rowcounts.py========================================")
 
-folder_path = "./bibench_processed"
+# folder_path = "./bibench_processed"
+folder_path = "./NewSqlsSmall"
+
 # 遍历文件夹
 dir_list = os.listdir(folder_path)
 
