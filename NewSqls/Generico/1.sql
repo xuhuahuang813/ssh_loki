@@ -1,0 +1,1 @@
+SELECT * FROM  generico_1  WHERE  ((generico_1.anunciante IN ('BANTRAB/TODOTICKET', 'TODOTICKET', 'TODOTICKET.COM')) AND generico_1.fecha >= '2010-01-01' and generico_1.fecha <= '2015-12-31');

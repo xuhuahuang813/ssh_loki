@@ -1,0 +1,1 @@
+SELECT * FROM   mlb_62  WHERE  ((mlb_62.pa >= 0) AND (mlb_62.pa <= 668) AND (mlb_62.parentteam = 'NYM') AND (mlb_62.year = 2015));

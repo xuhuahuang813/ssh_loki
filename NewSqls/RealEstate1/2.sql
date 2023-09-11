@@ -1,0 +1,1 @@
+SELECT * FROM   realestate1_2  WHERE  ((realestate1_2.calculation_5480628224156393 >= '2005-01-01') AND (realestate1_2.calculation_5480628224156393 <= '2015-03-31') AND (realestate1_2.date_of_transfer >= '2005-01-01' and realestate1_2.date_of_transfer <= '2014-12-31'));

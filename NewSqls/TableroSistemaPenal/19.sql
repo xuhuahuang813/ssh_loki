@@ -1,0 +1,1 @@
+SELECT * FROM   tablerosistemapenal_5  WHERE  ((tablerosistemapenal_5.pais = 'PAÍS') AND (tablerosistemapenal_5.fecha_audiencia >= '2010-01-01' and tablerosistemapenal_5.fecha_audiencia <= '2010-12-31'));

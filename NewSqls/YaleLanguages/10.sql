@@ -1,0 +1,1 @@
+SELECT * FROM   yalelanguages_3  WHERE  ((yalelanguages_3.charge_date >= '2002-01-01') AND (yalelanguages_3.patron_type__pseudo_vs_patron_ = 'Patron'));

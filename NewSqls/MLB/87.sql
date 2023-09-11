@@ -1,0 +1,1 @@
+SELECT * FROM   mlb_56  WHERE  ((mlb_56.pa >= 1) AND (mlb_56.pa <= 149) AND (mlb_56.league = 'PCL') AND (mlb_56.month = 'July') AND (mlb_56.year = 2015));

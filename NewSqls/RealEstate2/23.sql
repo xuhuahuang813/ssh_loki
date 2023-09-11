@@ -1,0 +1,1 @@
+SELECT * FROM   realestate2_7  WHERE  ((realestate2_7.postcode_district = 'DE6') AND (realestate2_7.date_of_transfer >= '1996-01-01') AND (realestate2_7.date_of_transfer < '2019-01-01'));

@@ -1,0 +1,1 @@
+SELECT * FROM   realestate1_1  WHERE  ((realestate1_1.date_of_transfer >= '2005-01-01' and realestate1_1.date_of_transfer <= '2014-12-31'));

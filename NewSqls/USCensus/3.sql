@@ -1,0 +1,1 @@
+SELECT * FROM   uscensus_3  WHERE  ((uscensus_3.agep__bin_ >= 2) AND (uscensus_3.agep__bin_ <= 9));

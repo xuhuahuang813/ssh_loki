@@ -9,3 +9,14 @@
 2023-08-18 02:52:17 INFO     [MAIN]  **********dir CMSprovider solved!************
 
 2023-08-18 02:52:17 INFO     [MAIN]  Solving: {'state_', 'keyword'}
+2023-08-19 14:35:11 INFO     [MAIN]  Solving: {'hcpcs_description', 'nppes_provider_state'}
+2023-08-19 14:35:11 INFO     [MAIN]  Solved: {'hcpcs_description', 'nppes_provider_state'}
+2023-08-19 14:35:12 INFO     [MAIN]  table cmsprovider_1 solved!
+
+2023-08-19 14:35:12 INFO     [MAIN]  Solving: {'hcpcs_description', 'nppes_provider_state'}
+2023-08-19 14:35:12 INFO     [MAIN]  Solved: {'hcpcs_description', 'nppes_provider_state'}
+2023-08-19 14:35:14 INFO     [MAIN]  table cmsprovider_2 solved!
+
+2023-08-19 14:35:14 INFO     [MAIN]  **********dir CMSprovider solved!************
+
+2023-08-19 14:35:14 INFO     [MAIN]  Solving: {'state_', 'keyword'}

@@ -1,0 +1,1 @@
+SELECT * FROM   iublibrary_1  WHERE  (iublibrary_1.datelastcharged >= '1900-01-01' and iublibrary_1.datelastcharged <= '1900-12-31');
