@@ -1,0 +1,1 @@
+SELECT * FROM   mlb_24  WHERE  ((mlb_24.inning = 4) AND (mlb_24.league = 'PCL') AND (mlb_24.year = 2015));

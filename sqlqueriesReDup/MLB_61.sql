@@ -1,0 +1,1 @@
+SELECT * FROM   mlb_18  WHERE  ((mlb_18.pa >= 26) AND (mlb_18.pa <= 161) AND (mlb_18.league = 'EL') AND (mlb_18.opponent_teamname = 'Binghamton Mets') AND (mlb_18.year = 2015));

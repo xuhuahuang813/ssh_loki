@@ -1,0 +1,1 @@
+SELECT * FROM   mlb_21  WHERE  ((mlb_21.league = 'EL') AND (mlb_21.times_faced = 1) AND (mlb_21.year = 2015));

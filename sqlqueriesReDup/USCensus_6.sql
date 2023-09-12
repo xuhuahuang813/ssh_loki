@@ -1,0 +1,1 @@
+SELECT * FROM   uscensus_3  WHERE  (uscensus_3.agep > 15);

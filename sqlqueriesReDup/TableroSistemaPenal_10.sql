@@ -1,0 +1,1 @@
+SELECT * FROM   tablerosistemapenal_5  WHERE  ('Volver a Tramitacion Inicial' = 'Volver a Tramitacion Inicial');

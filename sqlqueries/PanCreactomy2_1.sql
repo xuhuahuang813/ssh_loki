@@ -1,0 +1,1 @@
+SELECT * FROM   pancreactomy2_1  WHERE  (pancreactomy2_1.hcpcs_description = 'Imaging of pancreatic duct for placement of catheter using an endoscope');

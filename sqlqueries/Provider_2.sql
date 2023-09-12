@@ -1,0 +1,1 @@
+SELECT * FROM   provider_2  WHERE  ((provider_2.nppes_provider_state = 'WA') AND (provider_2.provider_type = 'Nephrology'));

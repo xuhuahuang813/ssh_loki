@@ -1,0 +1,1 @@
+SELECT * FROM   tablerosistemapenal_8  WHERE  (tablerosistemapenal_8.salidas_tempranas IN ('Aprueba acuerdo reparatorio.', 'Suspensión condicional del procedimiento.'));

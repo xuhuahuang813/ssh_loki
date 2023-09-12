@@ -1,0 +1,1 @@
+SELECT * FROM   mlb_48  WHERE  ((mlb_48.pa >= 1) AND (mlb_48.pa <= 355) AND (mlb_48.homeaway = 'Away') AND (mlb_48.league = 'PCL') AND (mlb_48.year = 2015));

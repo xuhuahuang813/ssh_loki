@@ -1,0 +1,1 @@
+SELECT * FROM   romance_1  WHERE  ((romance_1.lat >= '40.46667') AND (romance_1.lat <= '41') AND (romance_1.lng >= '-74.25') AND (romance_1.lng <= '-73.55'));

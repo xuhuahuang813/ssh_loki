@@ -1,0 +1,1 @@
+SELECT * FROM   mlb_11  WHERE  ((mlb_11.league = 'PCL') AND (mlb_11.position = 'Center Fielder') AND (mlb_11.year = 2015));

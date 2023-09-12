@@ -1,2 +1,0 @@
-input,sql,real,estimate,qerr
-bimbo_1,"SELECT COUNT(*) from ""bimbo_1_gen_shuffle"" AS bimbo_1 WHERE bimbo_1.agencia_id in (1110, 1111, 1112, 1113, 1114, 1116, 1117, 1118, 1119, 1120, 1121, 1122, 1123, 1124, 1126, 1127, 1129, 1130, 1137, 1138)",7418046.0,726964,10.204144909514088

@@ -1,0 +1,1 @@
+SELECT * FROM   arade_1  WHERE  ((arade_1.f3 >= '2014-10-17') AND (arade_1.f3 <= '2015-10-16'));
