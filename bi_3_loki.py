@@ -76,7 +76,7 @@ if __name__ == '__main__':
 
             leftover_constraints = []
 
-            vars_per_col = args.vars_per_col
+            vars_per_col = table_cardinality
 
             solutions = []
             for program in programs:

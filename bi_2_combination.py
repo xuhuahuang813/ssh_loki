@@ -208,7 +208,7 @@ def get_rowcounts_consts(sqls, exprhashes, inputs, jobids):
 
             newsql = newsql_start + " WHERE " + " AND ".join([f"{key} {value}" for key, value in c_i.items()])
 
-            print(newsql)
+            # print(newsql)
 
             rc = get_rowcount(newsql)
 
@@ -219,9 +219,8 @@ def get_rowcounts_consts(sqls, exprhashes, inputs, jobids):
             countdata["Column"].append("|".join([key for key, value in c_i.items()]))
             countdata["input"].append(expr_inp)
             countdata["jobid"].append(expr_jid)
-            countdata["Op"].append("|".join([value.split(" ")[0] for key, value in c_i.items()]))
-            countdata["Value"].append("|".join([value.split(" ")[1] for key, value in c_i.items()]))
-
+            countdata["Op"].append("|".join([value[0:value.find(" ")] for key, value in c_i.items()]))
+            countdata["Value"].append("|".join([value[value.find(" ")+1:] for key, value in c_i.items()]))
         '''
         原代码只支持两列
         '''

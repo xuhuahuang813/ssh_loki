@@ -8,8 +8,8 @@ def get_constraints_df(c_df, table, max_cols=1):
     
     max_cols_ids = constraints_df['Column'].str.split('|').apply(len).idxmax()
     max_cols = len(constraints_df.loc[max_cols_ids]['Column'].split("|"))
-    print(constraints_df.loc[max_cols_ids]['Column'])
-    print("max_cols", max_cols)
+    # print(constraints_df.loc[max_cols_ids]['Column'])
+    # print("max_cols", max_cols)
     
     constraints_df['Value'] = constraints_df['Value'].astype(str)
     constraints_df['opstring'] = constraints_df['Column'] + constraints_df['Op'] + constraints_df['Value']
@@ -28,8 +28,8 @@ def get_table_cardinality(constraints_df):
 def get_co_optimized_columns(constraints_df, columns, max_cols=1):
     max_cols_ids = constraints_df['Column'].str.split('|').apply(len).idxmax()
     max_cols = len(constraints_df.loc[max_cols_ids]['Column'].split("|"))
-    print(constraints_df.loc[max_cols_ids]['Column'])
-    print("max_cols", max_cols)
+    # print(constraints_df.loc[max_cols_ids]['Column'])
+    # print("max_cols", max_cols)
     
     co_optimized_cols = {column: set() for column in columns}
     for row in constraints_df[constraints_df.columns & [f'Column{i}' for i in range(max_cols)]].iterrows():
@@ -62,8 +62,8 @@ def parse_constraints(program, constraints_df):
     constraints = {}
     max_cols_ids = constraints_df['Column'].str.split('|').apply(len).idxmax()
     max_cols = len(constraints_df.loc[max_cols_ids]['Column'].split("|"))
-    print(constraints_df.loc[max_cols_ids]['Column'])
-    print("max_cols", max_cols)
+    # print(constraints_df.loc[max_cols_ids]['Column'])
+    # print("max_cols", max_cols)
     
 
     
