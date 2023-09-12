@@ -1,1 +1,0 @@
-SELECT * FROM   salariesfrance_2  WHERE  (salariesfrance_2.appellation = 'Manutentionnaire');

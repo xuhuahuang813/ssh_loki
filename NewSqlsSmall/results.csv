@@ -1,5 +1,2 @@
 input,sql,real,estimate,qerr
-salariesfrance_2,"SELECT COUNT(*) from ""salariesfrance_2_gen_shuffle"" AS salariesfrance_2 WHERE salariesfrance_2.appellation = 'Manutentionnaire'",22.0,98000,4454.545454545455
-salariesfrance_13,"SELECT COUNT(*) from ""salariesfrance_13_gen_shuffle"" AS salariesfrance_13 WHERE salariesfrance_13.reg_lib = 'BOURGOGNE-FRANCHE-COMTÉ'",9287.0,9246,1.0044343499891846
-salariesfrance_13,"SELECT COUNT(*) from ""salariesfrance_13_gen_shuffle"" AS salariesfrance_13 WHERE salariesfrance_13.reg_lib = 'NOUVELLE-AQUITAINE'",14309.0,14204,1.0073922838637004
-salariesfrance_13,"SELECT COUNT(*) from ""salariesfrance_13_gen_shuffle"" AS salariesfrance_13 WHERE salariesfrance_13.reg_lib = 'BOURGOGNE-FRANCHE-COMTÉ' AND salariesfrance_13.ze2010_lib = 'COSNE - CLAMECY'",245.0,134,1.828358208955224
+bimbo_1,"SELECT COUNT(*) from ""bimbo_1_gen_shuffle"" AS bimbo_1 WHERE bimbo_1.agencia_id in (1110, 1111, 1112, 1113, 1114, 1116, 1117, 1118, 1119, 1120, 1121, 1122, 1123, 1124, 1126, 1127, 1129, 1130, 1137, 1138)",7418046.0,726964,10.204144909514088
