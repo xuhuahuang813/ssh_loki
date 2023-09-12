@@ -17,7 +17,7 @@ if __name__ == '__main__':
     print("========================================bi_3_loki.py========================================")
     
     parser = argparse.ArgumentParser(description='Run Loki.')
-    parser.add_argument('--vars_per_col', '-n', default=200000)
+    parser.add_argument('--vars_per_col', '-n', default=5000)
     parser.add_argument('--verbose', '-v', default=True, action='store_true')
 
     args = parser.parse_args()
