@@ -70,7 +70,11 @@ for dir_name in dir_list:
                 # print(sql_content)
                 sql_content = transform_quotes_to_lowercase(sql_content)
                 sql_content = sql_content.replace("double", "double precision")
+                
+                sql_content = sql_content.replace("((", "(")
+                sql_content = sql_content.replace("))", ")")
                 # print(sql_content)
+                
                 with open(output_path, "w") as output_file:
                     output_file.write(sql_content)
 
