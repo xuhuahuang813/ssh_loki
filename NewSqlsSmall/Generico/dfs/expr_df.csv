@@ -1,2 +1,0 @@
-filtersql,jobid,input,alias,exprhash,unique_filter_cols,discrete_ops,cont_ops,like_ops,is_id,num_unique_ops,num_ops,num_discrete_consts,num_likes,like_lens,InputCardinality,Selectivity,RowCount,workload,db
-"SELECT COUNT(*) from generico_5 AS generico_5 WHERE generico_5.anunciante in ('BANTRAB/TODOTICKET', 'TODOTICKET') AND generico_5.fecha >= '2014-01-01' AND generico_5.fecha <= '2015-12-31' AND generico_5.medio = 'RADIO'",0,generico_5,generico_5,432497650556028409264277412683358521794225321911,3,1,1,0,0,3,5,3,0,0,2336699,0.9999546368616583,2336593,ceb,ceb

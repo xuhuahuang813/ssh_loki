@@ -50,7 +50,9 @@ def read_flags():
 def main():
     print("========================================bi_4_create_table.py========================================")
 
-    folder_path = "./bibench_processed"
+    # folder_path = "./bibench_processed"
+    folder_path = "./NewSqlsSmall"
+    
     # 遍历文件夹
     dir_list = os.listdir(folder_path)
     for dir_name in dir_list:

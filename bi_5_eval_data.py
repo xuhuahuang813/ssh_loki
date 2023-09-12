@@ -147,7 +147,9 @@ def qerr_func(ytrue, yhat):
 def main():
     print("========================================bi_5_eval_data.py========================================")
         
-    folder_path = "./bibench_processed"
+    # folder_path = "./bibench_processed"
+    folder_path = "./NewSqlsSmall"
+    
     
     result_all_path = os.path.join(folder_path, "results.csv")
     with open(result_all_path, mode='w', newline='') as csv_file:

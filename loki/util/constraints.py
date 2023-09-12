@@ -78,7 +78,7 @@ def parse_constraints(program, constraints_df):
         ops = []
         values = []
         for i in range(0, max_cols):
-            print(pd.isnull(eval('row.Column'+ str(i))))
+            # print(pd.isnull(eval('row.Column'+ str(i))))
             if not pd.isnull(eval('row.Column'+ str(i))):
                 columns.append(eval('row.Column'+ str(i)))
                 ops.append(eval('row.Op'+ str(i)))
@@ -98,7 +98,6 @@ def parse_constraints(program, constraints_df):
         #     values = [row.Value0]
         if len(set(columns).intersection(set(program))) == 0:  # Kick out constraints that are not for this program
             continue
-        print(1)
         values = [value.replace('\'', '') for value in values]
         # Sorting by col ensures proper uniqueness above
         row_constraints = tuple(sorted([(col, op, val) for col, op, val in zip(columns, ops, values)]))
