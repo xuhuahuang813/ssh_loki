@@ -1,1 +1,0 @@
-SELECT * FROM   salariesfrance_13  WHERE  (salariesfrance_13.reg_lib = 'BOURGOGNE-FRANCHE-COMTÉ');

@@ -1,5 +1,0 @@
-input,sql,real,estimate,qerr
-salariesfrance_13,"SELECT COUNT(*) from ""salariesfrance_13_gen_shuffle"" AS salariesfrance_13 WHERE salariesfrance_13.reg_lib = 'BOURGOGNE-FRANCHE-COMTÉ'",9287.0,9246,1.0044343499891846
-salariesfrance_13,"SELECT COUNT(*) from ""salariesfrance_13_gen_shuffle"" AS salariesfrance_13 WHERE salariesfrance_13.reg_lib = 'NOUVELLE-AQUITAINE'",14309.0,14204,1.0073922838637004
-salariesfrance_13,"SELECT COUNT(*) from ""salariesfrance_13_gen_shuffle"" AS salariesfrance_13 WHERE salariesfrance_13.reg_lib = 'BOURGOGNE-FRANCHE-COMTÉ' AND salariesfrance_13.ze2010_lib = 'COSNE - CLAMECY'",134376.0,134,1002.8059701492538
-salariesfrance_2,"SELECT COUNT(*) from ""salariesfrance_2_gen_shuffle"" AS salariesfrance_2 WHERE salariesfrance_2.appellation = 'Manutentionnaire'",22.0,98000,4454.545454545455

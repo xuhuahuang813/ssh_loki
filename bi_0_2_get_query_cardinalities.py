@@ -85,10 +85,10 @@ def read_flags():
                         required=False, default=0)
     #
     parser.add_argument("--card_type", type=str, required=False,
-                        default="actual")
+                        default="total")
     #
     parser.add_argument("--key_name", type=str, required=False,
-                        default="actual")
+                        default="total")
     
     parser.add_argument("--true_timeout", type=int,
                         required=False, default=1800000*5)
@@ -403,6 +403,8 @@ def get_cardinality(qrep, card_type, key_name, db_host, db_name, user, pwd,
                 cards[key_name] = -1
             elif(len(subset) == 1):
                 exec_sql = get_total_count_query(subsql)
+                print("subsql is ", subsql)
+                print("exec_sql is ", exec_sql)
                 if args.pg_total:
                     exec_sql = "EXPLAIN " + exec_sql
 
