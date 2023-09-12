@@ -199,7 +199,7 @@ def get_rowcounts_consts(sqls, exprhashes, inputs, jobids):
                     combined_dict = {key: value.lstrip() for key, value in zip(combination_keys, combo)}
                     all_combinations.append(combined_dict)
 
-        print(all_combinations)
+        # print(all_combinations)
 
         for c_i in all_combinations:
             newsql_start = sql[0:sql.find("WHERE")-1]

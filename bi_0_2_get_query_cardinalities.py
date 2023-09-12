@@ -85,10 +85,10 @@ def read_flags():
                         required=False, default=0)
     #
     parser.add_argument("--card_type", type=str, required=False,
-                        default="total")
+                        default="pg")
     #
     parser.add_argument("--key_name", type=str, required=False,
-                        default="total")
+                        default="expected")
     
     parser.add_argument("--true_timeout", type=int,
                         required=False, default=1800000*5)
@@ -379,6 +379,7 @@ def get_cardinality(qrep, card_type, key_name, db_host, db_name, user, pwd,
                 if card == 0 and skip_zero_queries:
                     # bad times...
                     print("skipping query with zero cardinality subquery")
+                    print(subsql, "\n")
                     break
             else:
                 print("something go wrong!")

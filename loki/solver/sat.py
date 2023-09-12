@@ -26,7 +26,7 @@ def build_model(program, constraints, leftover_constraints, table_cardinality, v
             for value in col_values[col]:
                 vars[var].append(model.NewBoolVar('%s_%i_%s' % (col, var, value)))
                 scale += 1
-    # print(f'Problem scale: {scale}')
+    print(f'Problem scale: {scale}')
 
     # Enforce exactly one value per variable
     for var in range(len(vars)):

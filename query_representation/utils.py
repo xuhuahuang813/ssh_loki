@@ -245,7 +245,7 @@ def nx_graph_to_query(G, from_clause=None):
 
         for pred in data["predicates"]:
             if pred not in conds:
-                conds.append(pred)
+                conds.append(pred.replace(";", ""))
 
     for edge in G.edges(data=True):
         conds.append(edge[2]['join_condition'])
