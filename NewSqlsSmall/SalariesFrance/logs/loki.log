@@ -1,10 +1,10 @@
-2023-09-12 13:53:47 INFO     [MAIN]  Solving: {'appellation'}
-2023-09-12 13:53:47 INFO     [MAIN]  Solved: {'appellation'}
-2023-09-12 13:53:47 INFO     [MAIN]  table salariesfrance_2 solved!
+2023-09-12 14:26:51 INFO     [MAIN]  Solving: {'appellation'}
+2023-09-12 14:26:51 INFO     [MAIN]  Solved: {'appellation'}
+2023-09-12 14:26:51 INFO     [MAIN]  table salariesfrance_2 solved!
 
-2023-09-12 13:53:47 INFO     [MAIN]  Solving: {'reg_lib', 'ze2010_lib'}
-2023-09-12 13:53:48 INFO     [MAIN]  Solved: {'reg_lib', 'ze2010_lib'}
-2023-09-12 13:53:48 INFO     [MAIN]  table salariesfrance_13 solved!
+2023-09-12 14:26:51 INFO     [MAIN]  Solving: {'reg_lib', 'ze2010_lib'}
+2023-09-12 14:26:51 INFO     [MAIN]  Solved: {'reg_lib', 'ze2010_lib'}
+2023-09-12 14:26:52 INFO     [MAIN]  table salariesfrance_13 solved!
 
-2023-09-12 13:53:48 INFO     [MAIN]  **********dir SalariesFrance solved!************
+2023-09-12 14:26:52 INFO     [MAIN]  **********dir SalariesFrance solved!************
 

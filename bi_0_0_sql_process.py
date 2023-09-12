@@ -27,6 +27,8 @@ folder_path = "./NewSqlsSmall"
 # 遍历文件夹
 dir_list = os.listdir(folder_path)
 
+notEqual = 0 #sql中包含<或>的sql数量
+
 for dir_name in dir_list:
     if ".csv" in dir_name:
         continue
@@ -52,11 +54,7 @@ for dir_name in dir_list:
         if filename.lower().endswith(".sql"):
             # 构造输入文件的完整路径
             input_path = os.path.join(input_folder, filename)
-            
-            # 构造输出文件的完整路径，保持原文件名但转为小写
-            output_filename = filename.lower()
-            output_path = os.path.join(output_folder, output_filename)
-            
+                       
             # 读取输入文件内容并转为小写，然后写入输出文件
             with open(input_path, "r") as input_file:
                 sql_content = input_file.read()
@@ -75,6 +73,15 @@ for dir_name in dir_list:
                 sql_content = sql_content.replace("))", ")")
                 # print(sql_content)
                 
+                if ">" in sql_content or "<" in sql_content:
+                    notEqual += 1
+                    print(input_path,"*******", sql_content)
+                    continue
+                
+                # 构造输出文件的完整路径，保持原文件名但转为小写
+                output_filename = filename.lower()
+                output_path = os.path.join(output_folder, output_filename)
                 with open(output_path, "w") as output_file:
                     output_file.write(sql_content)
 
+    print(f"notEqual is {notEqual}")
