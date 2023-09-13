@@ -18,6 +18,14 @@ def build_model(program, constraints, leftover_constraints, table_cardinality, v
     model = cp_model.CpModel()
     vars = collections.defaultdict(list)
 
+    # 计算scale
+    # scale = 0
+    # for i, col in enumerate(cols):
+    #     for var in range(i * vars_per_col, (i + 1) * vars_per_col):
+    #         for value in col_values[col]:
+    #             scale += 1
+    # print(f'Problem scale: {scale}')
+    
     # Create row variables
     scale = 0
     for i, col in enumerate(cols):

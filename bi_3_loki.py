@@ -17,7 +17,7 @@ if __name__ == '__main__':
     print("========================================bi_3_loki.py========================================")
     
     parser = argparse.ArgumentParser(description='Run Loki.')
-    parser.add_argument('--vars_per_col', '-n', default=5000)
+    parser.add_argument('--vars_per_col', '-n', default=10000)
     parser.add_argument('--verbose', '-v', default=True, action='store_true')
 
     args = parser.parse_args()
@@ -76,12 +76,12 @@ if __name__ == '__main__':
 
             leftover_constraints = []
 
-            # vars_per_col = args.vars_per_col
-            vars_per_col = table_cardinality
+            vars_per_col = args.vars_per_col
+            # vars_per_col = table_cardinality
 
             solutions = []
             for program in programs:
-                logger.info(f'Solving: {program}')
+                logger.info(f'Solving:{dir_name}--{table}--{program}')
                 constraints_ = constraints.parse_constraints(program, constraints_df)
                 model, vars, cols, col_values_ids_map = sat.build_model(program, constraints_, leftover_constraints, table_cardinality, vars_per_col)
                 solution = sat.solve(model, vars, cols, col_values_ids_map, vars_per_col)
