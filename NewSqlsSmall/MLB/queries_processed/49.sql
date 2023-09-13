@@ -1,0 +1,1 @@
+SELECT * FROM   mlb_65  WHERE  (mlb_65.batter_name = 'Gavin Cecchini');

@@ -1,0 +1,1 @@
+SELECT * FROM   pancreactomy2_2  WHERE  (pancreactomy2_2.hcpcs_description IN ('Pancreas procedure', 'Partial removal of pancreas', 'Partial removal of pancreas with attachment to small bowel', 'Partial removal of pancreas, bile duct and small bowel with connection of pancreas to small bowel') AND (pancreactomy2_2.provider_type IN ('General Surgery', 'Surgical Oncology'));

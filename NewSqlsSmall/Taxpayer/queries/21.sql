@@ -1,0 +1,1 @@
+SELECT * FROM   taxpayer_10  WHERE  ((taxpayer_10.nppes_provider_city IN ('BELLEVUE', 'BELLVUE')) AND (taxpayer_10.nppes_provider_state = 'WA') AND (taxpayer_10.hcpcs_description = 'Initial hospital care'));

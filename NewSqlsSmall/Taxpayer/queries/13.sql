@@ -1,0 +1,1 @@
+SELECT * FROM   taxpayer_7  WHERE  ((taxpayer_7.nppes_provider_first_name = 'JOHN') AND (taxpayer_7.nppes_provider_state = 'WA'));

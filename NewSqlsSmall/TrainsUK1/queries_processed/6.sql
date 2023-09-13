@@ -1,0 +1,1 @@
+SELECT * FROM   trainsuk1_2  WHERE  (trainsuk1_2.timetable = 'M18') AND (trainsuk1_2.v_headcode_description = '1A04London Liverpool Street to Harwich Town at 06:38');

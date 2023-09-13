@@ -14,7 +14,7 @@ for filename in os.listdir("./sqlqueriesReDup"):
         new_filename = parts[1]
 
         # 创建文件夹（如果不存在）
-        folder_path = os.path.join("./NewSqls", folder_name, "queries")
+        folder_path = os.path.join("./NewSqlsSmall", folder_name, "queries")
 
         # 构建文件的源路径和目标路径
         source_file_path = os.path.join("./sqlqueriesReDup", filename)

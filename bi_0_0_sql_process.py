@@ -69,8 +69,9 @@ for dir_name in dir_list:
                 sql_content = transform_quotes_to_lowercase(sql_content)
                 sql_content = sql_content.replace("double", "double precision")
                 
-                sql_content = sql_content.replace("((", "(")
-                sql_content = sql_content.replace("))", ")")
+                if "((" in sql_content:
+                    sql_content = sql_content.replace("((", "(")
+                    sql_content = sql_content.replace("))", ")")
                 # print(sql_content)
                 
                 # if ">" in sql_content or "<" in sql_content:

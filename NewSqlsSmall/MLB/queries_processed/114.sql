@@ -1,0 +1,1 @@
+SELECT * FROM   mlb_30  WHERE  (mlb_30.league = 'PCL') AND (mlb_30.statei = 'Bases Empty') AND (mlb_30.year = 2015);

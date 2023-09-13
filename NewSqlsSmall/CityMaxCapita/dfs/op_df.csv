@@ -1,0 +1,7 @@
+op,dtype,optype,constant,input,column,opstring,is_id,jobid,discrete_ops,cont_ops,like_ops,alias,exprhash,InputCardinality,Selectivity,RowCount,workload,db
+=,string,=,'bitch',citymaxcapita_1,keyword,citymaxcapita_1.keyword = 'bitch',0,0,1,0,0,citymaxcapita_1,199957788218938161655964598075260233121812980378,912767,0.0,0,ceb,ceb
+=,string,=,'cunt',citymaxcapita_1,keyword,citymaxcapita_1.keyword = 'cunt',0,1,1,0,0,citymaxcapita_1,588836486652003982883067239758142564157365174494,912767,0.0946199851659843,86366,ceb,ceb
+=,string,=,'slut',citymaxcapita_1,keyword,citymaxcapita_1.keyword = 'slut',0,2,1,0,0,citymaxcapita_1,1081582314886111816851983860332483236813401767092,912767,0.0,0,ceb,ceb
+=,string,in,'bimbo',citymaxcapita_1,keyword,"citymaxcapita_1.keyword in ('bimbo', 'twat')",0,3,1,0,0,citymaxcapita_1,625177819699858934615403891717637655915587684793,912767,0.0,0,ceb,ceb
+=,string,in,'twat',citymaxcapita_1,keyword,"citymaxcapita_1.keyword in ('bimbo', 'twat')",0,3,1,0,0,citymaxcapita_1,625177819699858934615403891717637655915587684793,912767,0.0,0,ceb,ceb
+=,string,=,'dyke',citymaxcapita_1,keyword,citymaxcapita_1.keyword = 'dyke',0,4,1,0,0,citymaxcapita_1,1142075876554116539318182753025789026436937112543,912767,0.0,0,ceb,ceb

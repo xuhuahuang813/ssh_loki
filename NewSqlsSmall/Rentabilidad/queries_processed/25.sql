@@ -1,0 +1,1 @@
+SELECT * FROM   rentabilidad_5  WHERE  (rentabilidad_5.sede_foraneo_sintec = 'Sede') AND (rentabilidad_5.zona = 'OC');

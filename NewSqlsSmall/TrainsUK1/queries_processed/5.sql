@@ -1,0 +1,1 @@
+SELECT * FROM   trainsuk1_4  WHERE  (trainsuk1_4.timetable IN ('', 'Timetable') AND (trainsuk1_4.operator = 'EB');

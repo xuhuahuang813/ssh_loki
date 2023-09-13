@@ -1,0 +1,1 @@
+SELECT * FROM   rentabilidad_7  WHERE  (rentabilidad_7.figura = 'Preventa On Premise') AND (rentabilidad_7.sede_foraneo_sintec = 'Sede') AND (rentabilidad_7.zona = 'OC');
