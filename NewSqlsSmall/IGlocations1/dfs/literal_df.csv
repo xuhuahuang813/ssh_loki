@@ -1,0 +1,2 @@
+exprhash,RowCount,InputCardinality,RowSql,Column,input,jobid,Op,Value
+166705674010325605820872440776969024783693586578,4,81611,SELECT COUNT(*) from iglocations1_1 AS iglocations1_1 WHERE iglocations1_1.state = 'District of Columbia',iglocations1_1.state,iglocations1_1,0,=,'District of Columbia'
