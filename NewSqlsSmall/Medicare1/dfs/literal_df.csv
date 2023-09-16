@@ -1,8 +1,0 @@
-exprhash,RowCount,InputCardinality,RowSql,Column,input,jobid,Op,Value
-896628348831257316991792080881328321270500617926,484,864507,SELECT COUNT(*) from medicare1_2 AS medicare1_2 WHERE medicare1_2.nppes_provider_state = 'AK',medicare1_2.nppes_provider_state,medicare1_2,0,=,'AK'
-896628348831257316991792080881328321270500617926,3,864507,SELECT COUNT(*) from medicare1_2 AS medicare1_2 WHERE medicare1_2.nppes_provider_state = 'AS',medicare1_2.nppes_provider_state,medicare1_2,0,=,'AS'
-896628348831257316991792080881328321270500617926,50,864507,SELECT COUNT(*) from medicare1_2 AS medicare1_2 WHERE medicare1_2.nppes_provider_state = 'GU',medicare1_2.nppes_provider_state,medicare1_2,0,=,'GU'
-896628348831257316991792080881328321270500617926,2889,864507,SELECT COUNT(*) from medicare1_2 AS medicare1_2 WHERE medicare1_2.nppes_provider_state = 'HI',medicare1_2.nppes_provider_state,medicare1_2,0,=,'HI'
-896628348831257316991792080881328321270500617926,6,864507,SELECT COUNT(*) from medicare1_2 AS medicare1_2 WHERE medicare1_2.nppes_provider_state = 'MP',medicare1_2.nppes_provider_state,medicare1_2,0,=,'MP'
-896628348831257316991792080881328321270500617926,15254,864507,SELECT COUNT(*) from medicare1_2 AS medicare1_2 WHERE medicare1_2.nppes_provider_state = 'PR',medicare1_2.nppes_provider_state,medicare1_2,0,=,'PR'
-896628348831257316991792080881328321270500617926,77,864507,SELECT COUNT(*) from medicare1_2 AS medicare1_2 WHERE medicare1_2.nppes_provider_state = 'VI',medicare1_2.nppes_provider_state,medicare1_2,0,=,'VI'

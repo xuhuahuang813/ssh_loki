@@ -1,0 +1,108 @@
+(python39) [qswang@node-49-52-27-35 hxh]$ python -m memory_profiler bi_3_loki.py 
+========================================bi_3_loki.py========================================
+/home/qswang/hxh/loki/util/constraints.py:35: FutureWarning: Index.__and__ operating as a set operation is deprecated, in the future this will be a logical operation matching Series.__and__.  Use index.intersection(other) instead.
+  for row in constraints_df[constraints_df.columns & [f'Column{i}' for i in range(max_cols)]].iterrows():
+2023-09-14 17:00:08 INFO     [MAIN]  Solving:CMSprovider--cmsprovider_2--{'nppes_provider_state', 'hcpcs_description'}
+SatScale: 4, vars_per_col: 25000, Estimate scale: 100000
+Problem scale: 100000
+Status = OPTIMAL
+2023-09-14 17:01:05 INFO     [MAIN]  Solved: {'nppes_provider_state', 'hcpcs_description'}
+2023-09-14 17:01:07 INFO     [MAIN]  table cmsprovider_2 solved!
+
+2023-09-14 17:01:07 INFO     [MAIN]  **********dir CMSprovider solved!************
+
+Filename: bi_3_loki.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    18     82.7 MiB     82.7 MiB           1   @profile
+    19                                         def run():
+    20     82.7 MiB      0.0 MiB           1       print("========================================bi_3_loki.py========================================")
+    21                                         
+    22                                             
+    23     82.7 MiB      0.0 MiB           1       parser = argparse.ArgumentParser(description='Run Loki.')
+    24                                             # parser.add_argument('--vars_per_col', '-n', default=10000)
+    25     82.7 MiB      0.0 MiB           1       parser.add_argument('--verbose', '-v', default=True, action='store_true')
+    26                                         
+    27     82.7 MiB      0.0 MiB           1       args = parser.parse_args()
+    28                                             
+    29                                             # folder_path = "./bibench_processed"
+    30     82.7 MiB      0.0 MiB           1       folder_path = "./NewSqlsSmall"
+    31                                             
+    32                                             # 遍历文件夹
+    33     82.7 MiB      0.0 MiB           1       dir_list = os.listdir(folder_path)
+    34                                         
+    35   1780.4 MiB      0.0 MiB           3       for dir_name in dir_list:
+    36   1780.4 MiB      0.0 MiB           2           if ".csv" in dir_name:
+    37   1780.4 MiB      0.0 MiB           1               continue
+    38     82.7 MiB      0.0 MiB           1           log_file_path = os.path.join(folder_path, dir_name, "logs")
+    39                                                 
+    40     82.7 MiB      0.0 MiB           1           if not os.path.exists(log_file_path):
+    41                                                     os.makedirs(log_file_path)
+    42                                                     # print(f"文件夹 '{log_file_path}' 已创建")
+    43                                                 # else:
+    44                                                     # print(f"文件夹 '{log_file_path}' 已存在")
+    45                                         
+    46     82.7 MiB      0.0 MiB           2           logging.basicConfig(
+    47     82.7 MiB      0.0 MiB           1               level=logging.DEBUG if args.verbose else logging.INFO,
+    48     82.7 MiB      0.0 MiB           1               format="%(asctime)s %(levelname)-8s [%(name)s]  %(message)s",
+    49     82.7 MiB      0.0 MiB           1               datefmt="%Y-%m-%d %H:%M:%S",
+    50     82.7 MiB      0.0 MiB           1               handlers=[logging.FileHandler(log_file_path + "/loki.log"), logging.StreamHandler()])
+    51                                         
+    52     82.7 MiB      0.0 MiB           1           logger = logging.getLogger('MAIN')
+    53                                         
+    54     83.5 MiB      0.8 MiB           1           df = pd.read_csv(os.path.join(folder_path, dir_name, "dfs", "op_df.csv")) #"df": "sample-data/op_df.csv"
+    55                                                 
+    56     83.5 MiB      0.0 MiB           1           tables = set(df['input']) 
+    57     83.5 MiB      0.0 MiB           4           table_columns = {table: set(df['column'].where(df['input'] == table).dropna()) for table in tables}
+    58                                                 # print("table_columns is", table_columns)
+    59                                                 
+    60     83.5 MiB      0.0 MiB           1           c_df = pd.read_csv(os.path.join(folder_path, dir_name, "dfs", "literal_df.csv")) #literal_df.csv
+    61                                                 
+    62                                                 # 创建输出文件夹
+    63     83.5 MiB      0.0 MiB           1           result_folder = os.path.join(folder_path, dir_name, "results")
+    64     83.5 MiB      0.0 MiB           1           if not os.path.exists(result_folder):
+    65                                                     os.makedirs(result_folder)
+    66                                                     # print(f"文件夹 '{result_folder}' 已创建")
+    67                                                 # else:
+    68                                                     # print(f"文件夹 '{result_folder}' 已存在")
+    69                                                     
+    70                                                 # table不能直接取第一个，因为同一个文件夹下的sql会针对多个数据表，只是单个sql本身不会join多个表
+    71     83.5 MiB      0.0 MiB           1           tableList = list(tables)
+    72                                                 
+    73   1780.4 MiB      0.0 MiB           2           for table in tableList:
+    74     83.5 MiB      0.0 MiB           1               columns = table_columns[table]
+    75                                                     
+    76     84.2 MiB      0.8 MiB           1               constraints_df = constraints.get_constraints_df(c_df, table)
+    77     84.2 MiB      0.0 MiB           1               table_cardinality = constraints.get_table_cardinality(constraints_df)
+    78     84.2 MiB      0.0 MiB           1               co_optimized_columns = constraints.get_co_optimized_columns(constraints_df, columns)
+    79     84.2 MiB      0.0 MiB           1               programs = constraints.get_programs(co_optimized_columns)
+    80                                         
+    81     84.2 MiB      0.0 MiB           1               leftover_constraints = []
+    82                                         
+    83                                                     # vars_per_col = args.vars_per_col
+    84                                                     # vars_per_col = table_cardinality
+    85                                         
+    86     84.2 MiB      0.0 MiB           1               solutions = []
+    87   1778.9 MiB      0.0 MiB           2               for program in programs:
+    88     84.2 MiB      0.0 MiB           1                   logger.info(f'Solving:{dir_name}--{table}--{program}')
+    89     84.2 MiB      0.0 MiB           1                   constraints_ = constraints.parse_constraints(program, constraints_df)
+    90    183.5 MiB     99.2 MiB           1                   model, vars, cols, col_values_ids_map, vars_per_col = sat.build_model(program, constraints_, leftover_constraints, table_cardinality)
+    91   1778.9 MiB   1595.5 MiB           1                   solution = sat.solve(model, vars, cols, col_values_ids_map, vars_per_col)
+    92   1778.9 MiB      0.0 MiB           1                   solutions.append(solution)
+    93   1778.9 MiB      0.0 MiB           1                   logger.info(f'Solved: {program}')
+    94                                         
+    95                                         
+    96                                                     # Combine all programs' solutions into a single dictionary solution
+    97   1778.9 MiB      0.0 MiB           6               full_solution = {k: v for s in solutions for k, v in s.items()}
+    98                                         
+    99   1778.9 MiB      0.0 MiB           1               postprocessing.apply_leftover_constraints(full_solution, leftover_constraints)
+   100   1778.9 MiB      0.0 MiB           1               solution_df = postprocessing.solution_to_df(full_solution)
+   101   1780.4 MiB      1.4 MiB           1               final_solution_df = postprocessing.scale_solution_df(solution_df, table_cardinality, vars_per_col)
+   102                                                     
+   103   1780.4 MiB      0.0 MiB           1               final_solution_df.to_csv(os.path.join(folder_path, dir_name, "results") + f"/{table}.csv")
+   104                                                     
+   105   1780.4 MiB      0.0 MiB           1               logger.info(f"table {table} solved!\n")
+   106                                         
+   107                                                     # logger.info('Exiting Loki!')
+   108   1780.4 MiB      0.0 MiB           1           logger.info(f"**********dir {dir_name} solved!************\n")

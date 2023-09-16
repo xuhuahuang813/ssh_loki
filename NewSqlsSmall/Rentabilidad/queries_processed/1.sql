@@ -1,1 +1,0 @@
-SELECT * FROM   rentabilidad_1  WHERE  (rentabilidad_1.locacion = 'Bogota Sur') AND (rentabilidad_1.zona = 'CE');

@@ -1,1 +1,0 @@
-SELECT * FROM   medicare2_1  WHERE  (medicare2_1.nppes_provider_state = 'NY');

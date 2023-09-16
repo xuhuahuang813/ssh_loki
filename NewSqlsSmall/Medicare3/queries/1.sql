@@ -1,1 +1,0 @@
-SELECT * FROM   medicare3_1  WHERE  (medicare3_1.provider_type IN ('Physical Medicine and Rehabilitation', 'Physical Therapist'));

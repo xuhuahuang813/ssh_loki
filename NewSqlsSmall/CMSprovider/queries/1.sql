@@ -1,1 +1,0 @@
-SELECT * FROM   cmsprovider_1  WHERE  ((cmsprovider_1.hcpcs_description IN ('Removal of joint lining from two or more knee joint compartments using an endoscope', 'Removal of knee cap', 'Removal of knee joint covering')) AND (cmsprovider_1.nppes_provider_state = 'CA'));

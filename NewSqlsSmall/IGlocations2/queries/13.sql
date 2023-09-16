@@ -1,1 +1,0 @@
-SELECT * FROM   iglocations2_2  WHERE  ((iglocations2_2.state__copy_ = 'Alaska') AND (iglocations2_2.state IN ('Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas')));

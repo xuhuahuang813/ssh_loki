@@ -1,4 +1,5 @@
-#!/bin/bash
+# #!/bin/bash
+
 python bi_0_0_sql_process.py
 
 python bi_0_1_sql_to_qrep.py
@@ -11,6 +12,6 @@ python bi_1_ParsingSQLs.py
 
 python bi_2_combination.py
  
-# python bi_3_loki.py
-# python bi_4_create_table.py 
-# python bi_5_eval_data.py
+python bi_3_loki.py
+python bi_4_create_table.py 
+python bi_5_eval_data.py

@@ -1,1 +1,0 @@
-SELECT * FROM   mlb_14  WHERE  ((mlb_14.field = 'Center') AND (mlb_14.league = 'PCL') AND (mlb_14.stand = 'R') AND (mlb_14.year = 2015));

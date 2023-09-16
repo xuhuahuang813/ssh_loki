@@ -1,1 +1,0 @@
-SELECT * FROM   tablerosistemapenal_6  WHERE  (tablerosistemapenal_6.audiencia IN ('AUDIENCIA DE JUICIO ORAL TOP', 'AUDIENCIA DE LECTURA DE SENTENCIA.') AND (tablerosistemapenal_6.tip_trib = 'Oral');

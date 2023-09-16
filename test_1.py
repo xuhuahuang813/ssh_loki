@@ -1,21 +1,17 @@
-import networkx as nx
-from networkx.readwrite import json_graph
-import pickle
-# import numpy as np
+from ortools.sat.python import cp_model
 
-# settings = {}
-# with open("./settings.json", 'r') as f:
-#     settings = json.load(f)
-    
-fn = "./NewSqlsSmall/SalariesFrance/workload/17.pkl"
+# Create a CSP model
+model = cp_model.CpModel()
 
-with open(fn, "rb") as f:
-    query = pickle.load(f)
-    
-# 选择要保存的文件名
-file_name = 'query.txt'
+# Add boolean variables
+x = model.NewBoolVar('x')
+y = model.NewBoolVar('y')
+z = model.NewBoolVar('z')
 
-# 保存字典到文本文件
-with open(file_name, 'w') as f:
-    for key, value in query.items():
-        f.write(f"{key}: {value}\n")
+# Create a CSP solver
+solver = cp_model.CpSolver()
+
+# Get the number of boolean variables in the model
+num_booleans = solver.NumBooleans()
+
+print(f'Number of boolean variables: {num_booleans}')

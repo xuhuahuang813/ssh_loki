@@ -1,0 +1,5 @@
+input,sql,real,estimate,qerr
+salariesfrance_2,"SELECT COUNT(*) from ""salariesfrance_2_gen_shuffle"" AS salariesfrance_2 WHERE salariesfrance_2.appellation = 'Manutentionnaire'",22.0,22,1.0
+salariesfrance_13,"SELECT COUNT(*) from ""salariesfrance_13_gen_shuffle"" AS salariesfrance_13 WHERE salariesfrance_13.reg_lib = 'BOURGOGNE-FRANCHE-COMTÉ'",9287.0,9287,1.0
+salariesfrance_13,"SELECT COUNT(*) from ""salariesfrance_13_gen_shuffle"" AS salariesfrance_13 WHERE salariesfrance_13.reg_lib = 'NOUVELLE-AQUITAINE'",14309.0,14309,1.0
+salariesfrance_13,"SELECT COUNT(*) from ""salariesfrance_13_gen_shuffle"" AS salariesfrance_13 WHERE salariesfrance_13.reg_lib = 'BOURGOGNE-FRANCHE-COMTÉ' AND salariesfrance_13.ze2010_lib = 'COSNE - CLAMECY'",245.0,245,1.0

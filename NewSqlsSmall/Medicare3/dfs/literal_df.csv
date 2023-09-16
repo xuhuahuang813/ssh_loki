@@ -1,3 +1,0 @@
-exprhash,RowCount,InputCardinality,RowSql,Column,input,jobid,Op,Value
-854215675980347075533714692638815117319426353770,8084,928788,SELECT COUNT(*) from medicare3_1 AS medicare3_1 WHERE medicare3_1.provider_type = 'Physical Medicine and Rehabilitation',medicare3_1.provider_type,medicare3_1,0,=,'Physical Medicine and Rehabilitation'
-854215675980347075533714692638815117319426353770,19808,928788,SELECT COUNT(*) from medicare3_1 AS medicare3_1 WHERE medicare3_1.provider_type = 'Physical Therapist',medicare3_1.provider_type,medicare3_1,0,=,'Physical Therapist'

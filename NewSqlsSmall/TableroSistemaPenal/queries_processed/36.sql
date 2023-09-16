@@ -1,1 +1,0 @@
-SELECT * FROM   tablerosistemapenal_8  WHERE  (tablerosistemapenal_8.tipo_sentencia IN ('Sentencia Absolutoria', 'Sentencia Condenatoria'));

@@ -7,8 +7,10 @@ import collections
 
 from loki.util import printer
 
+# from memory_profiler import profile
 
-def build_model(program, constraints, leftover_constraints, table_cardinality, vars_per_col=1000):
+
+def build_model(program, constraints, leftover_constraints, table_cardinality):
     cols = list(set([c[0] for cs in constraints.keys() for c in cs]))
     col_values = {col: list(set([c[2] for cs in constraints.keys() for c in cs if c[0] == col])) for col in cols}
     values = [v for col in cols for v in col_values[col]]
@@ -18,13 +20,15 @@ def build_model(program, constraints, leftover_constraints, table_cardinality, v
     model = cp_model.CpModel()
     vars = collections.defaultdict(list)
 
-    # 计算scale
-    # scale = 0
-    # for i, col in enumerate(cols):
-    #     for var in range(i * vars_per_col, (i + 1) * vars_per_col):
-    #         for value in col_values[col]:
-    #             scale += 1
-    # print(f'Problem scale: {scale}')
+    
+    SatScale = 0
+    for col_name in col_values:
+        SatScale += len(col_values[col_name])    
+    
+    # vars_per_col = 200000 // SatScale  
+    vars_per_col = table_cardinality
+    
+    print(f'SatScale: {SatScale}, vars_per_col: {vars_per_col}, Estimate scale: {vars_per_col*SatScale}')  
     
     # Create row variables
     scale = 0
@@ -72,7 +76,7 @@ def build_model(program, constraints, leftover_constraints, table_cardinality, v
             model.Add(sum(vs) == downsampled_v)
         constraint_id += 1
 
-    return model, vars, cols, col_values_ids_map
+    return model, vars, cols, col_values_ids_map, vars_per_col
 
 
 def get_solution(solver, vars):
@@ -83,10 +87,12 @@ def get_solution(solver, vars):
                 solution.append(value)
     return solution
 
-
+# @profile
 def solve(model, vars, cols, col_values_ids_map, vars_per_col=1000):
     solver = cp_model.CpSolver()
+    
     status = solver.Solve(model)
+    print("NumBooleans(): ", solver.NumBooleans())
 
     print('Status = %s' % solver.StatusName(status))
     abstract_solution = get_solution(solver, vars)

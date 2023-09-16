@@ -1,7 +1,0 @@
-exprhash,RowCount,InputCardinality,RowSql,Column,input,jobid,Op,Value
-199957788218938161655964598075260233121812980378,0,912657,SELECT COUNT(*) from citymaxcapita_1 AS citymaxcapita_1 WHERE citymaxcapita_1.keyword = 'bitch',citymaxcapita_1.keyword,citymaxcapita_1,0,=,'bitch'
-588836486652003982883067239758142564157365174494,86366,912657,SELECT COUNT(*) from citymaxcapita_1 AS citymaxcapita_1 WHERE citymaxcapita_1.keyword = 'cunt',citymaxcapita_1.keyword,citymaxcapita_1,1,=,'cunt'
-1081582314886111816851983860332483236813401767092,0,912657,SELECT COUNT(*) from citymaxcapita_1 AS citymaxcapita_1 WHERE citymaxcapita_1.keyword = 'slut',citymaxcapita_1.keyword,citymaxcapita_1,2,=,'slut'
-625177819699858934615403891717637655915587684793,0,912657,SELECT COUNT(*) from citymaxcapita_1 AS citymaxcapita_1 WHERE citymaxcapita_1.keyword = 'bimbo',citymaxcapita_1.keyword,citymaxcapita_1,3,=,'bimbo'
-625177819699858934615403891717637655915587684793,0,912657,SELECT COUNT(*) from citymaxcapita_1 AS citymaxcapita_1 WHERE citymaxcapita_1.keyword = 'twat',citymaxcapita_1.keyword,citymaxcapita_1,3,=,'twat'
-1142075876554116539318182753025789026436937112543,0,912657,SELECT COUNT(*) from citymaxcapita_1 AS citymaxcapita_1 WHERE citymaxcapita_1.keyword = 'dyke',citymaxcapita_1.keyword,citymaxcapita_1,4,=,'dyke'

@@ -1,1 +1,0 @@
-SELECT * FROM   mlb_44  WHERE  ((mlb_44.batted_ball_type = 'LD') AND (mlb_44.league = 'PCL') AND (mlb_44.year = 2015));

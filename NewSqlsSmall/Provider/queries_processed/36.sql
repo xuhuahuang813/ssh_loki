@@ -1,1 +1,0 @@
-SELECT * FROM   provider_6  WHERE  (provider_6.nppes_provider_state = 'WA') AND (provider_6.provider_type = 'Nephrology');

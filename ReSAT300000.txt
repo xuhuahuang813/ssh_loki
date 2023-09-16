@@ -1,0 +1,26 @@
+/home/qswang/hxh/loki/util/constraints.py:35: FutureWarning: Index.__and__ operating as a set operation is deprecated, in the future this will be a logical operation matching Series.__and__.  Use index.intersection(other) instead.
+  for row in constraints_df[constraints_df.columns & [f'Column{i}' for i in range(max_cols)]].iterrows():
+2023-09-14 18:31:22 INFO     [MAIN]  Solving:CMSprovider--cmsprovider_2--{'hcpcs_description', 'nppes_provider_state'}
+SatScale: 4, vars_per_col: 75000, Estimate scale: 300000
+Problem scale: 300000
+Status = OPTIMAL
+Filename: /home/qswang/hxh/loki/solver/sat.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    88    387.1 MiB    387.1 MiB           1   @profile
+    89                                         def solve(model, vars, cols, col_values_ids_map, vars_per_col=1000):
+    90    387.1 MiB      0.0 MiB           1       solver = cp_model.CpSolver()
+    91   4561.8 MiB   4174.7 MiB           1       status = solver.Solve(model)
+    92                                         
+    93   4561.8 MiB      0.0 MiB           1       print('Status = %s' % solver.StatusName(status))
+    94   4562.0 MiB      0.3 MiB           1       abstract_solution = get_solution(solver, vars)
+    95                                         
+    96   4562.3 MiB      0.2 MiB      150003       solution = [col_values_ids_map[cols[int(i / vars_per_col)]][v] if v in col_values_ids_map[cols[int(i / vars_per_col)]] else None for i, v in enumerate(abstract_solution)]
+    97   4562.3 MiB      0.0 MiB           5       return {cols[int(i / vars_per_col)]: solution[i:i + vars_per_col] for i in range(0, len(solution), vars_per_col)}
+
+
+2023-09-14 18:34:36 INFO     [MAIN]  Solved: {'hcpcs_description', 'nppes_provider_state'}
+2023-09-14 18:34:37 INFO     [MAIN]  table cmsprovider_2 solved!
+
+2023-09-14 18:34:37 INFO     [MAIN]  **********dir CMSprovider solved!************

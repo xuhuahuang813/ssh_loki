@@ -1,1 +1,0 @@
-SELECT * FROM   hatred_1  WHERE  ((hatred_1.state_ IN ('DC', 'NV')) AND (hatred_1.keyword IN ('chicks with dicks', 'man in a dress', 'men in dresses', 'shemale', 'trannies', 'tranny')));

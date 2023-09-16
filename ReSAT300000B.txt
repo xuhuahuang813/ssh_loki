@@ -1,0 +1,31 @@
+/home/qswang/hxh/loki/util/constraints.py:35: FutureWarning: Index.__and__ operating as a set operation is deprecated, in the future this will be a logical operation matching Series.__and__.  Use index.intersection(other) instead.
+  for row in constraints_df[constraints_df.columns & [f'Column{i}' for i in range(max_cols)]].iterrows():
+2023-09-14 19:22:54 INFO     [MAIN]  Solving:Bimbo--bimbo_1--{'agencia_id'}
+SatScale: 20, vars_per_col: 15000, Estimate scale: 300000
+Problem scale: 300000
+NumBooleans():  300000
+Status = OPTIMAL
+Filename: /home/qswang/hxh/loki/solver/sat.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    88    256.6 MiB    256.6 MiB           1   @profile
+    89                                         def solve(model, vars, cols, col_values_ids_map, vars_per_col=1000):
+    90    256.6 MiB      0.0 MiB           1       solver = cp_model.CpSolver()
+    91                                             
+    92    695.3 MiB    438.8 MiB           1       status = solver.Solve(model)
+    93    695.3 MiB      0.0 MiB           1       print("NumBooleans(): ", solver.NumBooleans())
+    94                                         
+    95    695.3 MiB      0.0 MiB           1       print('Status = %s' % solver.StatusName(status))
+    96    695.3 MiB      0.0 MiB           1       abstract_solution = get_solution(solver, vars)
+    97                                         
+    98    695.3 MiB      0.0 MiB       15003       solution = [col_values_ids_map[cols[int(i / vars_per_col)]][v] if v in col_values_ids_map[cols[int(i / vars_per_col)]] else None for i, v in enumerate(abstract_solution)]
+    99    695.3 MiB      0.0 MiB           4       return {cols[int(i / vars_per_col)]: solution[i:i + vars_per_col] for i in range(0, len(solution), vars_per_col)}
+
+
+2023-09-14 19:24:35 INFO     [MAIN]  Solved: {'agencia_id'}
+2023-09-14 19:24:44 INFO     [MAIN]  table bimbo_1 solved!
+
+2023-09-14 19:24:44 INFO     [MAIN]  **********dir Bimbo solved!************
+
+(python39) [qswang@node-49-52-27-35 hxh]$ 

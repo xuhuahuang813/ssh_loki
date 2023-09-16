@@ -1,1 +1,0 @@
-SELECT * FROM   taxpayer_2  WHERE  (taxpayer_2.nppes_provider_first_name = 'JOHN') AND (taxpayer_2.nppes_provider_state = 'WA');

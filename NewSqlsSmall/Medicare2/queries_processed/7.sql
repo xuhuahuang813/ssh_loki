@@ -1,1 +1,0 @@
-SELECT * FROM  medicare2_2  WHERE  (medicare2_2.nppes_provider_state = 'NY') AND (medicare2_2.nppes_provider_country = 'US') AND (medicare2_2.provider_type = 'Allergy/Immunology');

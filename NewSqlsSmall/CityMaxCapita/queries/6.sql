@@ -1,1 +1,0 @@
-SELECT * FROM   citymaxcapita_1  WHERE  (citymaxcapita_1.keyword = 'cunt');

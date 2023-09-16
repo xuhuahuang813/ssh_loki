@@ -1,1 +1,1 @@
-SELECT * FROM   iglocations1_1  WHERE  iglocations1_1.state = 'District of Columbia';
+SELECT * FROM   iglocations1_1  WHERE  (iglocations1_1.state IN ('District of Columbia'));

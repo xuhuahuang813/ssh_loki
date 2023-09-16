@@ -1,0 +1,8 @@
+input,sql,real,estimate,qerr
+mlb_30,"SELECT COUNT(*) from ""mlb_30_gen_shuffle"" AS mlb_30 WHERE mlb_30.league = 'PCL' AND mlb_30.statei = 'Bases Empty' AND mlb_30.year = 2015",648.0,648,1.0
+mlb_21,"SELECT COUNT(*) from ""mlb_21_gen_shuffle"" AS mlb_21 WHERE mlb_21.league = 'EL' AND mlb_21.times_faced = 1 AND mlb_21.year = 2015",432.0,432,1.0
+mlb_11,"SELECT COUNT(*) from ""mlb_11_gen_shuffle"" AS mlb_11 WHERE mlb_11.league = 'PCL' AND mlb_11.position = 'Center Fielder' AND mlb_11.year = 2015",509.0,509,1.0
+mlb_14,"SELECT COUNT(*) from ""mlb_14_gen_shuffle"" AS mlb_14 WHERE mlb_14.field = 'Center' AND mlb_14.league = 'PCL' AND mlb_14.stand = 'R' AND mlb_14.year = 2015",401.0,401,1.0
+mlb_24,"SELECT COUNT(*) from ""mlb_24_gen_shuffle"" AS mlb_24 WHERE mlb_24.inning = 4 AND mlb_24.league = 'PCL' AND mlb_24.year = 2015",552.0,552,1.0
+mlb_44,"SELECT COUNT(*) from ""mlb_44_gen_shuffle"" AS mlb_44 WHERE mlb_44.batted_ball_type = 'LD' AND mlb_44.league = 'PCL' AND mlb_44.year = 2015",530.0,530,1.0
+mlb_65,"SELECT COUNT(*) from ""mlb_65_gen_shuffle"" AS mlb_65 WHERE mlb_65.batter_name = 'Gavin Cecchini'",29.0,28,1.0357142857142858
