@@ -38,7 +38,7 @@ for dir_name in dir_list:
         # if file_name != "29.sql":
         #     continue
         
-        file_path = os.path.join(dir_path, file_name)  # ./benchmark/Arade/queries/2.sql
+        file_path = os.path.join(dir_path, file_name) 
 
         with open(file_path, encoding="utf-8") as f:
             sql = f.read()
@@ -48,7 +48,7 @@ for dir_name in dir_list:
                 continue
 
             # pkl文件路径
-            workload_path = file_path.replace("queries_processed", "workload").replace(".sql", ".pkl")  # ./benchmark/Arade/workload/2.pkl
+            workload_path = file_path.replace("queries_processed", "workload").replace(".sql", ".pkl") 
 
             print("file_name is: ", file_name)
             qrep = parse_sql(sql, None, None, None, None, None, compute_ground_truth=False)

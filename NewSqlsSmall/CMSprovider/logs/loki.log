@@ -1,0 +1,8 @@
+2023-09-16 17:42:42 INFO     [MAIN]  Solving:CMSprovider--cmsprovider_1--{'hcpcs_description', 'nppes_provider_state'}
+2023-09-16 19:29:13 INFO     [MAIN]  Solving:CMSprovider--cmsprovider_1--{'hcpcs_description', 'nppes_provider_state'}
+2023-09-16 19:30:41 INFO     [MAIN]  Solving:CMSprovider--cmsprovider_1--{'hcpcs_description', 'nppes_provider_state'}
+2023-09-16 19:33:43 INFO     [MAIN]  Solved: {'hcpcs_description', 'nppes_provider_state'}
+2023-09-16 19:33:44 INFO     [MAIN]  table cmsprovider_1 solved!
+
+2023-09-16 19:33:44 INFO     [MAIN]  **********dir CMSprovider solved!************
+

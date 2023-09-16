@@ -1,2 +1,0 @@
-op,dtype,optype,constant,input,column,opstring,is_id,jobid,discrete_ops,cont_ops,like_ops,alias,exprhash,InputCardinality,Selectivity,RowCount,workload,db
-=,string,in,'District of Columbia',iglocations1_1,state,iglocations1_1.state in ('District of Columbia'),0,0,1,0,0,iglocations1_1,166705674010325605820872440776969024783693586578,81611,4.901300069843526e-05,4,ceb,ceb
