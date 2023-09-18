@@ -1,0 +1,1 @@
+SELECT * FROM   hatred_1  WHERE  hatred_1.state_ = 'DC' AND hatred_1.keyword IN ('trans man', 'trans men', 'trans people', 'trans person', 'trans woman', 'trans women', 'transgender');

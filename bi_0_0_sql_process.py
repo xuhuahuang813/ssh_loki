@@ -1,5 +1,6 @@
 import os
 import shutil
+import re
 
 def transform_quotes_to_lowercase(line):
     result = []
@@ -79,10 +80,31 @@ for dir_name in dir_list:
                 #     print(input_path,"*******", sql_content)
                 #     continue
                 
+                # 查找所有 "IN" 出现的位置
+                in_positions = [match.end() for match in re.finditer(r'\bIN\b', sql_content)]
+
+                # 获取每个 "IN" 后面的第一个 "(" 和 ")" 字符的位置
+                parentheses_positions = []
+                for pos in in_positions:
+                    open_paren_pos = sql_content.find('(', pos)
+                    close_paren_pos = sql_content.find(')', pos)
+                    
+                    if open_paren_pos != -1 and close_paren_pos != -1:
+                        parentheses_positions.extend([open_paren_pos, close_paren_pos])
+                    
+                # 查找所有 "(" 和 ")" 的位置
+                all_positions = [i for i, c in enumerate(sql_content) if c == '(' or c == ')']
+
+                delete_positions = list(set(all_positions) - set(parentheses_positions))
+
+                # 过滤字符串中所有不在上述找出的位置中的 "(" 和 ")"
+                filtered_str = ''.join([c if i not in delete_positions else '' for i, c in enumerate(sql_content)])
+                
+                print("filtered_str is ", filtered_str)
                 # 构造输出文件的完整路径，保持原文件名但转为小写
                 output_filename = filename.lower()
                 output_path = os.path.join(output_folder, output_filename)
                 with open(output_path, "w") as output_file:
-                    output_file.write(sql_content)
+                    output_file.write(filtered_str)
 
     # print(f"notEqual is {notEqual}")

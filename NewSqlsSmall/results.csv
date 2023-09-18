@@ -1,2 +1,0 @@
-input,sql,real,estimate,qerr
-cmsprovider_1,"SELECT COUNT(*) from ""cmsprovider_1_gen_shuffle"" AS cmsprovider_1 WHERE cmsprovider_1.hcpcs_description in (                 'Removal of joint lining from two or more knee joint compartments using an endoscope',                 'Removal of knee cap',                 'Removal of knee joint covering'             ) AND cmsprovider_1.nppes_provider_state = 'CA'",11.0,60,5.454545454545454
