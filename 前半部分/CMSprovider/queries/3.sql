@@ -1,0 +1,1 @@
+SELECT * FROM   cmsprovider_2  WHERE  (cmsprovider_2.nppes_provider_state = 'CA');

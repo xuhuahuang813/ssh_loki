@@ -1,0 +1,1 @@
+SELECT * FROM   medpayment1_1  WHERE  medpayment1_1.hcpcs_code = '27447' AND medpayment1_1.hcpcs_description = 'Total knee arthroplasty';

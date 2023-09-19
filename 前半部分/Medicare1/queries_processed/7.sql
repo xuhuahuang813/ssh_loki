@@ -1,0 +1,1 @@
+SELECT * FROM   medicare1_2  WHERE  medicare1_2.nppes_provider_state IN ('AK', 'AS', 'GU', 'HI', 'MP', 'PR', 'VI');

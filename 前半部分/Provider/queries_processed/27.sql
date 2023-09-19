@@ -1,0 +1,1 @@
+SELECT * FROM   provider_8  WHERE  provider_8.nppes_provider_city = 'LINCOLN';

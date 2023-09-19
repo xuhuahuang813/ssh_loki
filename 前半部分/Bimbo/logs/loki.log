@@ -1,0 +1,113 @@
+2023-09-18 19:24:35 INFO     [MAIN]  Solving:Bimbo--bimbo_1--{'agencia_id'}
+2023-09-18 19:26:04 INFO     [MAIN]  Solved: {'agencia_id'}
+2023-09-18 19:26:13 INFO     [MAIN]  table bimbo_1 solved!
+
+2023-09-18 19:26:13 INFO     [MAIN]  **********dir Bimbo solved!************
+
+2023-09-18 19:26:14 INFO     [MAIN]  Solving:CityMaxCapita--citymaxcapita_1--{'keyword'}
+2023-09-18 19:26:23 INFO     [MAIN]  Solved: {'keyword'}
+2023-09-18 19:26:24 INFO     [MAIN]  table citymaxcapita_1 solved!
+
+2023-09-18 19:26:24 INFO     [MAIN]  **********dir CityMaxCapita solved!************
+
+2023-09-18 19:26:24 INFO     [MAIN]  Solving:CMSprovider--cmsprovider_1--{'nppes_provider_state', 'hcpcs_description'}
+2023-09-18 19:29:25 INFO     [MAIN]  Solved: {'nppes_provider_state', 'hcpcs_description'}
+2023-09-18 19:29:27 INFO     [MAIN]  table cmsprovider_1 solved!
+
+2023-09-18 19:29:27 INFO     [MAIN]  Solving:CMSprovider--cmsprovider_2--{'nppes_provider_state', 'hcpcs_description'}
+2023-09-18 19:32:29 INFO     [MAIN]  Solved: {'nppes_provider_state', 'hcpcs_description'}
+2023-09-18 19:32:30 INFO     [MAIN]  table cmsprovider_2 solved!
+
+2023-09-18 19:32:30 INFO     [MAIN]  **********dir CMSprovider solved!************
+
+2023-09-18 19:32:30 INFO     [MAIN]  Solving:Hatred--hatred_1--{'state_', 'keyword'}
+2023-09-18 19:36:28 INFO     [MAIN]  Solved: {'state_', 'keyword'}
+2023-09-18 19:36:30 INFO     [MAIN]  table hatred_1 solved!
+
+2023-09-18 19:36:30 INFO     [MAIN]  **********dir Hatred solved!************
+
+2023-09-18 19:36:30 INFO     [MAIN]  Solving:IGlocations1--iglocations1_1--{'state'}
+2023-09-18 19:37:00 INFO     [MAIN]  Solved: {'state'}
+2023-09-18 19:37:01 INFO     [MAIN]  table iglocations1_1 solved!
+
+2023-09-18 19:37:01 INFO     [MAIN]  **********dir IGlocations1 solved!************
+
+2023-09-18 19:37:01 INFO     [MAIN]  Solving:IGlocations2--iglocations2_1--{'city', 'calculation_4370724142342227', 'calculation_8090724143600502', 'state'}
+2023-09-18 20:08:35 INFO     [MAIN]  Solved: {'city', 'calculation_4370724142342227', 'calculation_8090724143600502', 'state'}
+2023-09-18 20:08:36 INFO     [MAIN]  table iglocations2_1 solved!
+
+2023-09-18 20:08:36 INFO     [MAIN]  Solving:IGlocations2--iglocations2_2--{'state__copy_', 'calculation_8090724143600502', 'state'}
+2023-09-18 20:11:24 INFO     [MAIN]  Solved: {'state__copy_', 'calculation_8090724143600502', 'state'}
+2023-09-18 20:11:25 INFO     [MAIN]  table iglocations2_2 solved!
+
+2023-09-18 20:11:25 INFO     [MAIN]  **********dir IGlocations2 solved!************
+
+2023-09-18 20:11:25 INFO     [MAIN]  Solving:Medicare1--medicare1_2--{'nppes_provider_state'}
+2023-09-18 20:12:56 INFO     [MAIN]  Solved: {'nppes_provider_state'}
+2023-09-18 20:12:57 INFO     [MAIN]  table medicare1_2 solved!
+
+2023-09-18 20:12:57 INFO     [MAIN]  **********dir Medicare1 solved!************
+
+2023-09-18 20:12:58 INFO     [MAIN]  Solving:Medicare2--medicare2_1--{'nppes_provider_state'}
+2023-09-18 20:28:40 INFO     [MAIN]  Solved: {'nppes_provider_state'}
+2023-09-18 20:28:41 INFO     [MAIN]  table medicare2_1 solved!
+
+2023-09-18 20:28:41 INFO     [MAIN]  Solving:Medicare2--medicare2_2--{'nppes_provider_state', 'nppes_provider_country', 'provider_type'}
+2023-09-18 20:33:08 INFO     [MAIN]  Solved: {'nppes_provider_state', 'nppes_provider_country', 'provider_type'}
+2023-09-18 20:33:10 INFO     [MAIN]  table medicare2_2 solved!
+
+2023-09-18 20:33:10 INFO     [MAIN]  **********dir Medicare2 solved!************
+
+2023-09-18 20:33:10 INFO     [MAIN]  Solving:Medicare3--medicare3_1--{'provider_type'}
+2023-09-18 20:36:52 INFO     [MAIN]  Solved: {'provider_type'}
+2023-09-18 20:36:53 INFO     [MAIN]  table medicare3_1 solved!
+
+2023-09-18 20:36:53 INFO     [MAIN]  **********dir Medicare3 solved!************
+
+2023-09-18 20:36:53 INFO     [MAIN]  Solving:MedPayment1--medpayment1_1--{'hcpcs_description', 'hcpcs_code'}
+2023-09-18 20:58:24 INFO     [MAIN]  Solved: {'hcpcs_description', 'hcpcs_code'}
+2023-09-18 20:58:25 INFO     [MAIN]  table medpayment1_1 solved!
+
+2023-09-18 20:58:25 INFO     [MAIN]  **********dir MedPayment1 solved!************
+
+2023-09-18 20:58:25 INFO     [MAIN]  Solving:MedPayment2--medpayment2_1--{'hcpcs_description', 'hcpcs_code'}
+2023-09-18 21:15:49 INFO     [MAIN]  Solved: {'hcpcs_description', 'hcpcs_code'}
+2023-09-18 21:15:50 INFO     [MAIN]  table medpayment2_1 solved!
+
+2023-09-18 21:15:50 INFO     [MAIN]  **********dir MedPayment2 solved!************
+
+2023-09-18 21:15:50 INFO     [MAIN]  Solving:PanCreactomy1--pancreactomy1_1--{'provider_type', 'hcpcs_description'}
+2023-09-18 21:16:56 INFO     [MAIN]  Solved: {'provider_type', 'hcpcs_description'}
+2023-09-18 21:16:57 INFO     [MAIN]  table pancreactomy1_1 solved!
+
+2023-09-18 21:16:57 INFO     [MAIN]  **********dir PanCreactomy1 solved!************
+
+2023-09-18 21:16:57 INFO     [MAIN]  Solving:PanCreactomy2--pancreactomy2_1--{'hcpcs_description'}
+2023-09-18 21:17:23 INFO     [MAIN]  Solved: {'hcpcs_description'}
+2023-09-18 21:17:26 INFO     [MAIN]  table pancreactomy2_1 solved!
+
+2023-09-18 21:17:26 INFO     [MAIN]  Solving:PanCreactomy2--pancreactomy2_2--{'provider_type', 'hcpcs_description'}
+2023-09-18 21:18:36 INFO     [MAIN]  Solved: {'provider_type', 'hcpcs_description'}
+2023-09-18 21:18:38 INFO     [MAIN]  table pancreactomy2_2 solved!
+
+2023-09-18 21:18:38 INFO     [MAIN]  **********dir PanCreactomy2 solved!************
+
+2023-09-18 21:18:38 INFO     [MAIN]  Solving:Provider--provider_2--{'provider_type', 'nppes_provider_state'}
+2023-09-18 21:20:59 INFO     [MAIN]  Solved: {'provider_type', 'nppes_provider_state'}
+2023-09-18 21:21:01 INFO     [MAIN]  table provider_2 solved!
+
+2023-09-18 21:21:01 INFO     [MAIN]  Solving:Provider--provider_3--{'provider_type', 'nppes_provider_state'}
+2023-09-18 21:23:38 INFO     [MAIN]  Solved: {'provider_type', 'nppes_provider_state'}
+2023-09-18 21:23:39 INFO     [MAIN]  table provider_3 solved!
+
+2023-09-18 21:23:39 INFO     [MAIN]  Solving:Provider--provider_6--{'provider_type', 'nppes_provider_state'}
+2023-09-18 21:25:04 INFO     [MAIN]  Solved: {'provider_type', 'nppes_provider_state'}
+2023-09-18 21:25:06 INFO     [MAIN]  table provider_6 solved!
+
+2023-09-18 21:25:06 INFO     [MAIN]  Solving:Provider--provider_8--{'nppes_provider_state', 'provider_type', 'nppes_provider_city'}
+2023-09-18 21:33:18 INFO     [MAIN]  Solved: {'nppes_provider_state', 'provider_type', 'nppes_provider_city'}
+2023-09-18 21:33:19 INFO     [MAIN]  table provider_8 solved!
+
+2023-09-18 21:33:19 INFO     [MAIN]  **********dir Provider solved!************
+
+2023-09-18 21:33:19 INFO     [MAIN]  Solving:Rentabilidad--rentabilidad_1--{'zona', 'sede_foraneo_sintec', 'locacion', 'figura'}

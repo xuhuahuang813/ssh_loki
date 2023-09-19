@@ -1,0 +1,1 @@
+SELECT * FROM   iglocations2_1  WHERE  iglocations2_1.city = 'Unalaska' AND iglocations2_1.state IN ('Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas') AND iglocations2_1.calculation_4370724142342227 = 'Beach';

@@ -1,0 +1,45 @@
+2023-09-19 09:46:09 INFO     [MAIN]  Solving:Taxpayer--taxpayer_1--{'nppes_provider_state', 'nppes_provider_last_org_name'}
+2023-09-19 10:02:33 INFO     [MAIN]  Solving:Taxpayer--taxpayer_1--{'nppes_provider_last_org_name', 'nppes_provider_state'}
+2023-09-19 15:11:22 INFO     [MAIN]  Solving:Taxpayer--taxpayer_1--{'nppes_provider_state', 'nppes_provider_last_org_name'}
+2023-09-19 15:27:34 INFO     [MAIN]  Solving:Taxpayer--taxpayer_1--{'nppes_provider_last_org_name', 'nppes_provider_state'}
+2023-09-19 15:30:53 INFO     [MAIN]  Solved: {'nppes_provider_last_org_name', 'nppes_provider_state'}
+2023-09-19 15:30:55 INFO     [MAIN]  table taxpayer_1 solved!
+
+2023-09-19 15:30:55 INFO     [MAIN]  Solving:Taxpayer--taxpayer_10--{'hcpcs_description', 'nppes_provider_state', 'nppes_provider_last_org_name', 'nppes_provider_city', 'nppes_provider_first_name'}
+2023-09-19 15:32:22 INFO     [MAIN]  Solved: {'hcpcs_description', 'nppes_provider_state', 'nppes_provider_last_org_name', 'nppes_provider_city', 'nppes_provider_first_name'}
+2023-09-19 15:32:24 INFO     [MAIN]  table taxpayer_10 solved!
+
+2023-09-19 15:32:24 INFO     [MAIN]  Solving:Taxpayer--taxpayer_2--{'nppes_provider_state', 'nppes_provider_first_name'}
+2023-09-19 15:34:04 INFO     [MAIN]  Solved: {'nppes_provider_state', 'nppes_provider_first_name'}
+2023-09-19 15:34:05 INFO     [MAIN]  table taxpayer_2 solved!
+
+2023-09-19 15:34:05 INFO     [MAIN]  Solving:Taxpayer--taxpayer_3--{'nppes_provider_last_org_name', 'nppes_provider_first_name'}
+2023-09-19 15:37:15 INFO     [MAIN]  Solved: {'nppes_provider_last_org_name', 'nppes_provider_first_name'}
+2023-09-19 15:37:16 INFO     [MAIN]  table taxpayer_3 solved!
+
+2023-09-19 15:37:16 INFO     [MAIN]  Solving:Taxpayer--taxpayer_4--{'nppes_provider_last_org_name', 'nppes_provider_first_name', 'nppes_provider_state'}
+2023-09-19 15:38:01 INFO     [MAIN]  Solved: {'nppes_provider_last_org_name', 'nppes_provider_first_name', 'nppes_provider_state'}
+2023-09-19 15:38:02 INFO     [MAIN]  table taxpayer_4 solved!
+
+2023-09-19 15:38:02 INFO     [MAIN]  Solving:Taxpayer--taxpayer_5--{'nppes_provider_last_org_name', 'nppes_provider_first_name'}
+2023-09-19 15:41:10 INFO     [MAIN]  Solved: {'nppes_provider_last_org_name', 'nppes_provider_first_name'}
+2023-09-19 15:41:12 INFO     [MAIN]  table taxpayer_5 solved!
+
+2023-09-19 15:41:12 INFO     [MAIN]  Solving:Taxpayer--taxpayer_6--{'hcpcs_description', 'nppes_provider_state'}
+2023-09-19 15:42:17 INFO     [MAIN]  Solved: {'hcpcs_description', 'nppes_provider_state'}
+2023-09-19 15:42:19 INFO     [MAIN]  table taxpayer_6 solved!
+
+2023-09-19 15:42:19 INFO     [MAIN]  Solving:Taxpayer--taxpayer_7--{'nppes_provider_city', 'nppes_provider_first_name', 'hcpcs_description', 'nppes_provider_state'}
+2023-09-19 15:43:08 INFO     [MAIN]  Solved: {'nppes_provider_city', 'nppes_provider_first_name', 'hcpcs_description', 'nppes_provider_state'}
+2023-09-19 15:43:09 INFO     [MAIN]  table taxpayer_7 solved!
+
+2023-09-19 15:43:09 INFO     [MAIN]  Solving:Taxpayer--taxpayer_8--{'nppes_provider_last_org_name', 'nppes_provider_first_name', 'nppes_provider_state'}
+2023-09-19 15:43:59 INFO     [MAIN]  Solved: {'nppes_provider_last_org_name', 'nppes_provider_first_name', 'nppes_provider_state'}
+2023-09-19 15:44:00 INFO     [MAIN]  table taxpayer_8 solved!
+
+2023-09-19 15:44:00 INFO     [MAIN]  Solving:Taxpayer--taxpayer_9--{'nppes_provider_last_org_name', 'nppes_provider_first_name', 'nppes_provider_state'}
+2023-09-19 15:44:50 INFO     [MAIN]  Solved: {'nppes_provider_last_org_name', 'nppes_provider_first_name', 'nppes_provider_state'}
+2023-09-19 15:44:52 INFO     [MAIN]  table taxpayer_9 solved!
+
+2023-09-19 15:44:52 INFO     [MAIN]  **********dir Taxpayer solved!************
+

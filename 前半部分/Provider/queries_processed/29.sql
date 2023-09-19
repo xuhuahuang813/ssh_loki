@@ -1,0 +1,1 @@
+SELECT * FROM   provider_8  WHERE  provider_8.nppes_provider_city = 'LINCOLN' AND provider_8.nppes_provider_state = 'RI' AND provider_8.provider_type = 'Internal Medicine';

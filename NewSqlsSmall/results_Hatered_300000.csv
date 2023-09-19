@@ -1,7 +1,0 @@
-input,sql,real,estimate,qerr
-hatred_1,"SELECT COUNT(*) from ""hatred_1_gen_shuffle"" AS hatred_1 WHERE hatred_1.state_ = 'DC' AND hatred_1.keyword in ('african american', 'black man', 'black men', 'black person', 'black woman', 'black women')",7342.0,7038,1.0431940892298948
-hatred_1,"SELECT COUNT(*) from ""hatred_1_gen_shuffle"" AS hatred_1 WHERE hatred_1.state_ = 'DC' AND hatred_1.keyword in ('chicks with dicks', 'man in a dress', 'men in dresses', 'shemale', 'trannies', 'tranny')",162.0,138,1.173913043478261
-hatred_1,"SELECT COUNT(*) from ""hatred_1_gen_shuffle"" AS hatred_1 WHERE hatred_1.state_ = 'DC' AND hatred_1.keyword in ('coon', 'nigger', 'porch monkey')",866.0,759,1.1409749670619236
-hatred_1,"SELECT COUNT(*) from ""hatred_1_gen_shuffle"" AS hatred_1 WHERE hatred_1.state_ = 'DC' AND hatred_1.keyword in ('nigger', 'porch monkey')",554.0,483,1.1469979296066253
-hatred_1,"SELECT COUNT(*) from ""hatred_1_gen_shuffle"" AS hatred_1 WHERE hatred_1.state_ = 'DC' AND hatred_1.keyword in ('trans man', 'trans men', 'trans people', 'trans person', 'trans woman', 'trans women', 'transgender')",1514.0,1380,1.0971014492753624
-hatred_1,"SELECT COUNT(*) from ""hatred_1_gen_shuffle"" AS hatred_1 WHERE hatred_1.state_ in ('DC', 'NV') AND hatred_1.keyword in ('chicks with dicks', 'man in a dress', 'men in dresses', 'shemale', 'trannies', 'tranny')",907.0,759,1.1949934123847168

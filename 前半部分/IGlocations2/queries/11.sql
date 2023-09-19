@@ -1,0 +1,1 @@
+SELECT * FROM   iglocations2_2  WHERE  ((iglocations2_2.calculation_8090724143600502 = 'Bar') AND (iglocations2_2.state IN ('Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas')) AND (iglocations2_2.state__copy_ = 'Alaska'));

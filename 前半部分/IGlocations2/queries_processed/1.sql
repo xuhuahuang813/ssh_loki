@@ -1,0 +1,1 @@
+SELECT * FROM   iglocations2_1  WHERE  iglocations2_1.state IN ('Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas');

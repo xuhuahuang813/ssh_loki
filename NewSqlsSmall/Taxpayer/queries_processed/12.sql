@@ -1,0 +1,1 @@
+SELECT * FROM   taxpayer_6  WHERE  taxpayer_6.hcpcs_description = 'Initial hospital care' AND taxpayer_6.nppes_provider_state = 'WA';

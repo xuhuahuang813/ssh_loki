@@ -25,7 +25,7 @@ def build_model(program, constraints, leftover_constraints, table_cardinality):
     for col_name in col_values:
         SatScale += len(col_values[col_name])    
     
-    vars_per_col = 300000 // SatScale  
+    vars_per_col = 150000 // SatScale  
     # vars_per_col = table_cardinality
     
     print(f'SatScale: {SatScale}, vars_per_col: {vars_per_col}, Estimate scale: {vars_per_col*SatScale}')  
